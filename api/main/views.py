@@ -9,6 +9,7 @@ from .models import *
 from .serializers import *
 from .analysis.ML import *
 from .analysis.sentiment import *
+from .analysis.face_analysis import *
 
 from collections import OrderedDict
 
@@ -24,6 +25,19 @@ def patients(request):
 	pat = Patient.objects.all()
 	ser = PatientSerializer(pat, many=True)
 	return JsonResponse(ser.data, safe=False)
+
+@csrf_exempt
+def imageAnalyze(request):
+	res = OrderedDict()
+	if request.method == 'POST':
+		try:
+			b = request.POST['base64']
+			res['emotion'] = predict_face(b)
+		except:
+			res['error'] = "Emotion key not found"	
+	else:
+		res['error'] = "Method not supported"
+	return JsonResponse(res, safe = False)
 
 @csrf_exempt
 def textAnalyze(request):

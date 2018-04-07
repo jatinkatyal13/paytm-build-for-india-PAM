@@ -116,7 +116,7 @@ module.exports =
   
   var _routes2 = _interopRequireDefault(_routes);
   
-  var _assets = __webpack_require__(194);
+  var _assets = __webpack_require__(195);
   
   var _assets2 = _interopRequireDefault(_assets);
   
@@ -919,55 +919,55 @@ module.exports =
   
   var _initiate2 = _interopRequireDefault(_initiate);
   
-  var _login = __webpack_require__(154);
+  var _login = __webpack_require__(155);
   
   var _login2 = _interopRequireDefault(_login);
   
-  var _tables = __webpack_require__(160);
+  var _tables = __webpack_require__(161);
   
   var _tables2 = _interopRequireDefault(_tables);
   
-  var _buttons = __webpack_require__(165);
+  var _buttons = __webpack_require__(166);
   
   var _buttons2 = _interopRequireDefault(_buttons);
   
-  var _flotCharts = __webpack_require__(167);
+  var _flotCharts = __webpack_require__(168);
   
   var _flotCharts2 = _interopRequireDefault(_flotCharts);
   
-  var _forms = __webpack_require__(169);
+  var _forms = __webpack_require__(170);
   
   var _forms2 = _interopRequireDefault(_forms);
   
-  var _grid = __webpack_require__(174);
+  var _grid = __webpack_require__(175);
   
   var _grid2 = _interopRequireDefault(_grid);
   
-  var _icons = __webpack_require__(176);
+  var _icons = __webpack_require__(177);
   
   var _icons2 = _interopRequireDefault(_icons);
   
-  var _morrisjsCharts = __webpack_require__(178);
+  var _morrisjsCharts = __webpack_require__(179);
   
   var _morrisjsCharts2 = _interopRequireDefault(_morrisjsCharts);
   
-  var _notification = __webpack_require__(180);
+  var _notification = __webpack_require__(181);
   
   var _notification2 = _interopRequireDefault(_notification);
   
-  var _panelWells = __webpack_require__(187);
+  var _panelWells = __webpack_require__(188);
   
   var _panelWells2 = _interopRequireDefault(_panelWells);
   
-  var _typography = __webpack_require__(189);
+  var _typography = __webpack_require__(190);
   
   var _typography2 = _interopRequireDefault(_typography);
   
-  var _blank = __webpack_require__(191);
+  var _blank = __webpack_require__(192);
   
   var _blank2 = _interopRequireDefault(_blank);
   
-  var _error = __webpack_require__(193);
+  var _error = __webpack_require__(194);
   
   var _error2 = _interopRequireDefault(_error);
   
@@ -20081,6 +20081,10 @@ module.exports =
   	value: true
   });
   
+  var _toConsumableArray2 = __webpack_require__(2);
+  
+  var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+  
   var _regenerator = __webpack_require__(1);
   
   var _regenerator2 = _interopRequireDefault(_regenerator);
@@ -20137,9 +20141,9 @@ module.exports =
   
   var _Chat2 = _interopRequireDefault(_Chat);
   
-  var _reactWebcam = __webpack_require__(196);
+  var _reactUserMedia = __webpack_require__(154);
   
-  var _reactWebcam2 = _interopRequireDefault(_reactWebcam);
+  var _reactUserMedia2 = _interopRequireDefault(_reactUserMedia);
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
@@ -20151,6 +20155,8 @@ module.exports =
   	(0, _inherits3.default)(Initiate, _Component);
   
   	function Initiate() {
+  		var _this2 = this;
+  
   		(0, _classCallCheck3.default)(this, Initiate);
   
   		var _this = (0, _possibleConstructorReturn3.default)(this, (Initiate.__proto__ || (0, _getPrototypeOf2.default)(Initiate)).call(this));
@@ -20160,7 +20166,8 @@ module.exports =
   		};
   
   		_this.capture = function () {
-  			var imageSrc = _this.webcam.getScreenshot();
+  			var imageSrc = _this.webcam.captureScreenshot();
+  			console.log(imageSrc);
   			return imageSrc;
   		};
   
@@ -20172,7 +20179,10 @@ module.exports =
   			text_emotion: [{ name: 'No Emotion', amt: 0 }],
   
   			// text sentiment analysis
-  			text_sentiment: [],
+  			text_sentiment: [{ name: 'No Emotion', pos: 0, neg: 0 }],
+  
+  			// face emotion analysis
+  			face_emotion: [{ name: 'No Emotion', amt: 0 }],
   
   			messages: []
   		};
@@ -20215,24 +20225,69 @@ module.exports =
   			// this.setState((prevState) => { identifiedTextList: prevState.identifiedTextList.push(noteContent) })
   		};
   
+  		setInterval((0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+  			var base64, formData;
+  			return _regenerator2.default.wrap(function _callee$(_context) {
+  				while (1) {
+  					switch (_context.prev = _context.next) {
+  						case 0:
+  							if (!_this.state.running) {
+  								_context.next = 6;
+  								break;
+  							}
+  
+  							base64 = _this.capture();
+  							formData = new FormData();
+  
+  							formData.append('base64', base64);
+  							_context.next = 6;
+  							return fetch('http://localhost:8000/imageAnalyze', {
+  								method: 'POST',
+  								body: formData
+  							}).then(function (response) {
+  								return response.json();
+  							}).then(function (responseJson) {
+  								var emotions = responseJson.emotion;
+  
+  								var data = [];
+  								for (var prop in emotions) {
+  									data.push({
+  										"name": prop,
+  										"amt": emotions[prop]
+  									});
+  								}
+  
+  								_this.setState({ face_emotion: data });
+  								// this.setState((prevState) => {{ faceEmotionDataList: prevState.faceEmotionDataList.push(data) }})
+  								// this.setState((prevState) => {{ faceEmotionData: prevState.faceEmotionData.push(responseJson[0].scores) }})
+  							}).catch(function (error) {});
+  
+  						case 6:
+  						case 'end':
+  							return _context.stop();
+  					}
+  				}
+  			}, _callee, _this2);
+  		})), 1000);
+  
   		return _this;
   	}
   
   	(0, _createClass3.default)(Initiate, [{
   		key: 'getEmotionAndSentiment',
   		value: function () {
-  			var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(content) {
-  				var _this2 = this;
+  			var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(content) {
+  				var _this3 = this;
   
   				var formData;
-  				return _regenerator2.default.wrap(function _callee$(_context) {
+  				return _regenerator2.default.wrap(function _callee2$(_context2) {
   					while (1) {
-  						switch (_context.prev = _context.next) {
+  						switch (_context2.prev = _context2.next) {
   							case 0:
   								formData = new FormData();
   
   								formData.append("str", content);
-  								_context.next = 4;
+  								_context2.next = 4;
   								return fetch('http://localhost:8000/textAnalyze', {
   									method: 'POST',
   									body: formData
@@ -20253,49 +20308,70 @@ module.exports =
   											});
   										}
   									}
-  									_this2.setState({ text_emotion: data });
+  									_this3.setState({ text_emotion: data });
   
   									// setting the sentiments
-  									_this2.setState(function (prevState) {
-  										text_sentiment: prevState.text_sentiment.push({
-  											name: 'Sentiment',
-  											pos: sentiments.pos,
-  											neg: sentiments.neg
-  										});
-  									});
+  									// this.setState({ text_sentiment : [...this.state.text_sentiment, temp]})
+  									var temp = [].concat((0, _toConsumableArray3.default)(_this3.state.text_sentiment), [{
+  										name: 'Sentiment',
+  										pos: sentiments.pos,
+  										neg: sentiments.neg
+  									}]);
   
-  									console.log(_this2.state.text_emotion);
-  									console.log(_this2.state.text_sentiment);
+  									_this3.setState({ text_sentiment: temp });
+  									// this.setState({ text_sentiment : tempData })
+  									// this.setState((prevState) => {return { text_sentiment : prevState.text_sentiment.append(temp), text_emotion : data }})
+  
+  									console.log(_this3.state.text_emotion);
+  									console.log(_this3.state.text_sentiment);
   								}).catch(function (err) {
   									console.log(err);
   								});
   
   							case 4:
   							case 'end':
-  								return _context.stop();
+  								return _context2.stop();
   						}
   					}
-  				}, _callee, this);
+  				}, _callee2, this);
   			}));
   
   			function getEmotionAndSentiment(_x) {
-  				return _ref.apply(this, arguments);
+  				return _ref2.apply(this, arguments);
   			}
   
   			return getEmotionAndSentiment;
   		}()
+  	}, {
+  		key: 'reset',
+  		value: function reset() {
+  			this.setState({
+  				running: false,
+  				forceEnd: true,
+  
+  				// text emotion analysis
+  				text_emotion: [{ name: 'No Emotion', amt: 0 }],
+  
+  				// text sentiment analysis
+  				text_sentiment: [{ name: 'No Emotion', pos: 0, neg: 0 }],
+  
+  				// face emotion analysis
+  				face_emotion: [{ name: 'No Emotion', amt: 0 }],
+  
+  				messages: []
+  			});
+  		}
   	}, {
   		key: 'renderWebCam',
   		value: function renderWebCam() {
   			return _react2.default.createElement(
   				'div',
   				null,
-  				_react2.default.createElement(_reactWebcam2.default, {
-  					playsInline: false,
+  				_react2.default.createElement(_reactUserMedia2.default, {
   					audio: false,
   					height: 135,
   					ref: this.setWebcamRef,
-  					screenshotFormat: 'image/jpeg',
+  					captureFormat: 'image/jpeg',
   					width: 150
   				})
   			);
@@ -20303,7 +20379,7 @@ module.exports =
   	}, {
   		key: 'renderStartStopButton',
   		value: function renderStartStopButton() {
-  			var _this3 = this;
+  			var _this4 = this;
   
   			if (!this.state.running) {
   				return _react2.default.createElement(
@@ -20311,7 +20387,7 @@ module.exports =
   					{
   						className: 'btn btn-success',
   						onClick: function onClick() {
-  							_this3.recognition.start();
+  							_this4.recognition.start();
   						}
   					},
   					'Start'
@@ -20320,32 +20396,23 @@ module.exports =
   				return _react2.default.createElement(
   					'button',
   					{
-  						className: 'btn btn-danger',
+  						className: 'btn btn-warning',
   						onClick: function onClick() {
-  							if (!_this3.state.forceEnd) {
-  								_this3.setState({ forceEnd: true });
-  								// var emotionAverage = {}
-  								// this.state.emotionDataList.map((data, i) => {
-  								// 	data.map((data, i) => {
-  								// 		if (data.name in emotionAverage){
-  								// 			emotionAverage[data.name] = (emotionAverage[data.name] + data.value)/2
-  								// 		} else {
-  								// 			emotionAverage[data.name] = data.value
-  								// 		}
-  								// 	})
-  								// })
-  								// this.setState({emotionAverage: emotionAverage})
+  							if (!_this4.state.forceEnd) {
+  								_this4.setState({ forceEnd: true });
   							}
-  							_this3.recognition.stop();
+  							_this4.recognition.stop();
   						}
   					},
-  					'Stop'
+  					'Pause'
   				);
   			}
   		}
   	}, {
   		key: 'render',
   		value: function render() {
+  			var _this5 = this;
+  
   			return _react2.default.createElement(
   				'div',
   				null,
@@ -20363,7 +20430,25 @@ module.exports =
   								null,
   								'Assitant'
   							),
-  							this.renderStartStopButton()
+  							_react2.default.createElement(
+  								'div',
+  								{ className: 'pull-right' },
+  								this.renderStartStopButton(),
+  								_react2.default.createElement(
+  									'button',
+  									{
+  										className: 'btn btn-danger',
+  										onClick: function onClick() {
+  											if (!_this5.state.forceEnd) {
+  												_this5.setState({ forceEnd: true });
+  											}
+  											_this5.recognition.stop();
+  											_this5.reset();
+  										}
+  									},
+  									'Stop'
+  								)
+  							)
   						)
   					)
   				),
@@ -20372,7 +20457,7 @@ module.exports =
   					{ className: 'row' },
   					_react2.default.createElement(
   						'div',
-  						{ className: 'col-lg-4' },
+  						{ className: 'col-lg-3' },
   						_react2.default.createElement(
   							_reactBootstrap.Panel,
   							{
@@ -20412,7 +20497,7 @@ module.exports =
   					),
   					_react2.default.createElement(
   						'div',
-  						{ className: 'col-lg-8' },
+  						{ className: 'col-lg-9' },
   						_react2.default.createElement(
   							'div',
   							{ className: 'row' },
@@ -20437,12 +20522,14 @@ module.exports =
   											{ width: '100%', aspect: 2 },
   											_react2.default.createElement(
   												_recharts.BarChart,
-  												{ data: this.state.text_emotion, margin: { top: 10, right: 30, left: 0, bottom: 0 } },
+  												{
+  													data: this.state.text_emotion,
+  													margin: { top: 10, right: 30, left: 0, bottom: 0 } },
   												_react2.default.createElement(_recharts.CartesianGrid, { stroke: '#ccc' }),
   												_react2.default.createElement(_recharts.XAxis, { dataKey: 'name' }),
   												_react2.default.createElement(_recharts.YAxis, null),
   												_react2.default.createElement(_recharts.Tooltip, null),
-  												_react2.default.createElement(_recharts.Bar, { type: 'monotone', dataKey: 'amt', fill: '#ffc658' })
+  												_react2.default.createElement(_recharts.Bar, { type: 'monotone', dataKey: 'amt', fill: '#ffc658', isAnimationActive: false })
   											)
   										)
   									)
@@ -20458,36 +20545,7 @@ module.exports =
   											'span',
   											null,
   											_react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
-  											' Bar Chart Example',
-  											_react2.default.createElement(
-  												'div',
-  												{ className: 'pull-right' },
-  												_react2.default.createElement(
-  													_reactBootstrap.DropdownButton,
-  													{ title: 'Dropdown', bsSize: 'xs', pullRight: true, id: 'dropdownButton2' },
-  													_react2.default.createElement(
-  														_reactBootstrap.MenuItem,
-  														{ eventKey: '1' },
-  														'Action'
-  													),
-  													_react2.default.createElement(
-  														_reactBootstrap.MenuItem,
-  														{ eventKey: '2' },
-  														'Another action'
-  													),
-  													_react2.default.createElement(
-  														_reactBootstrap.MenuItem,
-  														{ eventKey: '3' },
-  														'Something else here'
-  													),
-  													_react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
-  													_react2.default.createElement(
-  														_reactBootstrap.MenuItem,
-  														{ eventKey: '4' },
-  														'Separated link'
-  													)
-  												)
-  											)
+  											' Visual Emotional Analysis'
   										)
   									},
   									_react2.default.createElement(
@@ -20498,14 +20556,12 @@ module.exports =
   											{ width: '100%', aspect: 2 },
   											_react2.default.createElement(
   												_recharts.BarChart,
-  												{ data: data, margin: { top: 10, right: 30, left: 0, bottom: 0 } },
+  												{ data: this.state.face_emotion, margin: { top: 10, right: 30, left: 0, bottom: 0 } },
   												_react2.default.createElement(_recharts.CartesianGrid, { stroke: '#ccc' }),
   												_react2.default.createElement(_recharts.XAxis, { dataKey: 'name' }),
   												_react2.default.createElement(_recharts.YAxis, null),
   												_react2.default.createElement(_recharts.Tooltip, null),
-  												_react2.default.createElement(_recharts.Bar, { dataKey: 'pv', stackId: '1', fill: '#8884d8' }),
-  												_react2.default.createElement(_recharts.Bar, { dataKey: 'uv', stackId: '1', fill: '#82ca9d' }),
-  												_react2.default.createElement(_recharts.Bar, { type: 'monotone', dataKey: 'amt', fill: '#ffc658' })
+  												_react2.default.createElement(_recharts.Bar, { type: 'monotone', dataKey: 'amt', fill: '#ffc658', isAnimationActive: false })
   											)
   										)
   									)
@@ -20525,36 +20581,7 @@ module.exports =
   											'span',
   											null,
   											_react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
-  											' Area Chart Example',
-  											_react2.default.createElement(
-  												'div',
-  												{ className: 'pull-right' },
-  												_react2.default.createElement(
-  													_reactBootstrap.DropdownButton,
-  													{ title: 'Dropdown', bsSize: 'xs', pullRight: true, id: 'dropdownButton1' },
-  													_react2.default.createElement(
-  														_reactBootstrap.MenuItem,
-  														{ eventKey: '1' },
-  														'Action'
-  													),
-  													_react2.default.createElement(
-  														_reactBootstrap.MenuItem,
-  														{ eventKey: '2' },
-  														'Another action'
-  													),
-  													_react2.default.createElement(
-  														_reactBootstrap.MenuItem,
-  														{ eventKey: '3' },
-  														'Something else here'
-  													),
-  													_react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
-  													_react2.default.createElement(
-  														_reactBootstrap.MenuItem,
-  														{ eventKey: '4' },
-  														'Separated link'
-  													)
-  												)
-  											)
+  											' Textual Sentimental Analysis'
   										)
   									},
   									_react2.default.createElement(
@@ -20570,8 +20597,8 @@ module.exports =
   												_react2.default.createElement(_recharts.YAxis, null),
   												_react2.default.createElement(_recharts.CartesianGrid, { stroke: '#ccc' }),
   												_react2.default.createElement(_recharts.Tooltip, null),
-  												_react2.default.createElement(_recharts.Line, { type: 'monotone', dataKey: 'pos', stackId: '1', stroke: '#8884d8', fill: '#8884d8' }),
-  												_react2.default.createElement(_recharts.Line, { type: 'monotone', dataKey: 'neg', stackId: '1', stroke: '#82ca9d', fill: '#82ca9d' })
+  												_react2.default.createElement(_recharts.Line, { type: 'monotone', dataKey: 'pos', stackId: '1', stroke: '#8884d8', fill: '#8884d8', isAnimationActive: false }),
+  												_react2.default.createElement(_recharts.Line, { type: 'monotone', dataKey: 'neg', stackId: '1', stroke: '#82ca9d', fill: '#82ca9d', isAnimationActive: false })
   											)
   										)
   									)
@@ -20732,6 +20759,12 @@ module.exports =
 
 /***/ }),
 /* 154 */
+/***/ (function(module, exports) {
+
+  module.exports = require("react-user-media");
+
+/***/ }),
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -20744,7 +20777,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Login = __webpack_require__(155);
+  var _Login = __webpack_require__(156);
   
   var _Login2 = _interopRequireDefault(_Login);
   
@@ -20770,7 +20803,7 @@ module.exports =
   // import App from '../../components/App';
 
 /***/ }),
-/* 155 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -20783,11 +20816,11 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Button = __webpack_require__(156);
+  var _Button = __webpack_require__(157);
   
   var _Button2 = _interopRequireDefault(_Button);
   
-  var _Panel = __webpack_require__(157);
+  var _Panel = __webpack_require__(158);
   
   var _Panel2 = _interopRequireDefault(_Panel);
   
@@ -20797,7 +20830,7 @@ module.exports =
   
   var _withStyles2 = _interopRequireDefault(_withStyles);
   
-  var _Login = __webpack_require__(158);
+  var _Login = __webpack_require__(159);
   
   var _Login2 = _interopRequireDefault(_Login);
   
@@ -20903,23 +20936,23 @@ module.exports =
   exports.default = (0, _withStyles2.default)(_Login2.default)(Login);
 
 /***/ }),
-/* 156 */
+/* 157 */
 /***/ (function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/Button");
 
 /***/ }),
-/* 157 */
+/* 158 */
 /***/ (function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/Panel");
 
 /***/ }),
-/* 158 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
   
-      var content = __webpack_require__(159);
+      var content = __webpack_require__(160);
       var insertCss = __webpack_require__(22);
   
       if (typeof content === 'string') {
@@ -20949,7 +20982,7 @@ module.exports =
     
 
 /***/ }),
-/* 159 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(21)();
@@ -20976,7 +21009,7 @@ module.exports =
   };
 
 /***/ }),
-/* 160 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -20989,7 +21022,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Table = __webpack_require__(161);
+  var _Table = __webpack_require__(162);
   
   var _Table2 = _interopRequireDefault(_Table);
   
@@ -21005,7 +21038,7 @@ module.exports =
   };
 
 /***/ }),
-/* 161 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -21018,23 +21051,23 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Button = __webpack_require__(156);
+  var _Button = __webpack_require__(157);
   
   var _Button2 = _interopRequireDefault(_Button);
   
-  var _Panel = __webpack_require__(157);
+  var _Panel = __webpack_require__(158);
   
   var _Panel2 = _interopRequireDefault(_Panel);
   
-  var _Pagination = __webpack_require__(162);
+  var _Pagination = __webpack_require__(163);
   
   var _Pagination2 = _interopRequireDefault(_Pagination);
   
-  var _PageHeader = __webpack_require__(163);
+  var _PageHeader = __webpack_require__(164);
   
   var _PageHeader2 = _interopRequireDefault(_PageHeader);
   
-  var _Well = __webpack_require__(164);
+  var _Well = __webpack_require__(165);
   
   var _Well2 = _interopRequireDefault(_Well);
   
@@ -22381,51 +22414,22 @@ module.exports =
   exports.default = displayTable;
 
 /***/ }),
-/* 162 */
+/* 163 */
 /***/ (function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/Pagination");
 
 /***/ }),
-/* 163 */
+/* 164 */
 /***/ (function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/PageHeader");
 
 /***/ }),
-/* 164 */
+/* 165 */
 /***/ (function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/Well");
-
-/***/ }),
-/* 165 */
-/***/ (function(module, exports, __webpack_require__) {
-
-  'use strict';
-  
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  
-  var _react = __webpack_require__(11);
-  
-  var _react2 = _interopRequireDefault(_react);
-  
-  var _Button = __webpack_require__(166);
-  
-  var _Button2 = _interopRequireDefault(_Button);
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-  
-  exports.default = {
-  
-    path: '/button',
-  
-    action: function action() {
-      return _react2.default.createElement(_Button2.default, null);
-    }
-  };
 
 /***/ }),
 /* 166 */
@@ -22441,15 +22445,44 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Button = __webpack_require__(156);
+  var _Button = __webpack_require__(167);
   
   var _Button2 = _interopRequireDefault(_Button);
   
-  var _Panel = __webpack_require__(157);
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  exports.default = {
+  
+    path: '/button',
+  
+    action: function action() {
+      return _react2.default.createElement(_Button2.default, null);
+    }
+  };
+
+/***/ }),
+/* 167 */
+/***/ (function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  
+  var _react = __webpack_require__(11);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _Button = __webpack_require__(157);
+  
+  var _Button2 = _interopRequireDefault(_Button);
+  
+  var _Panel = __webpack_require__(158);
   
   var _Panel2 = _interopRequireDefault(_Panel);
   
-  var _PageHeader = __webpack_require__(163);
+  var _PageHeader = __webpack_require__(164);
   
   var _PageHeader2 = _interopRequireDefault(_PageHeader);
   
@@ -22988,7 +23021,7 @@ module.exports =
   exports.default = displayButtons;
 
 /***/ }),
-/* 167 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -23001,7 +23034,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _FlotCharts = __webpack_require__(168);
+  var _FlotCharts = __webpack_require__(169);
   
   var _FlotCharts2 = _interopRequireDefault(_FlotCharts);
   
@@ -23017,7 +23050,7 @@ module.exports =
   };
 
 /***/ }),
-/* 168 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -23030,15 +23063,15 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Button = __webpack_require__(156);
+  var _Button = __webpack_require__(157);
   
   var _Button2 = _interopRequireDefault(_Button);
   
-  var _Panel = __webpack_require__(157);
+  var _Panel = __webpack_require__(158);
   
   var _Panel2 = _interopRequireDefault(_Panel);
   
-  var _PageHeader = __webpack_require__(163);
+  var _PageHeader = __webpack_require__(164);
   
   var _PageHeader2 = _interopRequireDefault(_PageHeader);
   
@@ -23257,7 +23290,7 @@ module.exports =
   exports.default = displayFlotCharts;
 
 /***/ }),
-/* 169 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -23270,7 +23303,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _forms = __webpack_require__(170);
+  var _forms = __webpack_require__(171);
   
   var _forms2 = _interopRequireDefault(_forms);
   
@@ -23286,7 +23319,7 @@ module.exports =
   };
 
 /***/ }),
-/* 170 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -23301,15 +23334,15 @@ module.exports =
   
   var _reactBootstrap = __webpack_require__(38);
   
-  var _FormControlFeedback = __webpack_require__(171);
+  var _FormControlFeedback = __webpack_require__(172);
   
   var _FormControlFeedback2 = _interopRequireDefault(_FormControlFeedback);
   
-  var _FormControlStatic = __webpack_require__(172);
+  var _FormControlStatic = __webpack_require__(173);
   
   var _FormControlStatic2 = _interopRequireDefault(_FormControlStatic);
   
-  var _InputGroupAddon = __webpack_require__(173);
+  var _InputGroupAddon = __webpack_require__(174);
   
   var _InputGroupAddon2 = _interopRequireDefault(_InputGroupAddon);
   
@@ -23795,51 +23828,22 @@ module.exports =
   exports.default = displayForms;
 
 /***/ }),
-/* 171 */
+/* 172 */
 /***/ (function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/FormControlFeedback");
 
 /***/ }),
-/* 172 */
+/* 173 */
 /***/ (function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/FormControlStatic");
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/InputGroupAddon");
-
-/***/ }),
-/* 174 */
-/***/ (function(module, exports, __webpack_require__) {
-
-  'use strict';
-  
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  
-  var _react = __webpack_require__(11);
-  
-  var _react2 = _interopRequireDefault(_react);
-  
-  var _Grid = __webpack_require__(175);
-  
-  var _Grid2 = _interopRequireDefault(_Grid);
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-  
-  exports.default = {
-  
-    path: '/grid',
-  
-    action: function action() {
-      return _react2.default.createElement(_Grid2.default, null);
-    }
-  };
 
 /***/ }),
 /* 175 */
@@ -23855,11 +23859,40 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Panel = __webpack_require__(157);
+  var _Grid = __webpack_require__(176);
+  
+  var _Grid2 = _interopRequireDefault(_Grid);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  exports.default = {
+  
+    path: '/grid',
+  
+    action: function action() {
+      return _react2.default.createElement(_Grid2.default, null);
+    }
+  };
+
+/***/ }),
+/* 176 */
+/***/ (function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  
+  var _react = __webpack_require__(11);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _Panel = __webpack_require__(158);
   
   var _Panel2 = _interopRequireDefault(_Panel);
   
-  var _PageHeader = __webpack_require__(163);
+  var _PageHeader = __webpack_require__(164);
   
   var _PageHeader2 = _interopRequireDefault(_PageHeader);
   
@@ -24730,7 +24763,7 @@ module.exports =
   exports.default = displayGrid;
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -24743,7 +24776,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Icons = __webpack_require__(177);
+  var _Icons = __webpack_require__(178);
   
   var _Icons2 = _interopRequireDefault(_Icons);
   
@@ -24759,7 +24792,7 @@ module.exports =
   };
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -24772,11 +24805,11 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Panel = __webpack_require__(157);
+  var _Panel = __webpack_require__(158);
   
   var _Panel2 = _interopRequireDefault(_Panel);
   
-  var _PageHeader = __webpack_require__(163);
+  var _PageHeader = __webpack_require__(164);
   
   var _PageHeader2 = _interopRequireDefault(_PageHeader);
   
@@ -27858,7 +27891,7 @@ module.exports =
   exports.default = displayIcons;
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -27871,7 +27904,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _MorrisjsCharts = __webpack_require__(179);
+  var _MorrisjsCharts = __webpack_require__(180);
   
   var _MorrisjsCharts2 = _interopRequireDefault(_MorrisjsCharts);
   
@@ -27887,7 +27920,7 @@ module.exports =
   };
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -27900,15 +27933,15 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Button = __webpack_require__(156);
+  var _Button = __webpack_require__(157);
   
   var _Button2 = _interopRequireDefault(_Button);
   
-  var _Panel = __webpack_require__(157);
+  var _Panel = __webpack_require__(158);
   
   var _Panel2 = _interopRequireDefault(_Panel);
   
-  var _PageHeader = __webpack_require__(163);
+  var _PageHeader = __webpack_require__(164);
   
   var _PageHeader2 = _interopRequireDefault(_PageHeader);
   
@@ -28098,7 +28131,7 @@ module.exports =
   exports.default = displayMorrisjsCharts;
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -28111,7 +28144,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Notification = __webpack_require__(181);
+  var _Notification = __webpack_require__(182);
   
   var _Notification2 = _interopRequireDefault(_Notification);
   
@@ -28127,7 +28160,7 @@ module.exports =
   };
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -28160,35 +28193,35 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Panel = __webpack_require__(157);
+  var _Panel = __webpack_require__(158);
   
   var _Panel2 = _interopRequireDefault(_Panel);
   
-  var _Alert = __webpack_require__(182);
+  var _Alert = __webpack_require__(183);
   
   var _Alert2 = _interopRequireDefault(_Alert);
   
-  var _Button = __webpack_require__(156);
+  var _Button = __webpack_require__(157);
   
   var _Button2 = _interopRequireDefault(_Button);
   
-  var _OverlayTrigger = __webpack_require__(183);
+  var _OverlayTrigger = __webpack_require__(184);
   
   var _OverlayTrigger2 = _interopRequireDefault(_OverlayTrigger);
   
-  var _Tooltip = __webpack_require__(184);
+  var _Tooltip = __webpack_require__(185);
   
   var _Tooltip2 = _interopRequireDefault(_Tooltip);
   
-  var _Popover = __webpack_require__(185);
+  var _Popover = __webpack_require__(186);
   
   var _Popover2 = _interopRequireDefault(_Popover);
   
-  var _Modal = __webpack_require__(186);
+  var _Modal = __webpack_require__(187);
   
   var _Modal2 = _interopRequireDefault(_Modal);
   
-  var _PageHeader = __webpack_require__(163);
+  var _PageHeader = __webpack_require__(164);
   
   var _PageHeader2 = _interopRequireDefault(_PageHeader);
   
@@ -28687,37 +28720,37 @@ module.exports =
   exports.default = Notification;
 
 /***/ }),
-/* 182 */
+/* 183 */
 /***/ (function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/Alert");
 
 /***/ }),
-/* 183 */
+/* 184 */
 /***/ (function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/OverlayTrigger");
 
 /***/ }),
-/* 184 */
+/* 185 */
 /***/ (function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/Tooltip");
 
 /***/ }),
-/* 185 */
+/* 186 */
 /***/ (function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/Popover");
 
 /***/ }),
-/* 186 */
+/* 187 */
 /***/ (function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/Modal");
 
 /***/ }),
-/* 187 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -28730,7 +28763,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _PanelWells = __webpack_require__(188);
+  var _PanelWells = __webpack_require__(189);
   
   var _PanelWells2 = _interopRequireDefault(_PanelWells);
   
@@ -28746,7 +28779,7 @@ module.exports =
   };
 
 /***/ }),
-/* 188 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -29341,7 +29374,7 @@ module.exports =
   exports.default = displayPanelWells;
 
 /***/ }),
-/* 189 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -29354,7 +29387,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Typography = __webpack_require__(190);
+  var _Typography = __webpack_require__(191);
   
   var _Typography2 = _interopRequireDefault(_Typography);
   
@@ -29370,7 +29403,7 @@ module.exports =
   };
 
 /***/ }),
-/* 190 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -29383,11 +29416,11 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Panel = __webpack_require__(157);
+  var _Panel = __webpack_require__(158);
   
   var _Panel2 = _interopRequireDefault(_Panel);
   
-  var _PageHeader = __webpack_require__(163);
+  var _PageHeader = __webpack_require__(164);
   
   var _PageHeader2 = _interopRequireDefault(_PageHeader);
   
@@ -29985,7 +30018,7 @@ module.exports =
   exports.default = displayTypography;
 
 /***/ }),
-/* 191 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -29998,7 +30031,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _blank = __webpack_require__(192);
+  var _blank = __webpack_require__(193);
   
   var _blank2 = _interopRequireDefault(_blank);
   
@@ -30013,7 +30046,7 @@ module.exports =
   };
 
 /***/ }),
-/* 192 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -30057,7 +30090,7 @@ module.exports =
   exports.default = displayBlank;
 
 /***/ }),
-/* 193 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -30106,17 +30139,10 @@ module.exports =
       */
 
 /***/ }),
-/* 194 */
+/* 195 */
 /***/ (function(module, exports) {
 
   module.exports = require("./assets");
-
-/***/ }),
-/* 195 */,
-/* 196 */
-/***/ (function(module, exports) {
-
-  module.exports = require("react-webcam");
 
 /***/ })
 /******/ ]);

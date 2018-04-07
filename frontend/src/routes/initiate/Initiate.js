@@ -21,7 +21,7 @@ import {
 
 import Chat from './Chat';
 
-import Webcam from 'react-webcam';
+import Webcam from 'react-user-media';
 
 const title = 'Psychology Assistive Module';
 
@@ -51,7 +51,12 @@ class Initiate extends Component {
 
 			// text sentiment analysis
 			text_sentiment : [
+				{ name: 'No Emotion', pos: 0, neg: 0 },
+			],
 
+			// face emotion analysis
+			face_emotion : [
+				{ name: 'No Emotion', amt: 0 },
 			],
 
 			messages : []
@@ -93,6 +98,36 @@ class Initiate extends Component {
 			// this.setState((prevState) => { identifiedTextList: prevState.identifiedTextList.push(noteContent) })
 		}
 
+		setInterval(async () => {
+			if (this.state.running){
+				var base64 = this.capture()
+				var formData = new FormData()
+				formData.append('base64' , base64)
+				await fetch('http://localhost:8000/imageAnalyze', {
+					method: 'POST',
+					body: formData
+				})
+				.then((response) => response.json())
+				.then((responseJson) => {
+					var emotions = responseJson.emotion
+
+					var data = []
+					for(var prop in emotions) {
+						data.push({
+							"name": prop,
+							"amt": emotions[prop]
+						})
+					}
+
+					this.setState({ face_emotion : data })
+					// this.setState((prevState) => {{ faceEmotionDataList: prevState.faceEmotionDataList.push(data) }})
+					// this.setState((prevState) => {{ faceEmotionData: prevState.faceEmotionData.push(responseJson[0].scores) }})
+				})
+				.catch((error) => {
+				})
+			}
+		}, 1000)
+
 	}
 
 	async getEmotionAndSentiment(content) {
@@ -121,11 +156,16 @@ class Initiate extends Component {
 			this.setState({ text_emotion : data })
 
 			// setting the sentiments
-			this.setState((prevState) => { text_sentiment : prevState.text_sentiment.push({
+			// this.setState({ text_sentiment : [...this.state.text_sentiment, temp]})
+			var temp = [...this.state.text_sentiment, {
 				name : 'Sentiment',
 				pos : sentiments.pos,
 				neg : sentiments.neg
-			})})
+			}]
+
+			this.setState({ text_sentiment : temp })
+			// this.setState({ text_sentiment : tempData })
+			// this.setState((prevState) => {return { text_sentiment : prevState.text_sentiment.append(temp), text_emotion : data }})
 
 			console.log(this.state.text_emotion)
 			console.log(this.state.text_sentiment)
@@ -140,19 +180,43 @@ class Initiate extends Component {
 	}
 	
 	capture = () => {
-		const imageSrc = this.webcam.getScreenshot();
+		const imageSrc = this.webcam.captureScreenshot();
+		console.log(imageSrc)
 		return imageSrc
+	}
+
+	reset() {
+		this.setState({
+			running : false,
+			forceEnd : true,
+
+			// text emotion analysis
+			text_emotion : [
+				{ name: 'No Emotion', amt: 0 },
+			],
+
+			// text sentiment analysis
+			text_sentiment : [
+				{ name: 'No Emotion', pos: 0, neg: 0 },
+			],
+
+			// face emotion analysis
+			face_emotion : [
+				{ name: 'No Emotion', amt: 0 },
+			],
+
+			messages : []
+		})
 	}
 
 	renderWebCam(){
 		return (
 			<div>
 				<Webcam
-					playsInline={false}
 					audio={false}
 					height={135}
 					ref={this.setWebcamRef}
-					screenshotFormat="image/jpeg"
+					captureFormat="image/jpeg"
 					width={150}
 				/>
 			</div>
@@ -175,26 +239,15 @@ class Initiate extends Component {
 		} else {
 			return (
 				<button 
-					className="btn btn-danger"
+					className="btn btn-warning"
 					onClick={ () => {
 						if (!this.state.forceEnd){
 							this.setState({forceEnd: true})
-							// var emotionAverage = {}
-							// this.state.emotionDataList.map((data, i) => {
-							// 	data.map((data, i) => {
-							// 		if (data.name in emotionAverage){
-							// 			emotionAverage[data.name] = (emotionAverage[data.name] + data.value)/2
-							// 		} else {
-							// 			emotionAverage[data.name] = data.value
-							// 		}
-							// 	})
-							// })
-							// this.setState({emotionAverage: emotionAverage})
 						}
 						this.recognition.stop()
 					}}	
 				>
-					Stop
+					Pause
 				</button>
 			)
 		}
@@ -207,14 +260,28 @@ class Initiate extends Component {
 					<div className="col-lg-12">
 						<PageHeader>
 							<span>Assitant</span>
-							{ this.renderStartStopButton() }
+							<div className="pull-right">
+								{ this.renderStartStopButton() }
+								<button 
+									className="btn btn-danger"
+									onClick={ () => {
+										if (!this.state.forceEnd){
+											this.setState({forceEnd: true})
+										}
+										this.recognition.stop()
+										this.reset()
+									}}	
+								>
+									Stop
+								</button>
+							</div>
 						</PageHeader>
 					</div>
 				</div>
 	
 				<div className="row">
 	
-					<div className="col-lg-4">
+					<div className="col-lg-3">
 						<Panel
 							header={<span>
 								<i className="fa fa-bar-chart-o fa-fw" /> Video Stream
@@ -243,7 +310,7 @@ class Initiate extends Component {
 						</Panel>
 					</div>
 	
-					<div className="col-lg-8">
+					<div className="col-lg-9">
 						<div className="row">
 							<div className="col-lg-6">
 								<Panel
@@ -253,12 +320,14 @@ class Initiate extends Component {
 								>
 									<div>
 										<ResponsiveContainer width="100%" aspect={2}>
-											<BarChart data={ this.state.text_emotion } margin={{ top: 10, right: 30, left: 0, bottom: 0 }} >
+											<BarChart 
+												data={ this.state.text_emotion } 
+												margin={{ top: 10, right: 30, left: 0, bottom: 0 }} >
 												<CartesianGrid stroke="#ccc" />
 												<XAxis dataKey="name" />
 												<YAxis />
 												<Tooltip />
-												<Bar type="monotone" dataKey="amt" fill="#ffc658" />
+												<Bar type="monotone" dataKey="amt" fill="#ffc658" isAnimationActive = {false}/>
 											</BarChart>
 										</ResponsiveContainer>
 									</div>
@@ -268,28 +337,17 @@ class Initiate extends Component {
 							<div className="col-lg-6">
 								<Panel
 									header={<span>
-										<i className="fa fa-bar-chart-o fa-fw" /> Bar Chart Example
-										<div className="pull-right">
-											<DropdownButton title="Dropdown" bsSize="xs" pullRight id="dropdownButton2">
-												<MenuItem eventKey="1">Action</MenuItem>
-												<MenuItem eventKey="2">Another action</MenuItem>
-												<MenuItem eventKey="3">Something else here</MenuItem>
-												<MenuItem divider />
-												<MenuItem eventKey="4">Separated link</MenuItem>
-											</DropdownButton>
-										</div>
+										<i className="fa fa-bar-chart-o fa-fw" /> Visual Emotional Analysis
 									</span>}
 								>
 									<div>
 										<ResponsiveContainer width="100%" aspect={2}>
-											<BarChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }} >
+											<BarChart data={ this.state.face_emotion } margin={{ top: 10, right: 30, left: 0, bottom: 0 }} >
 												<CartesianGrid stroke="#ccc" />
 												<XAxis dataKey="name" />
 												<YAxis />
 												<Tooltip />
-												<Bar dataKey="pv" stackId="1" fill="#8884d8" />
-												<Bar dataKey="uv" stackId="1" fill="#82ca9d" />
-												<Bar type="monotone" dataKey="amt" fill="#ffc658" />
+												<Bar type="monotone" dataKey="amt" fill="#ffc658" isAnimationActive = {false}/>
 											</BarChart>
 										</ResponsiveContainer>
 									</div>
@@ -300,16 +358,7 @@ class Initiate extends Component {
 							<div className="col-lg-12">
 								<Panel
 									header={<span>
-										<i className="fa fa-bar-chart-o fa-fw" /> Area Chart Example
-										<div className="pull-right">
-											<DropdownButton title="Dropdown" bsSize="xs" pullRight id="dropdownButton1" >
-												<MenuItem eventKey="1">Action</MenuItem>
-												<MenuItem eventKey="2">Another action</MenuItem>
-												<MenuItem eventKey="3">Something else here</MenuItem>
-												<MenuItem divider />
-												<MenuItem eventKey="4">Separated link</MenuItem>
-											</DropdownButton>
-										</div>
+										<i className="fa fa-bar-chart-o fa-fw" /> Textual Sentimental Analysis
 									</span>}
 								>
 									<div>
@@ -319,8 +368,8 @@ class Initiate extends Component {
 											<YAxis />
 											<CartesianGrid stroke="#ccc" />
 											<Tooltip />
-											<Line type="monotone" dataKey="pos" stackId="1" stroke="#8884d8" fill="#8884d8" />
-											<Line type="monotone" dataKey="neg" stackId="1" stroke="#82ca9d" fill="#82ca9d" />
+											<Line type="monotone" dataKey="pos" stackId="1" stroke="#8884d8" fill="#8884d8" isAnimationActive = {false}/>
+											<Line type="monotone" dataKey="neg" stackId="1" stroke="#82ca9d" fill="#82ca9d" isAnimationActive = {false}/>
 										</LineChart>
 									</ResponsiveContainer>
 									</div>
