@@ -37,7 +37,13 @@ class Sidebar extends Component {
               </a>
             </li>
 
-            <li className={classNames({ active: !this.state.chartsElementsCollapsed })}>
+            <li>
+              <a href="" onClick={(e) => { e.preventDefault(); history.push('/initiate'); }} >
+                <i className="fa fa-dashboard fa-fw" /> &nbsp;Initiate Now
+              </a>
+            </li>
+
+            {/* <li className={classNames({ active: !this.state.chartsElementsCollapsed })}>
               <a
                 href=""
                 onClick={(e) => {
@@ -71,177 +77,20 @@ class Sidebar extends Component {
                   </a>
                 </li>
               </ul>
-            </li>
-
+            </li> */}
 
             <li>
               <a href="" onClick={(e) => { e.preventDefault(); history.push('/table'); }} >
-                <i className="fa fa-table fa-fw" /> &nbsp;Tables
+                <i className="fa fa-table fa-fw" /> &nbsp;Patients
               </a>
             </li>
 
             <li>
               <a href="" onClick={(e) => { e.preventDefault(); history.push('/forms'); }} >
-                <i className="fa fa-table fa-fw" /> &nbsp;Forms
+                <i className="fa fa-table fa-fw" /> &nbsp;History
               </a>
             </li>
 
-            <li className={classNames({ active: !this.state.uiElementsCollapsed })}>
-              <a
-                href=""
-                onClick={(e) => {
-                  e.preventDefault();
-                  this.setState({ uiElementsCollapsed: !this.state.uiElementsCollapsed,
-                }); return false;
-                }}
-              >
-                <i className="fa fa-edit fa-fw" /> UI Elements<span className="fa arrow" />
-              </a>
-
-              <ul
-                className={classNames({
-                  'nav nav-second-level': true,
-                  collapse: this.state.uiElementsCollapsed,
-                })}
-              >
-                <li>
-                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/panelwells'); }} >
-                    Panels And Wells
-                  </a>
-                </li>
-                <li>
-                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/button'); }} >
-                    Buttons
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href=""
-                    onClick={(e) => { e.preventDefault(); history.push('/notification'); }}
-                  >
-                    Notification
-                  </a>
-                </li>
-                <li>
-                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/typography'); }} >
-                    Typography
-                  </a>
-                </li>
-                <li>
-                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/icons'); }} >
-                    Icons
-                  </a>
-                </li>
-                <li>
-                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/grid'); }} >
-                    Grid
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <li className={classNames({ active: !this.state.multiLevelDropdownCollapsed })}>
-              <a
-                href=""
-                onClick={(e) => {
-                  e.preventDefault();
-                  this.setState({
-                    multiLevelDropdownCollapsed: !this.state.multiLevelDropdownCollapsed,
-                  });
-                  return false;
-                }}
-              >
-                <i className="fa fa-sitemap fa-fw" />
-                &nbsp;Multi-Level Dropdown
-                <span className="fa arrow" />
-              </a>
-              <ul
-                className={
-                  classNames({
-                    'nav nav-second-level': true, collapse: this.state.multiLevelDropdownCollapsed,
-                  })}
-              >
-                <li>
-                  <a href="" onClick={(e) => { e.preventDefault(); }}>Second Level Item</a>
-                </li>
-                <li>
-                  <a href="" onClick={(e) => { e.preventDefault(); }}>Second Level Item</a>
-                </li>
-                <li className={classNames({ active: !this.state.thirdLevelDropdownCollapsed })}>
-                  <a
-                    href=""
-                    onClick={(e) => {
-                      e.preventDefault();
-                      this.setState({
-                        thirdLevelDropdownCollapsed: !this.state.thirdLevelDropdownCollapsed,
-                      });
-                      return false;
-                    }}
-                  >
-                    Third Level<span className="fa arrow" />
-                  </a>
-                  <ul
-                    className={
-                      classNames({
-                        'nav nav-second-level': true,
-                        collapse: this.state.thirdLevelDropdownCollapsed,
-                      })}
-                  >
-                    <li>
-                      <a href="" onClick={(e) => { e.preventDefault(); }}>Third Level Item</a>
-                    </li>
-                    <li>
-                      <a href="" onClick={(e) => { e.preventDefault(); }}>Third Level Item</a>
-                    </li>
-                    <li>
-                      <a href="" onClick={(e) => { e.preventDefault(); }}>Third Level Item</a>
-                    </li>
-                    <li>
-                      <a href="" onClick={(e) => { e.preventDefault(); }}>Third Level Item</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-
-            <li className={classNames({ active: !this.state.samplePagesCollapsed })}>
-              <a
-                href=""
-                onClick={(e) => {
-                  e.preventDefault();
-                  this.setState({
-                    samplePagesCollapsed: !this.state.samplePagesCollapsed,
-                  });
-                  return false;
-                }}
-              >
-                <i className="fa fa-files-o fa-fw" />
-                &nbsp;Sample Pages
-                <span className="fa arrow" />
-              </a>
-              <ul
-                className={
-                  classNames({
-                    'nav nav-second-level': true,
-                    collapse: this.state.samplePagesCollapsed,
-                  })}
-              >
-                <li>
-                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/blank'); }} >
-                    Blank
-                  </a>
-                </li>
-                <li>
-                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/login'); }} >
-                    Login
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="http://www.strapui.com/">Premium React Themes</a>
-            </li>
           </ul>
         </div>
       </div>

@@ -12,6 +12,7 @@ import App from '../components/App';
 
 // Child routes
 import home from './home';
+import initiate from './initiate';
 import login from './login';
 import table from './dashboardPages/tables';
 import button from './dashboardPages/buttons';
@@ -51,6 +52,7 @@ export default [
   // keep in mind, routes are evaluated in order
     children: [
       home,
+      initiate,
       // contact,
       table,
       button,
