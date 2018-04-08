@@ -10,6 +10,7 @@ from .serializers import *
 from .analysis.ML import *
 from .analysis.sentiment import *
 from .analysis.face_analysis import *
+from .analysis.ai import *
 
 from collections import OrderedDict
 
@@ -98,6 +99,7 @@ def textAnalyze(request):
 			s = request.POST['str']
 			res['emotion'] = classify_dataset(s, word_features)
 			res['sentiment'] = classify_sentiment(s)
+			res['response'] = apiai_response(s)
 		except Exception as e:
 			print(e)
 			res['error'] = "Emotion key not found"	

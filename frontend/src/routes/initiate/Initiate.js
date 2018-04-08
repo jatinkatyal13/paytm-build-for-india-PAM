@@ -1,5 +1,3 @@
-
-
 import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import {
@@ -70,6 +68,12 @@ class Initiate extends Component {
 			// selected patient
 			selectedPatient: -1,
 
+			//timer seconds
+			seconds : 0,
+
+			//timer minutes
+			minutes : 0,
+
 			messages : []
 		}
 
@@ -119,8 +123,12 @@ class Initiate extends Component {
 			// this.setState((prevState) => { identifiedTextList: prevState.identifiedTextList.push(noteContent) })
 		}
 
+	}
+
+	componentDidMount() {
 		setInterval(async () => {
 			if (this.state.running){
+				this.incTime()
 				var base64 = this.capture()
 				var formData = new FormData()
 				formData.append('base64' , base64)
@@ -148,7 +156,17 @@ class Initiate extends Component {
 				})
 			}
 		}, 1000)
+	}
 
+	incTime() {
+		var s = this.state.seconds
+		var m = this.state.minutes
+
+		if (s < 59) {
+			this.setState({ seconds : s+1 })
+		} else {
+			this.setState({ minutes : m+1, seconds : 0 })
+		}
 	}
 
 	async getEmotionAndSentiment(content) {
@@ -163,6 +181,7 @@ class Initiate extends Component {
 
 			var emotions = json.emotion
 			var sentiments = json.sentiment
+			var response = json.response
 
 			// setting the emotions
 			let data = []
@@ -190,6 +209,9 @@ class Initiate extends Component {
 
 			console.log(this.state.text_emotion)
 			console.log(this.state.text_sentiment)
+
+			//setting the message response
+			this.setState((prev) => { messages : prev.messages.push({id: 1, message: response}) })
 
 		}).catch((err) => {
 			console.log(err)
@@ -256,6 +278,12 @@ class Initiate extends Component {
 			face_emotion : [
 				{ name: 'No Emotion', amt: 0 },
 			],
+
+			//timer seconds
+			seconds : 0,
+
+			//timer minutes
+			minutes : 0,
 
 			messages : []
 		})
@@ -348,6 +376,13 @@ class Initiate extends Component {
 											Stop
 										</button>
 									</div>
+								</div>
+							</div>
+							<div className="row">
+								<div className="pull-right">
+									<p>
+										{ this.state.minutes } : { this.state.seconds }
+									</p>
 								</div>
 							</div>
 						</PageHeader>

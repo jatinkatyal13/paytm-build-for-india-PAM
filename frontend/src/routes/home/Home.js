@@ -81,8 +81,8 @@ class Home extends Component {
 						<StatWidget
 							style="panel-red"
 							icon="fa fa-support fa-5x"
-							count="13"
-							headerText="Support Tickets!"
+							count="Active"
+							headerText="Status"
 							footerText="View Details"
 							linkTo="/"
 						/>

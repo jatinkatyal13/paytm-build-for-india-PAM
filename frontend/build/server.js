@@ -1906,8 +1906,8 @@ module.exports =
   						_react2.default.createElement(_Widget2.default, {
   							style: 'panel-red',
   							icon: 'fa fa-support fa-5x',
-  							count: '13',
-  							headerText: 'Support Tickets!',
+  							count: 'Active',
+  							headerText: 'Status',
   							footerText: 'View Details',
   							linkTo: '/'
   						})
@@ -19803,8 +19803,6 @@ module.exports =
   	(0, _inherits3.default)(Initiate, _Component);
   
   	function Initiate() {
-  		var _this2 = this;
-  
   		(0, _classCallCheck3.default)(this, Initiate);
   
   		var _this = (0, _possibleConstructorReturn3.default)(this, (Initiate.__proto__ || (0, _getPrototypeOf2.default)(Initiate)).call(this));
@@ -19837,6 +19835,12 @@ module.exports =
   
   			// selected patient
   			selectedPatient: -1,
+  
+  			//timer seconds
+  			seconds: 0,
+  
+  			//timer minutes
+  			minutes: 0,
   
   			messages: []
   		};
@@ -19887,55 +19891,73 @@ module.exports =
   			// this.setState((prevState) => { identifiedTextList: prevState.identifiedTextList.push(noteContent) })
   		};
   
-  		setInterval((0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
-  			var base64, formData;
-  			return _regenerator2.default.wrap(function _callee$(_context) {
-  				while (1) {
-  					switch (_context.prev = _context.next) {
-  						case 0:
-  							if (!_this.state.running) {
-  								_context.next = 6;
-  								break;
-  							}
-  
-  							base64 = _this.capture();
-  							formData = new FormData();
-  
-  							formData.append('base64', base64);
-  							_context.next = 6;
-  							return fetch('http://localhost:8000/imageAnalyze', {
-  								method: 'POST',
-  								body: formData
-  							}).then(function (response) {
-  								return response.json();
-  							}).then(function (responseJson) {
-  								var emotions = responseJson.emotion;
-  
-  								var data = [];
-  								for (var prop in emotions) {
-  									data.push({
-  										"name": prop,
-  										"amt": emotions[prop]
-  									});
-  								}
-  
-  								_this.setState({ face_emotion: data });
-  								// this.setState((prevState) => {{ faceEmotionDataList: prevState.faceEmotionDataList.push(data) }})
-  								// this.setState((prevState) => {{ faceEmotionData: prevState.faceEmotionData.push(responseJson[0].scores) }})
-  							}).catch(function (error) {});
-  
-  						case 6:
-  						case 'end':
-  							return _context.stop();
-  					}
-  				}
-  			}, _callee, _this2);
-  		})), 1000);
-  
   		return _this;
   	}
   
   	(0, _createClass3.default)(Initiate, [{
+  		key: 'componentDidMount',
+  		value: function componentDidMount() {
+  			var _this2 = this;
+  
+  			setInterval((0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+  				var base64, formData;
+  				return _regenerator2.default.wrap(function _callee$(_context) {
+  					while (1) {
+  						switch (_context.prev = _context.next) {
+  							case 0:
+  								if (!_this2.state.running) {
+  									_context.next = 7;
+  									break;
+  								}
+  
+  								_this2.incTime();
+  								base64 = _this2.capture();
+  								formData = new FormData();
+  
+  								formData.append('base64', base64);
+  								_context.next = 7;
+  								return fetch('http://localhost:8000/imageAnalyze', {
+  									method: 'POST',
+  									body: formData
+  								}).then(function (response) {
+  									return response.json();
+  								}).then(function (responseJson) {
+  									var emotions = responseJson.emotion;
+  
+  									var data = [];
+  									for (var prop in emotions) {
+  										data.push({
+  											"name": prop,
+  											"amt": emotions[prop]
+  										});
+  									}
+  
+  									_this2.setState({ face_emotion: data });
+  									// this.setState((prevState) => {{ faceEmotionDataList: prevState.faceEmotionDataList.push(data) }})
+  									// this.setState((prevState) => {{ faceEmotionData: prevState.faceEmotionData.push(responseJson[0].scores) }})
+  								}).catch(function (error) {});
+  
+  							case 7:
+  							case 'end':
+  								return _context.stop();
+  						}
+  					}
+  				}, _callee, _this2);
+  			})), 1000);
+  		}
+  	}, {
+  		key: 'incTime',
+  		value: function incTime() {
+  			var s = this.state.seconds;
+  			var m = this.state.minutes;
+  
+  			if (s < 59) {
+  				this.setState({ seconds: s + 1 });
+  			} else {
+  				this.setState({ minutes: m + 1, seconds: 0 });
+  			}
+  		}
+  	}, {
   		key: 'getEmotionAndSentiment',
   		value: function () {
   			var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(content) {
@@ -19959,6 +19981,7 @@ module.exports =
   
   									var emotions = json.emotion;
   									var sentiments = json.sentiment;
+  									var response = json.response;
   
   									// setting the emotions
   									var data = [];
@@ -19986,6 +20009,11 @@ module.exports =
   
   									console.log(_this3.state.text_emotion);
   									console.log(_this3.state.text_sentiment);
+  
+  									//setting the message response
+  									_this3.setState(function (prev) {
+  										messages: prev.messages.push({ id: 1, message: response });
+  									});
   								}).catch(function (err) {
   									console.log(err);
   								});
@@ -20061,6 +20089,12 @@ module.exports =
   
   									// face emotion analysis
   									face_emotion: [{ name: 'No Emotion', amt: 0 }],
+  
+  									//timer seconds
+  									seconds: 0,
+  
+  									//timer minutes
+  									minutes: 0,
   
   									messages: []
   								});
@@ -20209,6 +20243,21 @@ module.exports =
   											},
   											'Stop'
   										)
+  									)
+  								)
+  							),
+  							_react2.default.createElement(
+  								'div',
+  								{ className: 'row' },
+  								_react2.default.createElement(
+  									'div',
+  									{ className: 'pull-right' },
+  									_react2.default.createElement(
+  										'p',
+  										null,
+  										this.state.minutes,
+  										' : ',
+  										this.state.seconds
   									)
   								)
   							)
