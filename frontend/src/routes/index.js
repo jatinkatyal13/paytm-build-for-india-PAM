@@ -15,6 +15,7 @@ import home from './home';
 import initiate from './initiate';
 import patient from './patient';
 import session from './session';
+import scheduling from './scheduling';
 
 import login from './login';
 import table from './dashboardPages/tables';
@@ -58,6 +59,7 @@ export default [
       initiate,
       patient,
       session,
+      scheduling,
       // contact,
       table,
       button,

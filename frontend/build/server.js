@@ -927,6 +927,10 @@ module.exports =
   
   var _session2 = _interopRequireDefault(_session);
   
+  var _scheduling = __webpack_require__(200);
+  
+  var _scheduling2 = _interopRequireDefault(_scheduling);
+  
   var _login = __webpack_require__(155);
   
   var _login2 = _interopRequireDefault(_login);
@@ -985,16 +989,6 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
-  // Child routes
-  /**
-   * React Starter Kit (https://www.reactstarterkit.com/)
-   *
-   * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
-   *
-   * This source code is licensed under the MIT license found in the
-   * LICENSE.txt file in the root directory of this source tree.
-   */
-  
   exports.default = [{
     path: '/login',
     children: [_login2.default],
@@ -1042,7 +1036,7 @@ module.exports =
     path: '/',
   
     // keep in mind, routes are evaluated in order
-    children: [_home2.default, _initiate2.default, _patient2.default, _session2.default,
+    children: [_home2.default, _initiate2.default, _patient2.default, _session2.default, _scheduling2.default,
     // contact,
     _tables2.default, _buttons2.default, _flotCharts2.default, _forms2.default, _grid2.default, _icons2.default, _morrisjsCharts2.default, _notification2.default, _panelWells2.default, _typography2.default,
     // register,
@@ -1145,6 +1139,16 @@ module.exports =
       }))();
     }
   }];
+  
+  // Child routes
+  /**
+   * React Starter Kit (https://www.reactstarterkit.com/)
+   *
+   * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE.txt file in the root directory of this source tree.
+   */
 
 /***/ }),
 /* 28 */
@@ -1648,10 +1652,22 @@ module.exports =
                 _react2.default.createElement(
                   'a',
                   { href: '', onClick: function onClick(e) {
-                      e.preventDefault();_history2.default.push('/forms');
+                      e.preventDefault();_history2.default.push('/scheduling');
                     } },
                   _react2.default.createElement('i', { className: 'fa fa-table fa-fw' }),
-                  ' \xA0History'
+                  ' \xA0Smart Scheduling'
+                )
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                  'a',
+                  { href: '', onClick: function onClick(e) {
+                      e.preventDefault();_history2.default.push('/login');
+                    } },
+                  _react2.default.createElement('i', { className: 'fa fa-table fa-fw' }),
+                  ' \xA0Logout'
                 )
               )
             )
@@ -20571,18 +20587,7 @@ module.exports =
         _react2.default.createElement(
           'h1',
           { className: 'login-brand-text' },
-          'SB Admin React'
-        ),
-        _react2.default.createElement(
-          'h3',
-          { className: 'text-muted' },
-          'Created by ',
-          _react2.default.createElement(
-            'a',
-            { href: 'http://startreact.com' },
-            'StartReact.com'
-          ),
-          ' team'
+          'Psycological Assitance Module'
         )
       ),
       _react2.default.createElement(
@@ -30521,6 +30526,131 @@ module.exports =
   }(_react.Component);
   
   exports.default = Session;
+
+/***/ }),
+/* 200 */
+/***/ (function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  
+  var _react = __webpack_require__(11);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _Scheduling = __webpack_require__(201);
+  
+  var _Scheduling2 = _interopRequireDefault(_Scheduling);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  exports.default = {
+  
+    path: '/scheduling',
+  
+    action: function action() {
+      return _react2.default.createElement(_Scheduling2.default, null);
+    }
+  };
+
+/***/ }),
+/* 201 */
+/***/ (function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  
+  var _getPrototypeOf = __webpack_require__(29);
+  
+  var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+  
+  var _classCallCheck2 = __webpack_require__(30);
+  
+  var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+  
+  var _createClass2 = __webpack_require__(31);
+  
+  var _createClass3 = _interopRequireDefault(_createClass2);
+  
+  var _possibleConstructorReturn2 = __webpack_require__(32);
+  
+  var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+  
+  var _inherits2 = __webpack_require__(33);
+  
+  var _inherits3 = _interopRequireDefault(_inherits2);
+  
+  var _react = __webpack_require__(11);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _Button = __webpack_require__(157);
+  
+  var _Button2 = _interopRequireDefault(_Button);
+  
+  var _Panel = __webpack_require__(158);
+  
+  var _Panel2 = _interopRequireDefault(_Panel);
+  
+  var _Pagination = __webpack_require__(163);
+  
+  var _Pagination2 = _interopRequireDefault(_Pagination);
+  
+  var _PageHeader = __webpack_require__(164);
+  
+  var _PageHeader2 = _interopRequireDefault(_PageHeader);
+  
+  var _Well = __webpack_require__(165);
+  
+  var _Well2 = _interopRequireDefault(_Well);
+  
+  var _reactBootstrap = __webpack_require__(38);
+  
+  var _history = __webpack_require__(40);
+  
+  var _history2 = _interopRequireDefault(_history);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  var title = 'Table';
+  
+  var Scheduling = function (_Component) {
+    (0, _inherits3.default)(Scheduling, _Component);
+  
+    function Scheduling() {
+      (0, _classCallCheck3.default)(this, Scheduling);
+  
+      var _this = (0, _possibleConstructorReturn3.default)(this, (Scheduling.__proto__ || (0, _getPrototypeOf2.default)(Scheduling)).call(this));
+  
+      _this.state = {};
+  
+      return _this;
+    }
+  
+    (0, _createClass3.default)(Scheduling, [{
+      key: 'render',
+      value: function render() {
+        return _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'p',
+            null,
+            'Hello'
+          )
+        );
+      }
+    }]);
+    return Scheduling;
+  }(_react.Component);
+  
+  exports.default = Scheduling;
 
 /***/ })
 /******/ ]);

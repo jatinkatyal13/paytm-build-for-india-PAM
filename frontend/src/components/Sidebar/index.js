@@ -43,42 +43,6 @@ class Sidebar extends Component {
               </a>
             </li>
 
-            {/* <li className={classNames({ active: !this.state.chartsElementsCollapsed })}>
-              <a
-                href=""
-                onClick={(e) => {
-                  e.preventDefault();
-                  this.setState({ chartsElementsCollapsed: !this.state.chartsElementsCollapsed });
-                  return false;
-                }}
-              >
-                <i className="fa fa-bar-chart-o fa-fw" /> &nbsp;Charts
-                <span className="fa arrow" />
-              </a>
-              <ul
-                className={
-                  classNames({
-                    'nav nav-second-level': true,
-                    collapse: this.state.chartsElementsCollapsed,
-                  })
-              }
-              >
-                <li>
-                  <a href="" onClick={(e) => { e.preventDefault(); history.push('/flotcharts'); }} >
-                    FlotCharts
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href=""
-                    onClick={(e) => { e.preventDefault(); history.push('/morrisjscharts'); }}
-                  >
-                    Morrisjs Charts
-                  </a>
-                </li>
-              </ul>
-            </li> */}
-
             <li>
               <a href="" onClick={(e) => { e.preventDefault(); history.push('/patient'); }} >
                 <i className="fa fa-table fa-fw" /> &nbsp;Patients
@@ -86,8 +50,14 @@ class Sidebar extends Component {
             </li>
 
             <li>
-              <a href="" onClick={(e) => { e.preventDefault(); history.push('/forms'); }} >
-                <i className="fa fa-table fa-fw" /> &nbsp;History
+              <a href="" onClick={(e) => { e.preventDefault(); history.push('/scheduling'); }} >
+                <i className="fa fa-table fa-fw" /> &nbsp;Smart Scheduling
+              </a>
+            </li>
+
+            <li>
+              <a href="" onClick={(e) => { e.preventDefault(); history.push('/login'); }} >
+                <i className="fa fa-table fa-fw" /> &nbsp;Logout
               </a>
             </li>
 
