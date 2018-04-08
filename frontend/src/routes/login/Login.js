@@ -16,6 +16,8 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Login.css';
 import history from '../../core/history';
 
+const logo = require('../../components/Header/logo.png')
+
 const title = 'Log In';
 
 
@@ -27,9 +29,13 @@ function submitHandler(e) {
 function Login(props, context) {
   context.setTitle(title);
   return (
-    <div className="col-md-4 col-md-offset-4">
+    <div className="col-md-4 col-md-offset-4" style={{
+      backgroundColor : "#07252f"
+    }}>
       <div className="text-center">
-        <h1 className="login-brand-text">Psycological Assitance Module</h1>
+        <h1 className="login-brand-text">
+          <img src={logo} alt="Start React" title="Start React" width = {200}/>
+        </h1>
       </div>
 
       <Panel header={<h3>Please Sign In</h3>} className="login-panel">

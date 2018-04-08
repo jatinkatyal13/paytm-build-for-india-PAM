@@ -26,11 +26,11 @@ const logo = require('./logo.png');
 function Header() {
   return (
     <div id="wrapper" className="content">
-      <Navbar fluid={true}  style={ {margin: 0} }>
+      <Navbar fluid={true}  style={ {margin: 0, backgroundColor : '#07252f'} }>
           <Brand>
             <span>
               <img src={logo} alt="Start React" title="Start React" />
-              <span>&nbsp;Psychological Assistance Module</span>
+              <span style={{ color : '#fff' }}>&nbsp;Psychological Assistance Module</span>
                 <button type="button" className="navbar-toggle" onClick={() => {toggleMenu();}} style={{position: 'absolute', right: 0, top: 0}}>
                   <span className="sr-only">Toggle navigation</span>
                   <span className="icon-bar"></span>

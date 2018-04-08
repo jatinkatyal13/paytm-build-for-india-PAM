@@ -1404,7 +1404,7 @@ module.exports =
       { id: 'wrapper', className: 'content' },
       _react2.default.createElement(
         _Navbar2.default,
-        { fluid: true, style: { margin: 0 } },
+        { fluid: true, style: { margin: 0, backgroundColor: '#07252f' } },
         _react2.default.createElement(
           _Navbar.Brand,
           null,
@@ -1414,7 +1414,7 @@ module.exports =
             _react2.default.createElement('img', { src: logo, alt: 'Start React', title: 'Start React' }),
             _react2.default.createElement(
               'span',
-              null,
+              { style: { color: '#fff' } },
               '\xA0Psychological Assistance Module'
             ),
             _react2.default.createElement(
@@ -1617,7 +1617,7 @@ module.exports =
                   'a',
                   { href: '', onClick: function onClick(e) {
                       e.preventDefault();_history2.default.push('/');
-                    } },
+                    }, style: { color: '#07252f' } },
                   _react2.default.createElement('i', { className: 'fa fa-dashboard fa-fw' }),
                   ' \xA0Dashboard'
                 )
@@ -1629,7 +1629,7 @@ module.exports =
                   'a',
                   { href: '', onClick: function onClick(e) {
                       e.preventDefault();_history2.default.push('/initiate');
-                    } },
+                    }, style: { color: '#07252f' } },
                   _react2.default.createElement('i', { className: 'fa fa-dashboard fa-fw' }),
                   ' \xA0Initiate Now'
                 )
@@ -1641,7 +1641,7 @@ module.exports =
                   'a',
                   { href: '', onClick: function onClick(e) {
                       e.preventDefault();_history2.default.push('/patient');
-                    } },
+                    }, style: { color: '#07252f' } },
                   _react2.default.createElement('i', { className: 'fa fa-table fa-fw' }),
                   ' \xA0Patients'
                 )
@@ -1653,7 +1653,7 @@ module.exports =
                   'a',
                   { href: '', onClick: function onClick(e) {
                       e.preventDefault();_history2.default.push('/scheduling');
-                    } },
+                    }, style: { color: '#07252f' } },
                   _react2.default.createElement('i', { className: 'fa fa-table fa-fw' }),
                   ' \xA0Smart Scheduling'
                 )
@@ -1665,7 +1665,7 @@ module.exports =
                   'a',
                   { href: '', onClick: function onClick(e) {
                       e.preventDefault();_history2.default.push('/login');
-                    } },
+                    }, style: { color: '#07252f' } },
                   _react2.default.createElement('i', { className: 'fa fa-table fa-fw' }),
                   ' \xA0Logout'
                 )
@@ -1765,6 +1765,26 @@ module.exports =
   	value: true
   });
   
+  var _getPrototypeOf = __webpack_require__(29);
+  
+  var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+  
+  var _classCallCheck2 = __webpack_require__(30);
+  
+  var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+  
+  var _createClass2 = __webpack_require__(31);
+  
+  var _createClass3 = _interopRequireDefault(_createClass2);
+  
+  var _possibleConstructorReturn2 = __webpack_require__(32);
+  
+  var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+  
+  var _inherits2 = __webpack_require__(33);
+  
+  var _inherits3 = _interopRequireDefault(_inherits2);
+  
   var _react = __webpack_require__(11);
   
   var _react2 = _interopRequireDefault(_react);
@@ -1787,95 +1807,117 @@ module.exports =
   
   var _Donut2 = _interopRequireDefault(_Donut);
   
-  var _recharts = __webpack_require__(100);
-  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
   var title = 'Psychology Assistive Module';
   
-  var data = [{ name: 'Page A', uv: 4000, pv: 2400, amt: 2400, value: 600 }, { name: 'Page B', uv: 3000, pv: 1398, amt: 2210, value: 300 }, { name: 'Page C', uv: 2000, pv: 9800, amt: 2290, value: 500 }, { name: 'Page D', uv: 2780, pv: 3908, amt: 2000, value: 400 }, { name: 'Page E', uv: 1890, pv: 4800, amt: 2181, value: 200 }, { name: 'Page F', uv: 2390, pv: 3800, amt: 2500, value: 700 }, { name: 'Page G', uv: 3490, pv: 4300, amt: 2100, value: 100 }];
+  var Home = function (_Component) {
+  	(0, _inherits3.default)(Home, _Component);
   
-  function Home(props, context) {
-  	context.setTitle(title);
-  	return _react2.default.createElement(
-  		'div',
-  		null,
-  		_react2.default.createElement(
-  			'div',
-  			{ className: 'row' },
-  			_react2.default.createElement(
+  	function Home() {
+  		(0, _classCallCheck3.default)(this, Home);
+  
+  		var _this = (0, _possibleConstructorReturn3.default)(this, (Home.__proto__ || (0, _getPrototypeOf2.default)(Home)).call(this));
+  
+  		_this.state = {
+  			patient_count: 0,
+  			session_count: 0
+  		};
+  		return _this;
+  	}
+  
+  	(0, _createClass3.default)(Home, [{
+  		key: 'componentDidMount',
+  		value: function componentDidMount() {
+  			var _this2 = this;
+  
+  			fetch('http://localhost:8000/basic', {
+  				method: 'GET'
+  			}).then(function (response) {
+  				return response.json();
+  			}).then(function (responseJson) {
+  				_this2.setState({
+  					patient_count: responseJson.number_of_patients,
+  					session_count: responseJson.number_of_sessions
+  				});
+  			}).catch(function (error) {});
+  		}
+  	}, {
+  		key: 'render',
+  		value: function render() {
+  			return _react2.default.createElement(
   				'div',
-  				{ className: 'col-lg-12' },
+  				null,
   				_react2.default.createElement(
-  					_reactBootstrap.PageHeader,
-  					null,
-  					'Dashboard'
+  					'div',
+  					{ className: 'row' },
+  					_react2.default.createElement(
+  						'div',
+  						{ className: 'col-lg-12' },
+  						_react2.default.createElement(
+  							_reactBootstrap.PageHeader,
+  							null,
+  							'Dashboard'
+  						)
+  					)
+  				),
+  				_react2.default.createElement(
+  					'div',
+  					{ className: 'row' },
+  					_react2.default.createElement(
+  						'div',
+  						{ className: 'col-lg-3 col-md-6' },
+  						_react2.default.createElement(_Widget2.default, {
+  							style: 'panel-primary',
+  							icon: 'fa fa-comments fa-5x',
+  							count: this.state.patient_count,
+  							headerText: 'Number of Patients',
+  							footerText: 'View Details',
+  							linkTo: '/patient'
+  						})
+  					),
+  					_react2.default.createElement(
+  						'div',
+  						{ className: 'col-lg-3 col-md-6' },
+  						_react2.default.createElement(_Widget2.default, {
+  							style: 'panel-green',
+  							icon: 'fa fa-tasks fa-5x',
+  							count: this.state.session_count,
+  							headerText: 'Number of Sessions',
+  							footerText: 'View Details',
+  							linkTo: '/patient'
+  						})
+  					),
+  					_react2.default.createElement(
+  						'div',
+  						{ className: 'col-lg-3 col-md-6' },
+  						_react2.default.createElement(_Widget2.default, {
+  							style: 'panel-yellow',
+  							icon: 'fa fa-shopping-cart fa-5x',
+  							count: '00:00',
+  							headerText: 'Total Time in Sessions',
+  							footerText: 'View Details',
+  							linkTo: '/'
+  						})
+  					),
+  					_react2.default.createElement(
+  						'div',
+  						{ className: 'col-lg-3 col-md-6' },
+  						_react2.default.createElement(_Widget2.default, {
+  							style: 'panel-red',
+  							icon: 'fa fa-support fa-5x',
+  							count: '13',
+  							headerText: 'Support Tickets!',
+  							footerText: 'View Details',
+  							linkTo: '/'
+  						})
+  					)
   				)
-  			)
-  		),
-  		_react2.default.createElement(
-  			'div',
-  			{ className: 'row' },
-  			_react2.default.createElement(
-  				'div',
-  				{ className: 'col-lg-3 col-md-6' },
-  				_react2.default.createElement(_Widget2.default, {
-  					style: 'panel-primary',
-  					icon: 'fa fa-comments fa-5x',
-  					count: '26',
-  					headerText: 'New Comments!',
-  					footerText: 'View Details',
-  					linkTo: '/'
-  				})
-  			),
-  			_react2.default.createElement(
-  				'div',
-  				{ className: 'col-lg-3 col-md-6' },
-  				_react2.default.createElement(_Widget2.default, {
-  					style: 'panel-green',
-  					icon: 'fa fa-tasks fa-5x',
-  					count: '12',
-  					headerText: 'New Tasks!',
-  					footerText: 'View Details',
-  					linkTo: '/'
-  				})
-  			),
-  			_react2.default.createElement(
-  				'div',
-  				{ className: 'col-lg-3 col-md-6' },
-  				_react2.default.createElement(_Widget2.default, {
-  					style: 'panel-yellow',
-  					icon: 'fa fa-shopping-cart fa-5x',
-  					count: '124',
-  					headerText: 'New Orders!',
-  					footerText: 'View Details',
-  					linkTo: '/'
-  				})
-  			),
-  			_react2.default.createElement(
-  				'div',
-  				{ className: 'col-lg-3 col-md-6' },
-  				_react2.default.createElement(_Widget2.default, {
-  					style: 'panel-red',
-  					icon: 'fa fa-support fa-5x',
-  					count: '13',
-  					headerText: 'Support Tickets!',
-  					footerText: 'View Details',
-  					linkTo: '/'
-  				})
-  			)
-  		)
-  	);
-  }
-  
-  Home.propTypes = {
-  	// news: PropTypes.arrayOf(PropTypes.shape({
-  	//   title: PropTypes.string.isRequired,
-  	//   link: PropTypes.string.isRequired,
-  	//   contentSnippet: PropTypes.string,
-  	// })).isRequired,
-  };
-  Home.contextTypes = { setTitle: _react.PropTypes.func.isRequired };
+  			);
+  		}
+  	}]);
+  	return Home;
+  }(_react.Component);
   
   exports.default = (0, _withStyles2.default)(_Home2.default)(Home);
 
@@ -20562,14 +20604,16 @@ module.exports =
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
   // import { Panel, Input, Button } from 'react-bootstrap';
-  var title = 'Log In'; /**
-                         * React Starter Kit (https://www.reactstarterkit.com/)
-                         *
-                         * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
-                         *
-                         * This source code is licensed under the MIT license found in the
-                         * LICENSE.txt file in the root directory of this source tree.
-                         */
+  var logo = __webpack_require__(47); /**
+                                                           * React Starter Kit (https://www.reactstarterkit.com/)
+                                                           *
+                                                           * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
+                                                           *
+                                                           * This source code is licensed under the MIT license found in the
+                                                           * LICENSE.txt file in the root directory of this source tree.
+                                                           */
+  
+  var title = 'Log In';
   
   function submitHandler(e) {
     e.preventDefault();
@@ -20580,14 +20624,16 @@ module.exports =
     context.setTitle(title);
     return _react2.default.createElement(
       'div',
-      { className: 'col-md-4 col-md-offset-4' },
+      { className: 'col-md-4 col-md-offset-4', style: {
+          backgroundColor: "#07252f"
+        } },
       _react2.default.createElement(
         'div',
         { className: 'text-center' },
         _react2.default.createElement(
           'h1',
           { className: 'login-brand-text' },
-          'Psycological Assitance Module'
+          _react2.default.createElement('img', { src: logo, alt: 'Start React', title: 'Start React', width: 200 })
         )
       ),
       _react2.default.createElement(

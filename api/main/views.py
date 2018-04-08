@@ -24,6 +24,14 @@ Data = create_data(sen, emo)
 word_features = get_word_features(get_words_in_dataset(Data))
 
 @csrf_exempt
+def basic(request):
+	d = OrderedDict()
+	d['number_of_patients'] = Patient.objects.all().count()
+	d['number_of_sessions'] = Session.objects.all().count()
+
+	return JsonResponse(d, safe=False)
+
+@csrf_exempt
 def sessionId(request, id):
 	s = Session.objects.filter(patient = Patient.objects.get(pk = id))
 	ser = SessionSerializer(s, many=True)

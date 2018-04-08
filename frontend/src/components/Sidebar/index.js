@@ -32,31 +32,31 @@ class Sidebar extends Component {
             </li>
 
             <li>
-              <a href="" onClick={(e) => { e.preventDefault(); history.push('/'); }} >
+              <a href="" onClick={(e) => { e.preventDefault(); history.push('/'); }} style={{ color : '#07252f' }}>
                 <i className="fa fa-dashboard fa-fw" /> &nbsp;Dashboard
               </a>
             </li>
 
             <li>
-              <a href="" onClick={(e) => { e.preventDefault(); history.push('/initiate'); }} >
+              <a href="" onClick={(e) => { e.preventDefault(); history.push('/initiate'); }} style={{ color : '#07252f' }}>
                 <i className="fa fa-dashboard fa-fw" /> &nbsp;Initiate Now
               </a>
             </li>
 
             <li>
-              <a href="" onClick={(e) => { e.preventDefault(); history.push('/patient'); }} >
+              <a href="" onClick={(e) => { e.preventDefault(); history.push('/patient'); }} style={{ color : '#07252f' }}>
                 <i className="fa fa-table fa-fw" /> &nbsp;Patients
               </a>
             </li>
 
             <li>
-              <a href="" onClick={(e) => { e.preventDefault(); history.push('/scheduling'); }} >
+              <a href="" onClick={(e) => { e.preventDefault(); history.push('/scheduling'); }} style={{ color : '#07252f' }}>
                 <i className="fa fa-table fa-fw" /> &nbsp;Smart Scheduling
               </a>
             </li>
 
             <li>
-              <a href="" onClick={(e) => { e.preventDefault(); history.push('/login'); }} >
+              <a href="" onClick={(e) => { e.preventDefault(); history.push('/login'); }} style={{ color : '#07252f' }}>
                 <i className="fa fa-table fa-fw" /> &nbsp;Logout
               </a>
             </li>
