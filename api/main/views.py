@@ -13,6 +13,8 @@ from .analysis.face_analysis import *
 
 from collections import OrderedDict
 
+import json
+
 # Create your views here.
 
 c, st, labels, senten = create_frame(Data)
@@ -21,10 +23,51 @@ emo = c[0]
 Data = create_data(sen, emo)
 word_features = get_word_features(get_words_in_dataset(Data))
 
-def patients(request):
-	pat = Patient.objects.all()
-	ser = PatientSerializer(pat, many=True)
+@csrf_exempt
+def sessionId(request, id):
+	s = Session.objects.filter(patient = Patient.objects.get(pk = id))
+	ser = SessionSerializer(s, many=True)
 	return JsonResponse(ser.data, safe=False)
+
+@csrf_exempt
+def session(request):
+	if request.method == 'POST':
+		try:
+			req = json.loads(request.body.decode('utf-8'))
+			s = Session.objects.create(
+				patient = Patient.objects.get(pk = int(req['patient_id'])),
+				textual_emotional = json.dumps(req['textual_emotional']),
+				textual_sentimental = json.dumps(req['textual_sentiment']),
+				facial_emotional = json.dumps(req['facial_emotional']),
+				textual_conversation = json.dumps(req['messages'])
+			)
+			ser = SessionSerializer(s, many=True)
+			return JsonResponse(ser.data, safe=False)
+		except Exception as e:
+			d = OrderedDict()
+			d['error'] = str(e)
+			return JsonResponse(d, safe=False)
+	else:
+		sessions = Session.objects.all()
+		ser = SessionSerializer(sessions, many=True)
+		return JsonResponse(ser.data, safe=False)
+
+@csrf_exempt
+def patients(request):
+	if request.method == 'POST':
+		try:
+			name = request.POST['name']
+			patient = Patient.objects.create(name = name)
+			ser = PatientSerializer(patient)
+			return JsonResponse(ser.data, safe=False)
+		except Exception as e:
+			d = OrderedDict()
+			d['error'] = str(e)
+			return JsonResponse(d, safe=False)
+	else:
+		pat = Patient.objects.all()
+		ser = PatientSerializer(pat, many=True)
+		return JsonResponse(ser.data, safe=False)
 
 @csrf_exempt
 def imageAnalyze(request):

@@ -8,6 +8,11 @@ import {
 	Panel, PageHeader, ListGroup, ListGroupItem, Button,
 } from 'react-bootstrap';
 
+import {
+	ControlLabel,
+	FormControl,
+	FormGroup,
+	Form } from 'react-bootstrap';
 
 import s from './Initiate.css';
 import StatWidget from '../../components/Widget';
@@ -59,8 +64,24 @@ class Initiate extends Component {
 				{ name: 'No Emotion', amt: 0 },
 			],
 
+			// patients
+			patients : [],
+
+			// selected patient
+			selectedPatient: -1,
+
 			messages : []
 		}
+
+		fetch('http://localhost:8000/patients', {
+			method: 'GET'
+		})
+		.then((response) => response.json())
+		.then((responseJson) => {
+			this.setState({ patients : responseJson, selectedPatient: responseJson[0].id })
+		})
+		.catch((error) => {
+		})
 
 		this.recognition = new window.webkitSpeechRecognition()
 		this.recognition.onstart = () => {
@@ -185,7 +206,38 @@ class Initiate extends Component {
 		return imageSrc
 	}
 
-	reset() {
+	async reset() {
+
+		// patient = Patient.objects.get(pk = int(req['patient_id'])),
+		// textual_emotional = json.dumps(req['textual_emotional']),
+		// textual_sentiment = json.dumps(req['textual_sentiment']),
+		// facial_emotional = json.dumps(req['facial_emotional']),
+		// textual_conversation = json.dumps(req['messages'])
+
+		var data = {
+			patient_id : this.state.selectedPatient,
+			textual_emotional : this.state.text_emotion,
+			textual_sentiment : this.state.text_sentiment,
+			facial_emotional : this.state.face_emotion,
+			messages : this.state.messages
+		}
+
+		console.log(data)
+
+		await fetch('http://localhost:8000/session', {
+			method: 'POST',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(data)
+		})
+		.then((response) => response.json())
+		.then((json) => {
+			console.log(json)
+		})
+		.catch((err) => console.log(err))
+
 		this.setState({
 			running : false,
 			forceEnd : true,
@@ -259,21 +311,44 @@ class Initiate extends Component {
 				<div className="row">
 					<div className="col-lg-12">
 						<PageHeader>
-							<span>Assitant</span>
-							<div className="pull-right">
-								{ this.renderStartStopButton() }
-								<button 
-									className="btn btn-danger"
-									onClick={ () => {
-										if (!this.state.forceEnd){
-											this.setState({forceEnd: true})
+							<div className="row">
+								<div className="col-lg-3">
+									<span>Assitant</span>
+								</div>
+								<div className="col-lg-6">
+									<FormGroup controlId="formControlsSelect">
+										<ControlLabel><h4>Patient</h4></ControlLabel>
+										<FormControl 
+											componentClass="select" 
+											placeholder="select"
+											onChange={ (e) => {
+												this.state.selectedPatient = e.target.value
+											} }>
+										{
+											this.state.patients.map((data, i) => (
+												<option value={ data.id }>{ data.name }</option>
+											))
 										}
-										this.recognition.stop()
-										this.reset()
-									}}	
-								>
-									Stop
-								</button>
+										</FormControl>
+									</FormGroup>
+								</div>
+								<div className="col-lg-3">
+									<div className="pull-right">
+										{ this.renderStartStopButton() }
+										<button 
+											className="btn btn-danger"
+											onClick={ () => {
+												if (!this.state.forceEnd){
+													this.setState({forceEnd: true})
+												}
+												this.recognition.stop()
+												this.reset()
+											}}	
+										>
+											Stop
+										</button>
+									</div>
+								</div>
 							</div>
 						</PageHeader>
 					</div>

@@ -80,7 +80,7 @@ class Sidebar extends Component {
             </li> */}
 
             <li>
-              <a href="" onClick={(e) => { e.preventDefault(); history.push('/table'); }} >
+              <a href="" onClick={(e) => { e.preventDefault(); history.push('/patient'); }} >
                 <i className="fa fa-table fa-fw" /> &nbsp;Patients
               </a>
             </li>

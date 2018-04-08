@@ -919,6 +919,14 @@ module.exports =
   
   var _initiate2 = _interopRequireDefault(_initiate);
   
+  var _patient = __webpack_require__(196);
+  
+  var _patient2 = _interopRequireDefault(_patient);
+  
+  var _session = __webpack_require__(198);
+  
+  var _session2 = _interopRequireDefault(_session);
+  
   var _login = __webpack_require__(155);
   
   var _login2 = _interopRequireDefault(_login);
@@ -1034,7 +1042,7 @@ module.exports =
     path: '/',
   
     // keep in mind, routes are evaluated in order
-    children: [_home2.default, _initiate2.default,
+    children: [_home2.default, _initiate2.default, _patient2.default, _session2.default,
     // contact,
     _tables2.default, _buttons2.default, _flotCharts2.default, _forms2.default, _grid2.default, _icons2.default, _morrisjsCharts2.default, _notification2.default, _panelWells2.default, _typography2.default,
     // register,
@@ -1403,7 +1411,7 @@ module.exports =
             _react2.default.createElement(
               'span',
               null,
-              '\xA0Psychology Assistant Module'
+              '\xA0Psychological Assistance Module'
             ),
             _react2.default.createElement(
               'button',
@@ -1418,428 +1426,6 @@ module.exports =
               _react2.default.createElement('span', { className: 'icon-bar' }),
               _react2.default.createElement('span', { className: 'icon-bar' }),
               _react2.default.createElement('span', { className: 'icon-bar' })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'ul',
-          { className: 'nav navbar-top-links navbar-right' },
-          _react2.default.createElement(
-            _reactBootstrap.NavDropdown,
-            { bsClass: 'dropdown', title: _react2.default.createElement(
-                'span',
-                null,
-                _react2.default.createElement('i', { className: 'fa fa-envelope fa-fw' })
-              ), id: 'navDropdown1' },
-            _react2.default.createElement(
-              _reactBootstrap.MenuItem,
-              { style: { width: 300 }, eventKey: '1' },
-              _react2.default.createElement(
-                'div',
-                null,
-                ' ',
-                _react2.default.createElement(
-                  'strong',
-                  null,
-                  'John Smith'
-                ),
-                ' ',
-                _react2.default.createElement(
-                  'span',
-                  { className: 'pull-right text-muted' },
-                  ' ',
-                  _react2.default.createElement(
-                    'em',
-                    null,
-                    'Yesterday'
-                  ),
-                  ' '
-                ),
-                ' '
-              ),
-              _react2.default.createElement(
-                'div',
-                null,
-                ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...'
-              )
-            ),
-            _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
-            _react2.default.createElement(
-              _reactBootstrap.MenuItem,
-              { eventKey: '2' },
-              _react2.default.createElement(
-                'div',
-                null,
-                ' ',
-                _react2.default.createElement(
-                  'strong',
-                  null,
-                  'John Smith'
-                ),
-                ' ',
-                _react2.default.createElement(
-                  'span',
-                  { className: 'pull-right text-muted' },
-                  ' ',
-                  _react2.default.createElement(
-                    'em',
-                    null,
-                    'Yesterday'
-                  ),
-                  ' '
-                ),
-                ' '
-              ),
-              _react2.default.createElement(
-                'div',
-                null,
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...'
-              )
-            ),
-            _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
-            _react2.default.createElement(
-              _reactBootstrap.MenuItem,
-              { eventKey: '3' },
-              _react2.default.createElement(
-                'div',
-                null,
-                ' ',
-                _react2.default.createElement(
-                  'strong',
-                  null,
-                  'John Smith'
-                ),
-                ' ',
-                _react2.default.createElement(
-                  'span',
-                  { className: 'pull-right text-muted' },
-                  ' ',
-                  _react2.default.createElement(
-                    'em',
-                    null,
-                    'Yesterday'
-                  ),
-                  ' '
-                ),
-                ' '
-              ),
-              _react2.default.createElement(
-                'div',
-                null,
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...'
-              )
-            ),
-            _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
-            _react2.default.createElement(
-              _reactBootstrap.MenuItem,
-              { eventKey: '4', className: 'text-center' },
-              _react2.default.createElement(
-                'strong',
-                null,
-                'Read All Messages'
-              ),
-              ' ',
-              _react2.default.createElement('i', { className: 'fa fa-angle-right' })
-            )
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.NavDropdown,
-            { title: _react2.default.createElement(
-                'span',
-                null,
-                _react2.default.createElement('i', { className: 'fa fa-tasks fa-fw' }),
-                ' '
-              ), id: 'navDropdown2222' },
-            _react2.default.createElement(
-              _reactBootstrap.MenuItem,
-              { eventKey: '1', style: { width: 300 } },
-              _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  ' ',
-                  _react2.default.createElement(
-                    'strong',
-                    null,
-                    'Task 1'
-                  ),
-                  ' ',
-                  _react2.default.createElement(
-                    'span',
-                    { className: 'pull-right text-muted' },
-                    '40% Complete'
-                  ),
-                  ' '
-                ),
-                _react2.default.createElement(
-                  'div',
-                  null,
-                  _react2.default.createElement(_reactBootstrap.ProgressBar, { bsStyle: 'success', now: 40 })
-                )
-              )
-            ),
-            _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
-            _react2.default.createElement(
-              _reactBootstrap.MenuItem,
-              { eventKey: '2' },
-              _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  ' ',
-                  _react2.default.createElement(
-                    'strong',
-                    null,
-                    'Task 2'
-                  ),
-                  ' ',
-                  _react2.default.createElement(
-                    'span',
-                    { className: 'pull-right text-muted' },
-                    '20% Complete'
-                  ),
-                  ' '
-                ),
-                _react2.default.createElement(
-                  'div',
-                  null,
-                  _react2.default.createElement(_reactBootstrap.ProgressBar, { bsStyle: 'info', now: 20 })
-                )
-              )
-            ),
-            _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
-            _react2.default.createElement(
-              _reactBootstrap.MenuItem,
-              { eventKey: '3' },
-              _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  ' ',
-                  _react2.default.createElement(
-                    'strong',
-                    null,
-                    'Task 3'
-                  ),
-                  ' ',
-                  _react2.default.createElement(
-                    'span',
-                    { className: 'pull-right text-muted' },
-                    '60% Complete'
-                  ),
-                  ' '
-                ),
-                _react2.default.createElement(
-                  'div',
-                  null,
-                  _react2.default.createElement(_reactBootstrap.ProgressBar, { bsStyle: 'warning', now: 60 })
-                )
-              )
-            ),
-            _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
-            _react2.default.createElement(
-              _reactBootstrap.MenuItem,
-              { eventKey: '4' },
-              _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  ' ',
-                  _react2.default.createElement(
-                    'strong',
-                    null,
-                    'Task 4'
-                  ),
-                  ' ',
-                  _react2.default.createElement(
-                    'span',
-                    { className: 'pull-right text-muted' },
-                    '80% Complete'
-                  ),
-                  ' '
-                ),
-                _react2.default.createElement(
-                  'div',
-                  null,
-                  _react2.default.createElement(_reactBootstrap.ProgressBar, { bsStyle: 'danger', now: 80 })
-                )
-              )
-            ),
-            _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
-            _react2.default.createElement(
-              _reactBootstrap.MenuItem,
-              { eventKey: '5' },
-              _react2.default.createElement(
-                'strong',
-                null,
-                'See All Tasks'
-              ),
-              ' ',
-              _react2.default.createElement('i', { className: 'fa fa-angle-right' })
-            )
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.NavDropdown,
-            { title: _react2.default.createElement('i', { className: 'fa fa-bell fa-fw' }), id: 'navDropdown3' },
-            _react2.default.createElement(
-              _reactBootstrap.MenuItem,
-              { eventKey: '1', style: { width: 300 } },
-              _react2.default.createElement(
-                'div',
-                null,
-                ' ',
-                _react2.default.createElement('i', { className: 'fa fa-comment fa-fw' }),
-                ' New Comment ',
-                _react2.default.createElement(
-                  'span',
-                  { className: 'pull-right text-muted small' },
-                  '4 minutes ago'
-                ),
-                ' '
-              )
-            ),
-            _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
-            _react2.default.createElement(
-              _reactBootstrap.MenuItem,
-              { eventKey: '2' },
-              _react2.default.createElement(
-                'div',
-                null,
-                ' ',
-                _react2.default.createElement('i', { className: 'fa fa-twitter fa-fw' }),
-                ' 3 New Followers ',
-                _react2.default.createElement(
-                  'span',
-                  { className: 'pull-right text-muted small' },
-                  '12 minutes ago'
-                ),
-                ' '
-              )
-            ),
-            _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
-            _react2.default.createElement(
-              _reactBootstrap.MenuItem,
-              { eventKey: '3' },
-              _react2.default.createElement(
-                'div',
-                null,
-                ' ',
-                _react2.default.createElement('i', { className: 'fa fa-envelope fa-fw' }),
-                ' Message Sent ',
-                _react2.default.createElement(
-                  'span',
-                  { className: 'pull-right text-muted small' },
-                  '4 minutes ago'
-                ),
-                ' '
-              )
-            ),
-            _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
-            _react2.default.createElement(
-              _reactBootstrap.MenuItem,
-              { eventKey: '4' },
-              _react2.default.createElement(
-                'div',
-                null,
-                ' ',
-                _react2.default.createElement('i', { className: 'fa fa-tasks fa-fw' }),
-                ' New Task ',
-                _react2.default.createElement(
-                  'span',
-                  { className: 'pull-right text-muted small' },
-                  '4 minutes ago'
-                ),
-                ' '
-              )
-            ),
-            _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
-            _react2.default.createElement(
-              _reactBootstrap.MenuItem,
-              { eventKey: '5' },
-              _react2.default.createElement(
-                'div',
-                null,
-                ' ',
-                _react2.default.createElement('i', { className: 'fa fa-upload fa-fw' }),
-                ' Server Rebooted ',
-                _react2.default.createElement(
-                  'span',
-                  { className: 'pull-right text-muted small' },
-                  '4 minutes ago'
-                ),
-                ' '
-              )
-            ),
-            _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
-            _react2.default.createElement(
-              _reactBootstrap.MenuItem,
-              { eventKey: '6' },
-              _react2.default.createElement(
-                'strong',
-                null,
-                'See All Alerts'
-              ),
-              ' ',
-              _react2.default.createElement('i', { className: 'fa fa-angle-right' })
-            )
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.NavDropdown,
-            { title: _react2.default.createElement('i', { className: 'fa fa-user fa-fw' }), id: 'navDropdown4' },
-            _react2.default.createElement(
-              _reactBootstrap.MenuItem,
-              { eventKey: '1' },
-              _react2.default.createElement(
-                'span',
-                null,
-                ' ',
-                _react2.default.createElement('i', { className: 'fa fa-user fa-fw' }),
-                ' User Profile '
-              )
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.MenuItem,
-              { eventKey: '2' },
-              _react2.default.createElement(
-                'span',
-                null,
-                _react2.default.createElement('i', { className: 'fa fa-gear fa-fw' }),
-                ' Settings '
-              )
-            ),
-            _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
-            _react2.default.createElement(
-              _reactBootstrap.MenuItem,
-              { eventKey: '3', href: 'http://www.strapui.com' },
-              _react2.default.createElement(
-                'span',
-                null,
-                ' ',
-                _react2.default.createElement('i', { className: 'fa fa-eye fa-fw' }),
-                ' Premium React Themes '
-              )
-            ),
-            _react2.default.createElement(_reactBootstrap.MenuItem, { divider: true }),
-            _react2.default.createElement(
-              _reactBootstrap.MenuItem,
-              { eventKey: '4', onClick: function onClick(event) {
-                  _history2.default.push('/login');
-                } },
-              _react2.default.createElement(
-                'span',
-                null,
-                ' ',
-                _react2.default.createElement('i', { className: 'fa fa-sign-out fa-fw' }),
-                ' Logout '
-              )
             )
           )
         ),
@@ -2050,7 +1636,7 @@ module.exports =
                 _react2.default.createElement(
                   'a',
                   { href: '', onClick: function onClick(e) {
-                      e.preventDefault();_history2.default.push('/table');
+                      e.preventDefault();_history2.default.push('/patient');
                     } },
                   _react2.default.createElement('i', { className: 'fa fa-table fa-fw' }),
                   ' \xA0Patients'
@@ -2086,9 +1672,9 @@ module.exports =
 
 /***/ }),
 /* 47 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-  module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAmCAYAAACyAQkgAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpGODdGMTE3NDA3MjA2ODExODA4M0E3MjY3MTQwRTY5RSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1RTIzNTA3RUM5OEExMUU0QjRCOUUwQTIyNkYzQTlCNiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1RTIzNTA3REM5OEExMUU0QjRCOUUwQTIyNkYzQTlCNiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6Rjk3RjExNzQwNzIwNjgxMTgwODNBNzI2NzE0MEU2OUUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6Rjg3RjExNzQwNzIwNjgxMTgwODNBNzI2NzE0MEU2OUUiLz4gPC9yZGY6RGVzY3Jp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"
+  module.exports = __webpack_require__.p + "components/Header/logo.png?1f6bdb764eede7132b3b1b79ed1c783b";
 
 /***/ }),
 /* 48 */
@@ -20081,6 +19667,10 @@ module.exports =
   	value: true
   });
   
+  var _stringify = __webpack_require__(24);
+  
+  var _stringify2 = _interopRequireDefault(_stringify);
+  
   var _toConsumableArray2 = __webpack_require__(2);
   
   var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
@@ -20184,8 +19774,22 @@ module.exports =
   			// face emotion analysis
   			face_emotion: [{ name: 'No Emotion', amt: 0 }],
   
+  			// patients
+  			patients: [],
+  
+  			// selected patient
+  			selectedPatient: -1,
+  
   			messages: []
   		};
+  
+  		fetch('http://localhost:8000/patients', {
+  			method: 'GET'
+  		}).then(function (response) {
+  			return response.json();
+  		}).then(function (responseJson) {
+  			_this.setState({ patients: responseJson, selectedPatient: responseJson[0].id });
+  		}).catch(function (error) {});
   
   		_this.recognition = new window.webkitSpeechRecognition();
   		_this.recognition.onstart = function () {
@@ -20344,23 +19948,79 @@ module.exports =
   		}()
   	}, {
   		key: 'reset',
-  		value: function reset() {
-  			this.setState({
-  				running: false,
-  				forceEnd: true,
+  		value: function () {
+  			var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3() {
+  				var data;
+  				return _regenerator2.default.wrap(function _callee3$(_context3) {
+  					while (1) {
+  						switch (_context3.prev = _context3.next) {
+  							case 0:
   
-  				// text emotion analysis
-  				text_emotion: [{ name: 'No Emotion', amt: 0 }],
+  								// patient = Patient.objects.get(pk = int(req['patient_id'])),
+  								// textual_emotional = json.dumps(req['textual_emotional']),
+  								// textual_sentiment = json.dumps(req['textual_sentiment']),
+  								// facial_emotional = json.dumps(req['facial_emotional']),
+  								// textual_conversation = json.dumps(req['messages'])
   
-  				// text sentiment analysis
-  				text_sentiment: [{ name: 'No Emotion', pos: 0, neg: 0 }],
+  								data = {
+  									patient_id: this.state.selectedPatient,
+  									textual_emotional: this.state.text_emotion,
+  									textual_sentiment: this.state.text_sentiment,
+  									facial_emotional: this.state.face_emotion,
+  									messages: this.state.messages
+  								};
   
-  				// face emotion analysis
-  				face_emotion: [{ name: 'No Emotion', amt: 0 }],
   
-  				messages: []
-  			});
-  		}
+  								console.log(data);
+  
+  								_context3.next = 4;
+  								return fetch('http://localhost:8000/session', {
+  									method: 'POST',
+  									headers: {
+  										'Accept': 'application/json',
+  										'Content-Type': 'application/json'
+  									},
+  									body: (0, _stringify2.default)(data)
+  								}).then(function (response) {
+  									return response.json();
+  								}).then(function (json) {
+  									console.log(json);
+  								}).catch(function (err) {
+  									return console.log(err);
+  								});
+  
+  							case 4:
+  
+  								this.setState({
+  									running: false,
+  									forceEnd: true,
+  
+  									// text emotion analysis
+  									text_emotion: [{ name: 'No Emotion', amt: 0 }],
+  
+  									// text sentiment analysis
+  									text_sentiment: [{ name: 'No Emotion', pos: 0, neg: 0 }],
+  
+  									// face emotion analysis
+  									face_emotion: [{ name: 'No Emotion', amt: 0 }],
+  
+  									messages: []
+  								});
+  
+  							case 5:
+  							case 'end':
+  								return _context3.stop();
+  						}
+  					}
+  				}, _callee3, this);
+  			}));
+  
+  			function reset() {
+  				return _ref3.apply(this, arguments);
+  			}
+  
+  			return reset;
+  		}()
   	}, {
   		key: 'renderWebCam',
   		value: function renderWebCam() {
@@ -20426,27 +20086,72 @@ module.exports =
   							_reactBootstrap.PageHeader,
   							null,
   							_react2.default.createElement(
-  								'span',
-  								null,
-  								'Assitant'
-  							),
-  							_react2.default.createElement(
   								'div',
-  								{ className: 'pull-right' },
-  								this.renderStartStopButton(),
+  								{ className: 'row' },
   								_react2.default.createElement(
-  									'button',
-  									{
-  										className: 'btn btn-danger',
-  										onClick: function onClick() {
-  											if (!_this5.state.forceEnd) {
-  												_this5.setState({ forceEnd: true });
-  											}
-  											_this5.recognition.stop();
-  											_this5.reset();
-  										}
-  									},
-  									'Stop'
+  									'div',
+  									{ className: 'col-lg-3' },
+  									_react2.default.createElement(
+  										'span',
+  										null,
+  										'Assitant'
+  									)
+  								),
+  								_react2.default.createElement(
+  									'div',
+  									{ className: 'col-lg-6' },
+  									_react2.default.createElement(
+  										_reactBootstrap.FormGroup,
+  										{ controlId: 'formControlsSelect' },
+  										_react2.default.createElement(
+  											_reactBootstrap.ControlLabel,
+  											null,
+  											_react2.default.createElement(
+  												'h4',
+  												null,
+  												'Patient'
+  											)
+  										),
+  										_react2.default.createElement(
+  											_reactBootstrap.FormControl,
+  											{
+  												componentClass: 'select',
+  												placeholder: 'select',
+  												onChange: function onChange(e) {
+  													_this5.state.selectedPatient = e.target.value;
+  												} },
+  											this.state.patients.map(function (data, i) {
+  												return _react2.default.createElement(
+  													'option',
+  													{ value: data.id },
+  													data.name
+  												);
+  											})
+  										)
+  									)
+  								),
+  								_react2.default.createElement(
+  									'div',
+  									{ className: 'col-lg-3' },
+  									_react2.default.createElement(
+  										'div',
+  										{ className: 'pull-right' },
+  										this.renderStartStopButton(),
+  										_react2.default.createElement(
+  											'button',
+  											{
+  												className: 'btn btn-danger',
+  												onClick: function onClick() {
+  													if (!_this5.state.forceEnd) {
+  														_this5.setState({ forceEnd: true });
+  													}
+  													_this5.recognition.stop();
+  													_this5.reset();
+  												}
+  											},
+  											'Stop'
+  										)
+  									)
   								)
   							)
   						)
@@ -30143,6 +29848,679 @@ module.exports =
 /***/ (function(module, exports) {
 
   module.exports = require("./assets");
+
+/***/ }),
+/* 196 */
+/***/ (function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  
+  var _react = __webpack_require__(11);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _Patient = __webpack_require__(197);
+  
+  var _Patient2 = _interopRequireDefault(_Patient);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  exports.default = {
+  
+    path: '/patient',
+  
+    action: function action() {
+      return _react2.default.createElement(_Patient2.default, null);
+    }
+  };
+
+/***/ }),
+/* 197 */
+/***/ (function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  
+  var _getPrototypeOf = __webpack_require__(29);
+  
+  var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+  
+  var _classCallCheck2 = __webpack_require__(30);
+  
+  var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+  
+  var _createClass2 = __webpack_require__(31);
+  
+  var _createClass3 = _interopRequireDefault(_createClass2);
+  
+  var _possibleConstructorReturn2 = __webpack_require__(32);
+  
+  var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+  
+  var _inherits2 = __webpack_require__(33);
+  
+  var _inherits3 = _interopRequireDefault(_inherits2);
+  
+  var _react = __webpack_require__(11);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _Button = __webpack_require__(157);
+  
+  var _Button2 = _interopRequireDefault(_Button);
+  
+  var _Panel = __webpack_require__(158);
+  
+  var _Panel2 = _interopRequireDefault(_Panel);
+  
+  var _Pagination = __webpack_require__(163);
+  
+  var _Pagination2 = _interopRequireDefault(_Pagination);
+  
+  var _PageHeader = __webpack_require__(164);
+  
+  var _PageHeader2 = _interopRequireDefault(_PageHeader);
+  
+  var _Well = __webpack_require__(165);
+  
+  var _Well2 = _interopRequireDefault(_Well);
+  
+  var _reactBootstrap = __webpack_require__(38);
+  
+  var _history = __webpack_require__(40);
+  
+  var _history2 = _interopRequireDefault(_history);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  var title = 'Table';
+  
+  var Patient = function (_Component) {
+    (0, _inherits3.default)(Patient, _Component);
+  
+    function Patient() {
+      (0, _classCallCheck3.default)(this, Patient);
+  
+      var _this = (0, _possibleConstructorReturn3.default)(this, (Patient.__proto__ || (0, _getPrototypeOf2.default)(Patient)).call(this));
+  
+      _this.state = {
+        patients: [],
+  
+        showModal: false
+      };
+  
+      _this.updatePatients();
+  
+      return _this;
+    }
+  
+    (0, _createClass3.default)(Patient, [{
+      key: 'updatePatients',
+      value: function updatePatients() {
+        var _this2 = this;
+  
+        fetch('http://localhost:8000/patients', {
+          method: 'GET'
+        }).then(function (response) {
+          return response.json();
+        }).then(function (responseJson) {
+          _this2.setState({ patients: responseJson });
+        }).catch(function (error) {});
+      }
+    }, {
+      key: 'handleClose',
+      value: function handleClose() {
+        this.setState({ showModal: false });
+      }
+    }, {
+      key: 'handleShow',
+      value: function handleShow() {
+        this.setState({ showModal: true });
+      }
+    }, {
+      key: 'renderAddPatientModal',
+      value: function renderAddPatientModal() {
+        var _this3 = this;
+  
+        return _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Modal,
+            { show: this.state.showModal, onHide: function onHide() {
+                return _this3.handleClose();
+              } },
+            _react2.default.createElement(
+              _reactBootstrap.Modal.Header,
+              { closeButton: true },
+              _react2.default.createElement(
+                _reactBootstrap.Modal.Title,
+                null,
+                'Add Patient'
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Modal.Body,
+              null,
+              _react2.default.createElement(
+                _reactBootstrap.Form,
+                null,
+                _react2.default.createElement(
+                  _reactBootstrap.FormGroup,
+                  { controlId: 'formBasicText2' },
+                  _react2.default.createElement(
+                    _reactBootstrap.ControlLabel,
+                    null,
+                    'Text Input'
+                  ),
+                  _react2.default.createElement(_reactBootstrap.FormControl, {
+                    type: 'text',
+                    placeholder: 'Enter Text',
+                    inputRef: function inputRef(name) {
+                      return _this3.inputName = name;
+                    }
+                  })
+                ),
+                _react2.default.createElement(
+                  _Button2.default,
+                  { onClick: function onClick() {
+                      var formData = new FormData();
+                      formData.append("name", _this3.inputName.value);
+                      fetch('http://localhost:8000/patients', {
+                        method: 'POST',
+                        body: formData
+                      }).then(function (response) {
+                        return response.json();
+                      }).then(function (responseJson) {
+                        console.log(responseJson);
+                        _this3.updatePatients();
+                        _this3.handleClose();
+                      }).catch(function (error) {});
+                    } },
+                  'Submit'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Modal.Footer,
+              null,
+              _react2.default.createElement(
+                _Button2.default,
+                { onClick: function onClick() {
+                    return _this3.handleClose();
+                  } },
+                'Close'
+              )
+            )
+          )
+        );
+      }
+    }, {
+      key: 'render',
+      value: function render() {
+        var _this4 = this;
+  
+        return _react2.default.createElement(
+          'div',
+          null,
+          this.renderAddPatientModal(),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-lg-12' },
+            _react2.default.createElement(
+              _PageHeader2.default,
+              null,
+              'Patients',
+              _react2.default.createElement(
+                'div',
+                { className: 'pull-right' },
+                _react2.default.createElement(
+                  'button',
+                  {
+                    className: 'btn btn-success',
+                    onClick: function onClick() {
+                      return _this4.handleShow();
+                    } },
+                  'Add Patient'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-lg-12' },
+            _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement(
+                'div',
+                { className: 'dataTable_wrapper' },
+                _react2.default.createElement(
+                  'div',
+                  {
+                    id: 'dataTables-example_wrapper',
+                    className: 'dataTables_wrapper form-inline dt-bootstrap no-footer'
+                  },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'row' },
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'col-sm-12' },
+                      _react2.default.createElement(
+                        'table',
+                        {
+                          className: 'table table-striped table-bordered table-hover dataTable no-footer',
+                          id: 'dataTables-example',
+                          role: 'grid',
+                          'aria-describedby': 'dataTables-example_info'
+                        },
+                        _react2.default.createElement(
+                          'thead',
+                          null,
+                          _react2.default.createElement(
+                            'tr',
+                            { role: 'row' },
+                            _react2.default.createElement(
+                              'th',
+                              {
+                                className: 'sorting_asc',
+                                tabIndex: '0',
+                                'aria-controls': 'dataTables-example',
+                                rowSpan: '1',
+                                colSpan: '1',
+                                'aria-label': 'Rendering engine: activate to sort column descending',
+                                'aria-sort': 'ascending',
+                                style: { width: 265 }
+                              },
+                              'ID'
+                            ),
+                            _react2.default.createElement(
+                              'th',
+                              {
+                                className: 'sorting',
+                                tabIndex: '0',
+                                'aria-controls': 'dataTables-example',
+                                rowSpan: '1',
+                                colSpan: '1',
+                                'aria-label': 'Browser: activate to sort column ascending',
+                                style: { width: 321 }
+                              },
+                              'Name'
+                            ),
+                            _react2.default.createElement(
+                              'th',
+                              {
+                                className: 'sorting',
+                                tabIndex: '0',
+                                'aria-controls': 'dataTables-example',
+                                rowSpan: '1',
+                                colSpan: '1',
+                                'aria-label': 'Platform(s): activate to sort column ascending',
+                                style: { width: 299 }
+                              },
+                              'Action'
+                            )
+                          )
+                        ),
+                        _react2.default.createElement(
+                          'tbody',
+                          null,
+                          this.state.patients.map(function (data, i) {
+                            return _react2.default.createElement(
+                              'tr',
+                              { className: 'gradeA odd', role: 'row', key: i },
+                              _react2.default.createElement(
+                                'td',
+                                { className: 'sorting_1' },
+                                data.id
+                              ),
+                              _react2.default.createElement(
+                                'td',
+                                null,
+                                data.name
+                              ),
+                              _react2.default.createElement(
+                                'td',
+                                null,
+                                _react2.default.createElement(
+                                  'button',
+                                  {
+                                    className: 'btn btn-success',
+                                    onClick: function onClick() {
+                                      _history2.default.push('/session/' + data.id);
+                                    } },
+                                  'View Sessions'
+                                )
+                              )
+                            );
+                          })
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+        );
+      }
+    }]);
+    return Patient;
+  }(_react.Component);
+  
+  exports.default = Patient;
+
+/***/ }),
+/* 198 */
+/***/ (function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  
+  var _react = __webpack_require__(11);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _Session = __webpack_require__(199);
+  
+  var _Session2 = _interopRequireDefault(_Session);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  exports.default = {
+  
+    path: '/session/:patientId',
+  
+    action: function action(_ref) {
+      var path = _ref.path,
+          params = _ref.params,
+          query = _ref.query;
+  
+      return _react2.default.createElement(_Session2.default, { patientId: params.patientId });
+    }
+  };
+
+/***/ }),
+/* 199 */
+/***/ (function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  
+  var _regenerator = __webpack_require__(1);
+  
+  var _regenerator2 = _interopRequireDefault(_regenerator);
+  
+  var _asyncToGenerator2 = __webpack_require__(4);
+  
+  var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+  
+  var _getPrototypeOf = __webpack_require__(29);
+  
+  var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+  
+  var _classCallCheck2 = __webpack_require__(30);
+  
+  var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+  
+  var _createClass2 = __webpack_require__(31);
+  
+  var _createClass3 = _interopRequireDefault(_createClass2);
+  
+  var _possibleConstructorReturn2 = __webpack_require__(32);
+  
+  var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+  
+  var _inherits2 = __webpack_require__(33);
+  
+  var _inherits3 = _interopRequireDefault(_inherits2);
+  
+  var _react = __webpack_require__(11);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _Button = __webpack_require__(157);
+  
+  var _Button2 = _interopRequireDefault(_Button);
+  
+  var _Panel = __webpack_require__(158);
+  
+  var _Panel2 = _interopRequireDefault(_Panel);
+  
+  var _Pagination = __webpack_require__(163);
+  
+  var _Pagination2 = _interopRequireDefault(_Pagination);
+  
+  var _PageHeader = __webpack_require__(164);
+  
+  var _PageHeader2 = _interopRequireDefault(_PageHeader);
+  
+  var _Well = __webpack_require__(165);
+  
+  var _Well2 = _interopRequireDefault(_Well);
+  
+  var _recharts = __webpack_require__(100);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  var title = 'Table';
+  
+  var Session = function (_Component) {
+    (0, _inherits3.default)(Session, _Component);
+  
+    function Session() {
+      (0, _classCallCheck3.default)(this, Session);
+  
+      var _this = (0, _possibleConstructorReturn3.default)(this, (Session.__proto__ || (0, _getPrototypeOf2.default)(Session)).call(this));
+  
+      _this.state = {
+        graphs: []
+      };
+  
+      return _this;
+    }
+  
+    (0, _createClass3.default)(Session, [{
+      key: 'componentDidMount',
+      value: function componentDidMount() {
+        this.updateGraphs();
+      }
+    }, {
+      key: 'updateGraphs',
+      value: function () {
+        var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+          var _this2 = this;
+  
+          return _regenerator2.default.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  _context.next = 2;
+                  return fetch('http://localhost:8000/sessionId/' + this.props.patientId, {
+                    method: 'GET'
+                  }).then(function (response) {
+                    return response.json();
+                  }).then(function (responseJson) {
+                    console.log(responseJson);
+                    var data = [];
+                    for (var y in responseJson) {
+                      var x = responseJson[y];
+                      var temp = {
+                        text_emotion: JSON.parse(x.textual_emotional),
+                        face_emotion: JSON.parse(x.facial_emotional),
+                        text_sentiment: JSON.parse(x.textual_sentimental)
+                      };
+                      data.push(temp);
+                    }
+                    _this2.setState({ graphs: data });
+                    console.log(_this2.state.graphs);
+                  });
+  
+                case 2:
+                case 'end':
+                  return _context.stop();
+              }
+            }
+          }, _callee, this);
+        }));
+  
+        function updateGraphs() {
+          return _ref.apply(this, arguments);
+        }
+  
+        return updateGraphs;
+      }()
+    }, {
+      key: 'render',
+      value: function render() {
+        return _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'div',
+            { className: 'col-lg-12' },
+            _react2.default.createElement(
+              _PageHeader2.default,
+              null,
+              'Session for patient ID: ',
+              this.props.patientId,
+              ' '
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-lg-12' },
+            _react2.default.createElement(
+              'div',
+              null,
+              this.state.graphs.map(function (data, i) {
+                return _react2.default.createElement(
+                  'div',
+                  { className: 'row', key: i },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'col-lg-4' },
+                    _react2.default.createElement(
+                      _Panel2.default,
+                      {
+                        header: _react2.default.createElement(
+                          'span',
+                          null,
+                          _react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
+                          ' Textual Emotion Analysis'
+                        )
+                      },
+                      _react2.default.createElement(
+                        'div',
+                        null,
+                        _react2.default.createElement(
+                          _recharts.ResponsiveContainer,
+                          { width: '100%', aspect: 2 },
+                          _react2.default.createElement(
+                            _recharts.BarChart,
+                            {
+                              data: data.text_emotion,
+                              margin: { top: 10, right: 30, left: 0, bottom: 0 } },
+                            _react2.default.createElement(_recharts.CartesianGrid, { stroke: '#ccc' }),
+                            _react2.default.createElement(_recharts.XAxis, { dataKey: 'name' }),
+                            _react2.default.createElement(_recharts.YAxis, null),
+                            _react2.default.createElement(_recharts.Tooltip, null),
+                            _react2.default.createElement(_recharts.Bar, { type: 'monotone', dataKey: 'amt', fill: '#ffc658', isAnimationActive: false })
+                          )
+                        )
+                      )
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'col-lg-4' },
+                    _react2.default.createElement(
+                      _Panel2.default,
+                      {
+                        header: _react2.default.createElement(
+                          'span',
+                          null,
+                          _react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
+                          ' Visual Emotional Analysis'
+                        )
+                      },
+                      _react2.default.createElement(
+                        'div',
+                        null,
+                        _react2.default.createElement(
+                          _recharts.ResponsiveContainer,
+                          { width: '100%', aspect: 2 },
+                          _react2.default.createElement(
+                            _recharts.BarChart,
+                            { data: data.face_emotion, margin: { top: 10, right: 30, left: 0, bottom: 0 } },
+                            _react2.default.createElement(_recharts.CartesianGrid, { stroke: '#ccc' }),
+                            _react2.default.createElement(_recharts.XAxis, { dataKey: 'name' }),
+                            _react2.default.createElement(_recharts.YAxis, null),
+                            _react2.default.createElement(_recharts.Tooltip, null),
+                            _react2.default.createElement(_recharts.Bar, { type: 'monotone', dataKey: 'amt', fill: '#ffc658', isAnimationActive: false })
+                          )
+                        )
+                      )
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'col-lg-4' },
+                    _react2.default.createElement(
+                      _Panel2.default,
+                      {
+                        header: _react2.default.createElement(
+                          'span',
+                          null,
+                          _react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
+                          ' Textual Sentimental Analysis'
+                        )
+                      },
+                      _react2.default.createElement(
+                        'div',
+                        null,
+                        _react2.default.createElement(
+                          _recharts.ResponsiveContainer,
+                          { width: '100%', aspect: 2 },
+                          _react2.default.createElement(
+                            _recharts.LineChart,
+                            { data: data.text_sentiment, margin: { top: 10, right: 30, left: 0, bottom: 0 } },
+                            _react2.default.createElement(_recharts.XAxis, { dataKey: 'name' }),
+                            _react2.default.createElement(_recharts.YAxis, null),
+                            _react2.default.createElement(_recharts.CartesianGrid, { stroke: '#ccc' }),
+                            _react2.default.createElement(_recharts.Tooltip, null),
+                            _react2.default.createElement(_recharts.Line, { type: 'monotone', dataKey: 'pos', stackId: '1', stroke: '#8884d8', fill: '#8884d8', isAnimationActive: false }),
+                            _react2.default.createElement(_recharts.Line, { type: 'monotone', dataKey: 'neg', stackId: '1', stroke: '#82ca9d', fill: '#82ca9d', isAnimationActive: false })
+                          )
+                        )
+                      )
+                    )
+                  )
+                );
+              })
+            )
+          )
+        );
+      }
+    }]);
+    return Session;
+  }(_react.Component);
+  
+  exports.default = Session;
 
 /***/ })
 /******/ ]);

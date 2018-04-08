@@ -13,6 +13,9 @@ import App from '../components/App';
 // Child routes
 import home from './home';
 import initiate from './initiate';
+import patient from './patient';
+import session from './session';
+
 import login from './login';
 import table from './dashboardPages/tables';
 import button from './dashboardPages/buttons';
@@ -53,6 +56,8 @@ export default [
     children: [
       home,
       initiate,
+      patient,
+      session,
       // contact,
       table,
       button,
