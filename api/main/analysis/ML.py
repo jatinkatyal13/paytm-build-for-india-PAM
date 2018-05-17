@@ -3,10 +3,11 @@ import nltk
 from nltk.stem import *
 import pandas as pd
 from collections import OrderedDict
+import os
 
-clf = pickle.load(open('model.pickle', 'rb'))
+clf = pickle.load(open(os.path.join(os.path.dirname(__file__), 'model.pickle'), 'rb'))
 
-Data = pd.read_csv('ISEAR.csv',header=None)
+Data = pd.read_csv(os.path.join(os.path.dirname(__file__), 'ISEAR.csv'),header=None)
 def get_words_in_dataset(dataset):
 	all_words = []
 	for (words, sentiment) in dataset:
