@@ -116,7 +116,7 @@ module.exports =
   
   var _routes2 = _interopRequireDefault(_routes);
   
-  var _assets = __webpack_require__(195);
+  var _assets = __webpack_require__(201);
   
   var _assets2 = _interopRequireDefault(_assets);
   
@@ -915,71 +915,71 @@ module.exports =
   
   var _home2 = _interopRequireDefault(_home);
   
-  var _initiate = __webpack_require__(148);
+  var _initiate = __webpack_require__(100);
   
   var _initiate2 = _interopRequireDefault(_initiate);
   
-  var _patient = __webpack_require__(196);
+  var _patient = __webpack_require__(155);
   
   var _patient2 = _interopRequireDefault(_patient);
   
-  var _session = __webpack_require__(198);
+  var _session = __webpack_require__(162);
   
   var _session2 = _interopRequireDefault(_session);
   
-  var _scheduling = __webpack_require__(200);
+  var _scheduling = __webpack_require__(164);
   
   var _scheduling2 = _interopRequireDefault(_scheduling);
   
-  var _login = __webpack_require__(155);
+  var _login = __webpack_require__(166);
   
   var _login2 = _interopRequireDefault(_login);
   
-  var _tables = __webpack_require__(161);
+  var _tables = __webpack_require__(170);
   
   var _tables2 = _interopRequireDefault(_tables);
   
-  var _buttons = __webpack_require__(166);
+  var _buttons = __webpack_require__(172);
   
   var _buttons2 = _interopRequireDefault(_buttons);
   
-  var _flotCharts = __webpack_require__(168);
+  var _flotCharts = __webpack_require__(174);
   
   var _flotCharts2 = _interopRequireDefault(_flotCharts);
   
-  var _forms = __webpack_require__(170);
+  var _forms = __webpack_require__(176);
   
   var _forms2 = _interopRequireDefault(_forms);
   
-  var _grid = __webpack_require__(175);
+  var _grid = __webpack_require__(181);
   
   var _grid2 = _interopRequireDefault(_grid);
   
-  var _icons = __webpack_require__(177);
+  var _icons = __webpack_require__(183);
   
   var _icons2 = _interopRequireDefault(_icons);
   
-  var _morrisjsCharts = __webpack_require__(179);
+  var _morrisjsCharts = __webpack_require__(185);
   
   var _morrisjsCharts2 = _interopRequireDefault(_morrisjsCharts);
   
-  var _notification = __webpack_require__(181);
+  var _notification = __webpack_require__(187);
   
   var _notification2 = _interopRequireDefault(_notification);
   
-  var _panelWells = __webpack_require__(188);
+  var _panelWells = __webpack_require__(194);
   
   var _panelWells2 = _interopRequireDefault(_panelWells);
   
-  var _typography = __webpack_require__(190);
+  var _typography = __webpack_require__(196);
   
   var _typography2 = _interopRequireDefault(_typography);
   
-  var _blank = __webpack_require__(192);
+  var _blank = __webpack_require__(198);
   
   var _blank2 = _interopRequireDefault(_blank);
   
-  var _error = __webpack_require__(194);
+  var _error = __webpack_require__(200);
   
   var _error2 = _interopRequireDefault(_error);
   
@@ -6608,11 +6608,841 @@ module.exports =
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
+  
+  var _regenerator = __webpack_require__(1);
+  
+  var _regenerator2 = _interopRequireDefault(_regenerator);
+  
+  var _asyncToGenerator2 = __webpack_require__(4);
+  
+  var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+  
+  var _react = __webpack_require__(11);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _Initiate = __webpack_require__(101);
+  
+  var _Initiate2 = _interopRequireDefault(_Initiate);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  // import fetch from '../../core/fetch';
+  
+  /**
+   * React Starter Kit (https://www.reactstarterkit.com/)
+   *
+   * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE.txt file in the root directory of this source tree.
+   */
+  
+  exports.default = {
+  
+    path: '/initiate',
+  
+    action: function action() {
+      var _this = this;
+  
+      return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+        return _regenerator2.default.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                return _context.abrupt('return', _react2.default.createElement(_Initiate2.default, null));
+  
+              case 1:
+              case 'end':
+                return _context.stop();
+            }
+          }
+        }, _callee, _this);
+      }))();
+    }
+  };
+
+/***/ }),
+/* 101 */
+/***/ (function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+  	value: true
+  });
+  
+  var _stringify = __webpack_require__(24);
+  
+  var _stringify2 = _interopRequireDefault(_stringify);
+  
+  var _toConsumableArray2 = __webpack_require__(2);
+  
+  var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+  
+  var _regenerator = __webpack_require__(1);
+  
+  var _regenerator2 = _interopRequireDefault(_regenerator);
+  
+  var _asyncToGenerator2 = __webpack_require__(4);
+  
+  var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+  
+  var _getPrototypeOf = __webpack_require__(29);
+  
+  var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+  
+  var _classCallCheck2 = __webpack_require__(30);
+  
+  var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+  
+  var _createClass2 = __webpack_require__(31);
+  
+  var _createClass3 = _interopRequireDefault(_createClass2);
+  
+  var _possibleConstructorReturn2 = __webpack_require__(32);
+  
+  var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+  
+  var _inherits2 = __webpack_require__(33);
+  
+  var _inherits3 = _interopRequireDefault(_inherits2);
+  
+  var _react = __webpack_require__(11);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _withStyles = __webpack_require__(18);
+  
+  var _withStyles2 = _interopRequireDefault(_withStyles);
+  
+  var _reactBootstrap = __webpack_require__(38);
+  
+  var _Initiate = __webpack_require__(102);
+  
+  var _Initiate2 = _interopRequireDefault(_Initiate);
+  
+  var _Widget = __webpack_require__(52);
+  
+  var _Widget2 = _interopRequireDefault(_Widget);
+  
+  var _Donut = __webpack_require__(57);
+  
+  var _Donut2 = _interopRequireDefault(_Donut);
+  
+  var _recharts = __webpack_require__(104);
+  
+  var _Chat = __webpack_require__(152);
+  
+  var _Chat2 = _interopRequireDefault(_Chat);
+  
+  var _reactUserMedia = __webpack_require__(154);
+  
+  var _reactUserMedia2 = _interopRequireDefault(_reactUserMedia);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  var title = 'Psychology Assistive Module';
+  
+  var data = [{ name: 'Page A', uv: 4000, pv: 2400, amt: 2400, value: 600 }, { name: 'Page B', uv: 3000, pv: 1398, amt: 2210, value: 300 }, { name: 'Page C', uv: 2000, pv: 9800, amt: 2290, value: 500 }, { name: 'Page D', uv: 2780, pv: 3908, amt: 2000, value: 400 }, { name: 'Page E', uv: 1890, pv: 4800, amt: 2181, value: 200 }, { name: 'Page F', uv: 2390, pv: 3800, amt: 2500, value: 700 }, { name: 'Page G', uv: 3490, pv: 4300, amt: 2100, value: 100 }];
+  
+  var Initiate = function (_Component) {
+  	(0, _inherits3.default)(Initiate, _Component);
+  
+  	function Initiate() {
+  		(0, _classCallCheck3.default)(this, Initiate);
+  
+  		var _this = (0, _possibleConstructorReturn3.default)(this, (Initiate.__proto__ || (0, _getPrototypeOf2.default)(Initiate)).call(this));
+  
+  		_this.setWebcamRef = function (webcam) {
+  			_this.webcam = webcam;
+  		};
+  
+  		_this.capture = function () {
+  			var imageSrc = _this.webcam.captureScreenshot();
+  			console.log(imageSrc);
+  			return imageSrc;
+  		};
+  
+  		_this.state = {
+  			running: false,
+  			forceEnd: false,
+  
+  			// text emotion analysis
+  			text_emotion: [{ name: 'No Emotion', amt: 0 }],
+  
+  			// text sentiment analysis
+  			text_sentiment: [{ name: 'No Emotion', pos: 0, neg: 0 }],
+  
+  			// face emotion analysis
+  			face_emotion: [{ name: 'No Emotion', amt: 0 }],
+  
+  			// patients
+  			patients: [],
+  
+  			// selected patient
+  			selectedPatient: -1,
+  
+  			//timer seconds
+  			seconds: 0,
+  
+  			//timer minutes
+  			minutes: 0,
+  
+  			messages: []
+  		};
+  
+  		fetch('http://localhost:8000/patients', {
+  			method: 'GET'
+  		}).then(function (response) {
+  			return response.json();
+  		}).then(function (responseJson) {
+  			_this.setState({ patients: responseJson, selectedPatient: responseJson[0].id });
+  		}).catch(function (error) {});
+  
+  		_this.recognition = new window.webkitSpeechRecognition();
+  		_this.recognition.onstart = function () {
+  			// console.log("Start")
+  			_this.setState({ running: true });
+  		};
+  		_this.recognition.onerror = function () {
+  			// console.log("Error Occured")
+  			_this.setState({ running: false });
+  		};
+  		_this.recognition.onend = function () {
+  			// console.log("Ended")
+  			_this.setState({ running: false });
+  			if (!_this.state.running && !_this.state.forceEnd) {
+  				_this.setState({ running: true });
+  				_this.recognition.start();
+  			}
+  			if (_this.state.forceEnd) _this.setState({ forceEnd: false });
+  		};
+  		_this.recognition.onresult = function (event) {
+  			// event is a SpeechRecognitionEvent object.
+  			// It holds all the lines we have captured so far.
+  			// We only need the current one.
+  			var current = event.resultIndex;
+  
+  			// Get a transcript of what was said.
+  			var transcript = event.results[current][0].transcript;
+  
+  			_this.getEmotionAndSentiment(transcript);
+  
+  			_this.setState(function (prev) {
+  				messages: prev.messages.push({ id: 0, message: transcript });
+  			});
+  
+  			// console.log(transcript)
+  			// this.getEmotion(noteContent).then((result) => console.log(result) )
+  			// this.setState((prevState) => { identifiedTextList: prevState.identifiedTextList.push(noteContent) })
+  		};
+  
+  		return _this;
+  	}
+  
+  	(0, _createClass3.default)(Initiate, [{
+  		key: 'componentDidMount',
+  		value: function componentDidMount() {
+  			var _this2 = this;
+  
+  			setInterval((0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+  				var base64, formData;
+  				return _regenerator2.default.wrap(function _callee$(_context) {
+  					while (1) {
+  						switch (_context.prev = _context.next) {
+  							case 0:
+  								if (!_this2.state.running) {
+  									_context.next = 7;
+  									break;
+  								}
+  
+  								_this2.incTime();
+  								base64 = _this2.capture();
+  								formData = new FormData();
+  
+  								formData.append('base64', base64);
+  								_context.next = 7;
+  								return fetch('http://localhost:8000/imageAnalyze', {
+  									method: 'POST',
+  									body: formData
+  								}).then(function (response) {
+  									return response.json();
+  								}).then(function (responseJson) {
+  									var emotions = responseJson.emotion;
+  
+  									var data = [];
+  									for (var prop in emotions) {
+  										data.push({
+  											"name": prop,
+  											"amt": emotions[prop]
+  										});
+  									}
+  
+  									_this2.setState({ face_emotion: data });
+  									// this.setState((prevState) => {{ faceEmotionDataList: prevState.faceEmotionDataList.push(data) }})
+  									// this.setState((prevState) => {{ faceEmotionData: prevState.faceEmotionData.push(responseJson[0].scores) }})
+  								}).catch(function (error) {});
+  
+  							case 7:
+  							case 'end':
+  								return _context.stop();
+  						}
+  					}
+  				}, _callee, _this2);
+  			})), 1000);
+  		}
+  	}, {
+  		key: 'incTime',
+  		value: function incTime() {
+  			var s = this.state.seconds;
+  			var m = this.state.minutes;
+  
+  			if (s < 59) {
+  				this.setState({ seconds: s + 1 });
+  			} else {
+  				this.setState({ minutes: m + 1, seconds: 0 });
+  			}
+  		}
+  	}, {
+  		key: 'getEmotionAndSentiment',
+  		value: function () {
+  			var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(content) {
+  				var _this3 = this;
+  
+  				var formData;
+  				return _regenerator2.default.wrap(function _callee2$(_context2) {
+  					while (1) {
+  						switch (_context2.prev = _context2.next) {
+  							case 0:
+  								formData = new FormData();
+  
+  								formData.append("str", content);
+  								_context2.next = 4;
+  								return fetch('http://localhost:8000/textAnalyze', {
+  									method: 'POST',
+  									body: formData
+  								}).then(function (response) {
+  									return response.json();
+  								}).then(function (json) {
+  
+  									var emotions = json.emotion;
+  									var sentiments = json.sentiment;
+  									var response = json.response;
+  
+  									// setting the emotions
+  									var data = [];
+  									for (var p in emotions) {
+  										if (emotions.hasOwnProperty(p)) {
+  											data.push({
+  												'name': p,
+  												'amt': emotions[p]
+  											});
+  										}
+  									}
+  									_this3.setState({ text_emotion: data });
+  
+  									// setting the sentiments
+  									// this.setState({ text_sentiment : [...this.state.text_sentiment, temp]})
+  									var temp = [].concat((0, _toConsumableArray3.default)(_this3.state.text_sentiment), [{
+  										name: 'Sentiment',
+  										pos: sentiments.pos,
+  										neg: sentiments.neg
+  									}]);
+  
+  									_this3.setState({ text_sentiment: temp });
+  									// this.setState({ text_sentiment : tempData })
+  									// this.setState((prevState) => {return { text_sentiment : prevState.text_sentiment.append(temp), text_emotion : data }})
+  
+  									console.log(_this3.state.text_emotion);
+  									console.log(_this3.state.text_sentiment);
+  
+  									//setting the message response
+  									_this3.setState(function (prev) {
+  										messages: prev.messages.push({ id: 1, message: response });
+  									});
+  								}).catch(function (err) {
+  									console.log(err);
+  								});
+  
+  							case 4:
+  							case 'end':
+  								return _context2.stop();
+  						}
+  					}
+  				}, _callee2, this);
+  			}));
+  
+  			function getEmotionAndSentiment(_x) {
+  				return _ref2.apply(this, arguments);
+  			}
+  
+  			return getEmotionAndSentiment;
+  		}()
+  	}, {
+  		key: 'reset',
+  		value: function () {
+  			var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3() {
+  				var data;
+  				return _regenerator2.default.wrap(function _callee3$(_context3) {
+  					while (1) {
+  						switch (_context3.prev = _context3.next) {
+  							case 0:
+  
+  								// patient = Patient.objects.get(pk = int(req['patient_id'])),
+  								// textual_emotional = json.dumps(req['textual_emotional']),
+  								// textual_sentiment = json.dumps(req['textual_sentiment']),
+  								// facial_emotional = json.dumps(req['facial_emotional']),
+  								// textual_conversation = json.dumps(req['messages'])
+  
+  								data = {
+  									patient_id: this.state.selectedPatient,
+  									textual_emotional: this.state.text_emotion,
+  									textual_sentiment: this.state.text_sentiment,
+  									facial_emotional: this.state.face_emotion,
+  									messages: this.state.messages
+  								};
+  
+  
+  								console.log(data);
+  
+  								_context3.next = 4;
+  								return fetch('http://localhost:8000/session', {
+  									method: 'POST',
+  									headers: {
+  										'Accept': 'application/json',
+  										'Content-Type': 'application/json'
+  									},
+  									body: (0, _stringify2.default)(data)
+  								}).then(function (response) {
+  									return response.json();
+  								}).then(function (json) {
+  									console.log(json);
+  								}).catch(function (err) {
+  									return console.log(err);
+  								});
+  
+  							case 4:
+  
+  								this.setState({
+  									running: false,
+  									forceEnd: true,
+  
+  									// text emotion analysis
+  									text_emotion: [{ name: 'No Emotion', amt: 0 }],
+  
+  									// text sentiment analysis
+  									text_sentiment: [{ name: 'No Emotion', pos: 0, neg: 0 }],
+  
+  									// face emotion analysis
+  									face_emotion: [{ name: 'No Emotion', amt: 0 }],
+  
+  									//timer seconds
+  									seconds: 0,
+  
+  									//timer minutes
+  									minutes: 0,
+  
+  									messages: []
+  								});
+  
+  							case 5:
+  							case 'end':
+  								return _context3.stop();
+  						}
+  					}
+  				}, _callee3, this);
+  			}));
+  
+  			function reset() {
+  				return _ref3.apply(this, arguments);
+  			}
+  
+  			return reset;
+  		}()
+  	}, {
+  		key: 'renderWebCam',
+  		value: function renderWebCam() {
+  			return _react2.default.createElement(
+  				'div',
+  				null,
+  				_react2.default.createElement(_reactUserMedia2.default, {
+  					audio: false,
+  					height: 135,
+  					ref: this.setWebcamRef,
+  					captureFormat: 'image/jpeg',
+  					width: 150
+  				})
+  			);
+  		}
+  	}, {
+  		key: 'renderStartStopButton',
+  		value: function renderStartStopButton() {
+  			var _this4 = this;
+  
+  			if (!this.state.running) {
+  				return _react2.default.createElement(
+  					'button',
+  					{
+  						className: 'btn btn-success',
+  						onClick: function onClick() {
+  							_this4.recognition.start();
+  						}
+  					},
+  					'Start'
+  				);
+  			} else {
+  				return _react2.default.createElement(
+  					'button',
+  					{
+  						className: 'btn btn-warning',
+  						onClick: function onClick() {
+  							if (!_this4.state.forceEnd) {
+  								_this4.setState({ forceEnd: true });
+  							}
+  							_this4.recognition.stop();
+  						}
+  					},
+  					'Pause'
+  				);
+  			}
+  		}
+  	}, {
+  		key: 'render',
+  		value: function render() {
+  			var _this5 = this;
+  
+  			return _react2.default.createElement(
+  				'div',
+  				null,
+  				_react2.default.createElement(
+  					'div',
+  					{ className: 'row' },
+  					_react2.default.createElement(
+  						'div',
+  						{ className: 'col-lg-12' },
+  						_react2.default.createElement(
+  							_reactBootstrap.PageHeader,
+  							null,
+  							_react2.default.createElement(
+  								'div',
+  								{ className: 'row' },
+  								_react2.default.createElement(
+  									'div',
+  									{ className: 'col-lg-3' },
+  									_react2.default.createElement(
+  										'span',
+  										null,
+  										'Assitant'
+  									)
+  								),
+  								_react2.default.createElement(
+  									'div',
+  									{ className: 'col-lg-6' },
+  									_react2.default.createElement(
+  										_reactBootstrap.FormGroup,
+  										{ controlId: 'formControlsSelect' },
+  										_react2.default.createElement(
+  											_reactBootstrap.ControlLabel,
+  											null,
+  											_react2.default.createElement(
+  												'h4',
+  												null,
+  												'Patient'
+  											)
+  										),
+  										_react2.default.createElement(
+  											_reactBootstrap.FormControl,
+  											{
+  												componentClass: 'select',
+  												placeholder: 'select',
+  												onChange: function onChange(e) {
+  													_this5.state.selectedPatient = e.target.value;
+  												} },
+  											this.state.patients.map(function (data, i) {
+  												return _react2.default.createElement(
+  													'option',
+  													{ value: data.id },
+  													data.name
+  												);
+  											})
+  										)
+  									)
+  								),
+  								_react2.default.createElement(
+  									'div',
+  									{ className: 'col-lg-3' },
+  									_react2.default.createElement(
+  										'div',
+  										{ className: 'pull-right' },
+  										this.renderStartStopButton(),
+  										_react2.default.createElement(
+  											'button',
+  											{
+  												className: 'btn btn-danger',
+  												onClick: function onClick() {
+  													if (!_this5.state.forceEnd) {
+  														_this5.setState({ forceEnd: true });
+  													}
+  													_this5.recognition.stop();
+  													_this5.reset();
+  												}
+  											},
+  											'Stop'
+  										)
+  									)
+  								)
+  							),
+  							_react2.default.createElement(
+  								'div',
+  								{ className: 'row' },
+  								_react2.default.createElement(
+  									'div',
+  									{ className: 'pull-right' },
+  									_react2.default.createElement(
+  										'p',
+  										null,
+  										this.state.minutes,
+  										' : ',
+  										this.state.seconds
+  									)
+  								)
+  							)
+  						)
+  					)
+  				),
+  				_react2.default.createElement(
+  					'div',
+  					{ className: 'row' },
+  					_react2.default.createElement(
+  						'div',
+  						{ className: 'col-lg-3' },
+  						_react2.default.createElement(
+  							_reactBootstrap.Panel,
+  							{
+  								header: _react2.default.createElement(
+  									'span',
+  									null,
+  									_react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
+  									' Video Stream',
+  									_react2.default.createElement('div', null)
+  								)
+  							},
+  							_react2.default.createElement(
+  								'div',
+  								null,
+  								this.renderWebCam()
+  							)
+  						),
+  						_react2.default.createElement(
+  							_reactBootstrap.Panel,
+  							{
+  								header: _react2.default.createElement(
+  									'span',
+  									null,
+  									_react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
+  									' Text Stream',
+  									_react2.default.createElement('div', null)
+  								)
+  							},
+  							_react2.default.createElement(
+  								'div',
+  								null,
+  								_react2.default.createElement(_Chat2.default, {
+  									messages: this.state.messages
+  								})
+  							)
+  						)
+  					),
+  					_react2.default.createElement(
+  						'div',
+  						{ className: 'col-lg-9' },
+  						_react2.default.createElement(
+  							'div',
+  							{ className: 'row' },
+  							_react2.default.createElement(
+  								'div',
+  								{ className: 'col-lg-6' },
+  								_react2.default.createElement(
+  									_reactBootstrap.Panel,
+  									{
+  										header: _react2.default.createElement(
+  											'span',
+  											null,
+  											_react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
+  											' Textual Emotion Analysis'
+  										)
+  									},
+  									_react2.default.createElement(
+  										'div',
+  										null,
+  										_react2.default.createElement(
+  											_recharts.ResponsiveContainer,
+  											{ width: '100%', aspect: 2 },
+  											_react2.default.createElement(
+  												_recharts.BarChart,
+  												{
+  													data: this.state.text_emotion,
+  													margin: { top: 10, right: 30, left: 0, bottom: 0 } },
+  												_react2.default.createElement(_recharts.CartesianGrid, { stroke: '#ccc' }),
+  												_react2.default.createElement(_recharts.XAxis, { dataKey: 'name' }),
+  												_react2.default.createElement(_recharts.YAxis, null),
+  												_react2.default.createElement(_recharts.Tooltip, null),
+  												_react2.default.createElement(_recharts.Bar, { type: 'monotone', dataKey: 'amt', fill: '#ffc658', isAnimationActive: false })
+  											)
+  										)
+  									)
+  								)
+  							),
+  							_react2.default.createElement(
+  								'div',
+  								{ className: 'col-lg-6' },
+  								_react2.default.createElement(
+  									_reactBootstrap.Panel,
+  									{
+  										header: _react2.default.createElement(
+  											'span',
+  											null,
+  											_react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
+  											' Visual Emotional Analysis'
+  										)
+  									},
+  									_react2.default.createElement(
+  										'div',
+  										null,
+  										_react2.default.createElement(
+  											_recharts.ResponsiveContainer,
+  											{ width: '100%', aspect: 2 },
+  											_react2.default.createElement(
+  												_recharts.BarChart,
+  												{ data: this.state.face_emotion, margin: { top: 10, right: 30, left: 0, bottom: 0 } },
+  												_react2.default.createElement(_recharts.CartesianGrid, { stroke: '#ccc' }),
+  												_react2.default.createElement(_recharts.XAxis, { dataKey: 'name' }),
+  												_react2.default.createElement(_recharts.YAxis, null),
+  												_react2.default.createElement(_recharts.Tooltip, null),
+  												_react2.default.createElement(_recharts.Bar, { type: 'monotone', dataKey: 'amt', fill: '#ffc658', isAnimationActive: false })
+  											)
+  										)
+  									)
+  								)
+  							)
+  						),
+  						_react2.default.createElement(
+  							'div',
+  							{ className: 'row' },
+  							_react2.default.createElement(
+  								'div',
+  								{ className: 'col-lg-12' },
+  								_react2.default.createElement(
+  									_reactBootstrap.Panel,
+  									{
+  										header: _react2.default.createElement(
+  											'span',
+  											null,
+  											_react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
+  											' Textual Sentimental Analysis'
+  										)
+  									},
+  									_react2.default.createElement(
+  										'div',
+  										null,
+  										_react2.default.createElement(
+  											_recharts.ResponsiveContainer,
+  											{ width: '100%', aspect: 2 },
+  											_react2.default.createElement(
+  												_recharts.LineChart,
+  												{ data: this.state.text_sentiment, margin: { top: 10, right: 30, left: 0, bottom: 0 } },
+  												_react2.default.createElement(_recharts.XAxis, { dataKey: 'name' }),
+  												_react2.default.createElement(_recharts.YAxis, null),
+  												_react2.default.createElement(_recharts.CartesianGrid, { stroke: '#ccc' }),
+  												_react2.default.createElement(_recharts.Tooltip, null),
+  												_react2.default.createElement(_recharts.Line, { type: 'monotone', dataKey: 'pos', stackId: '1', stroke: '#8884d8', fill: '#8884d8', isAnimationActive: false }),
+  												_react2.default.createElement(_recharts.Line, { type: 'monotone', dataKey: 'neg', stackId: '1', stroke: '#82ca9d', fill: '#82ca9d', isAnimationActive: false })
+  											)
+  										)
+  									)
+  								)
+  							)
+  						)
+  					)
+  				)
+  			);
+  		}
+  	}]);
+  	return Initiate;
+  }(_react.Component);
+  
+  exports.default = (0, _withStyles2.default)(_Initiate2.default)(Initiate);
+
+/***/ }),
+/* 102 */
+/***/ (function(module, exports, __webpack_require__) {
+
+  
+      var content = __webpack_require__(103);
+      var insertCss = __webpack_require__(22);
+  
+      if (typeof content === 'string') {
+        content = [[module.id, content, '']];
+      }
+  
+      module.exports = content.locals || {};
+      module.exports._getCss = function() { return content.toString(); };
+      module.exports._insertCss = function(options) { return insertCss(content, options) };
+    
+      // Hot Module Replacement
+      // https://webpack.github.io/docs/hot-module-replacement
+      // Only activated in browser context
+      if (false) {
+        var removeCss = function() {};
+        module.hot.accept("!!../../../node_modules/css-loader/index.js?{\"sourceMap\":true,\"modules\":true,\"localIdentName\":\"[name]_[local]_[hash:base64:3]\",\"minimize\":false}!../../../node_modules/postcss-loader/index.js?pack=default!./Initiate.css", function() {
+          content = require("!!../../../node_modules/css-loader/index.js?{\"sourceMap\":true,\"modules\":true,\"localIdentName\":\"[name]_[local]_[hash:base64:3]\",\"minimize\":false}!../../../node_modules/postcss-loader/index.js?pack=default!./Initiate.css");
+  
+          if (typeof content === 'string') {
+            content = [[module.id, content, '']];
+          }
+  
+          removeCss = insertCss(content, { replace: true });
+        });
+        module.hot.dispose(function() { removeCss(); });
+      }
+    
+
+/***/ }),
+/* 103 */
+/***/ (function(module, exports, __webpack_require__) {
+
+  exports = module.exports = __webpack_require__(21)();
+  // imports
+  
+  
+  // module
+  exports.push([module.id, "/**\n * React Starter Kit (https://www.reactstarterkit.com/)\n *\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE.txt file in the root directory of this source tree.\n */\n\n/**\n * React Starter Kit (https://www.reactstarterkit.com/)\n *\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE.txt file in the root directory of this source tree.\n */\n\n:root {\n  /*\n   * Typography\n   * ======================================================================== */\n\n  /*\n   * Layout\n   * ======================================================================== */\n\n  /*\n   * Media queries breakpoints\n   * ======================================================================== */  /* Extra small screen / phone */  /* Small screen / tablet */  /* Medium screen / desktop */ /* Large screen / wide desktop */\n}\n\n.Initiate_root_28e {\n  padding-left: 20px;\n  padding-right: 20px;\n}\n\n.Initiate_container_3rT {\n  margin: 0 auto;\n  padding: 0 0 40px;\n  max-width: 1000px;\n}\n\n.Initiate_news_3dl {\n  padding: 0;\n}\n\n.Initiate_newsItem_3fU {\n  list-style-type: none;\n  padding-bottom: 6px;\n}\n\n.Initiate_newsTitle_3-B {\n  font-size: 1.125em;\n}\n\n.Initiate_newsTitle_3-B,\n.Initiate_newsDesc_3St {\n  display: block;\n}\n", "", {"version":3,"sources":["/./routes/initiate/Initiate.css","/./components/variables.css"],"names":[],"mappings":"AAAA;;;;;;;GAOG;;ACPH;;;;;;;GAOG;;AAEH;EACE;;gFAE8E;;EAI9E;;gFAE8E;;EAI9E;;gFAE8E,EAErD,gCAAgC,EAChC,2BAA2B,EAC3B,6BAA6B,CAC7B,iCAAiC;CAC3D;;ADnBD;EACE,mBAAmB;EACnB,oBAAoB;CACrB;;AAED;EACE,eAAe;EACf,kBAAkB;EAClB,kBAAoC;CACrC;;AAED;EACE,WAAW;CACZ;;AAED;EACE,sBAAsB;EACtB,oBAAoB;CACrB;;AAED;EACE,mBAAmB;CACpB;;AAED;;EAEE,eAAe;CAChB","file":"Initiate.css","sourcesContent":["/**\n * React Starter Kit (https://www.reactstarterkit.com/)\n *\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE.txt file in the root directory of this source tree.\n */\n\n@import '../../components/variables.css';\n\n.root {\n  padding-left: 20px;\n  padding-right: 20px;\n}\n\n.container {\n  margin: 0 auto;\n  padding: 0 0 40px;\n  max-width: var(--max-content-width);\n}\n\n.news {\n  padding: 0;\n}\n\n.newsItem {\n  list-style-type: none;\n  padding-bottom: 6px;\n}\n\n.newsTitle {\n  font-size: 1.125em;\n}\n\n.newsTitle,\n.newsDesc {\n  display: block;\n}\n","/**\n * React Starter Kit (https://www.reactstarterkit.com/)\n *\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE.txt file in the root directory of this source tree.\n */\n\n:root {\n  /*\n   * Typography\n   * ======================================================================== */\n\n  --font-family-base: 'Segoe UI', 'HelveticaNeue-Light', sans-serif;\n\n  /*\n   * Layout\n   * ======================================================================== */\n\n  --max-content-width: 1000px;\n\n  /*\n   * Media queries breakpoints\n   * ======================================================================== */\n\n  --screen-xs-min: 480px;  /* Extra small screen / phone */\n  --screen-sm-min: 768px;  /* Small screen / tablet */\n  --screen-md-min: 992px;  /* Medium screen / desktop */\n  --screen-lg-min: 1200px; /* Large screen / wide desktop */\n}\n"],"sourceRoot":"webpack://"}]);
+  
+  // exports
+  exports.locals = {
+  	"root": "Initiate_root_28e",
+  	"container": "Initiate_container_3rT",
+  	"news": "Initiate_news_3dl",
+  	"newsItem": "Initiate_newsItem_3fU",
+  	"newsTitle": "Initiate_newsTitle_3-B",
+  	"newsDesc": "Initiate_newsDesc_3St"
+  };
+
+/***/ }),
+/* 104 */
+/***/ (function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
   exports.ComposedChart = exports.RadialBarChart = exports.AreaChart = exports.ScatterChart = exports.RadarChart = exports.Sankey = exports.Treemap = exports.PieChart = exports.BarChart = exports.LineChart = exports.ZAxis = exports.YAxis = exports.XAxis = exports.Scatter = exports.Bar = exports.Area = exports.Line = exports.CartesianGrid = exports.CartesianAxis = exports.ReferenceArea = exports.ReferenceDot = exports.ReferenceLine = exports.Brush = exports.RadialBar = exports.Radar = exports.Pie = exports.PolarAngleAxis = exports.PolarRadiusAxis = exports.PolarGrid = exports.Symbols = exports.Cross = exports.Dot = exports.Polygon = exports.Rectangle = exports.Curve = exports.Sector = exports.Text = exports.Cell = exports.ResponsiveContainer = exports.Tooltip = exports.Legend = exports.Layer = exports.Surface = undefined;
   
-  __webpack_require__(101);
+  __webpack_require__(105);
   
-  __webpack_require__(102);
+  __webpack_require__(106);
   
   var _Surface2 = __webpack_require__(63);
   
@@ -6650,19 +7480,19 @@ module.exports =
   
   var _Curve3 = _interopRequireDefault(_Curve2);
   
-  var _Rectangle2 = __webpack_require__(103);
+  var _Rectangle2 = __webpack_require__(107);
   
   var _Rectangle3 = _interopRequireDefault(_Rectangle2);
   
-  var _Polygon2 = __webpack_require__(105);
+  var _Polygon2 = __webpack_require__(109);
   
   var _Polygon3 = _interopRequireDefault(_Polygon2);
   
-  var _Dot2 = __webpack_require__(106);
+  var _Dot2 = __webpack_require__(110);
   
   var _Dot3 = _interopRequireDefault(_Dot2);
   
-  var _Cross2 = __webpack_require__(107);
+  var _Cross2 = __webpack_require__(111);
   
   var _Cross3 = _interopRequireDefault(_Cross2);
   
@@ -6670,15 +7500,15 @@ module.exports =
   
   var _Symbols3 = _interopRequireDefault(_Symbols2);
   
-  var _PolarGrid2 = __webpack_require__(108);
+  var _PolarGrid2 = __webpack_require__(112);
   
   var _PolarGrid3 = _interopRequireDefault(_PolarGrid2);
   
-  var _PolarRadiusAxis2 = __webpack_require__(109);
+  var _PolarRadiusAxis2 = __webpack_require__(113);
   
   var _PolarRadiusAxis3 = _interopRequireDefault(_PolarRadiusAxis2);
   
-  var _PolarAngleAxis2 = __webpack_require__(111);
+  var _PolarAngleAxis2 = __webpack_require__(115);
   
   var _PolarAngleAxis3 = _interopRequireDefault(_PolarAngleAxis2);
   
@@ -6686,71 +7516,71 @@ module.exports =
   
   var _Pie3 = _interopRequireDefault(_Pie2);
   
-  var _Radar2 = __webpack_require__(112);
+  var _Radar2 = __webpack_require__(116);
   
   var _Radar3 = _interopRequireDefault(_Radar2);
   
-  var _RadialBar2 = __webpack_require__(113);
+  var _RadialBar2 = __webpack_require__(117);
   
   var _RadialBar3 = _interopRequireDefault(_RadialBar2);
   
-  var _Brush2 = __webpack_require__(115);
+  var _Brush2 = __webpack_require__(119);
   
   var _Brush3 = _interopRequireDefault(_Brush2);
   
-  var _ReferenceLine2 = __webpack_require__(118);
+  var _ReferenceLine2 = __webpack_require__(122);
   
   var _ReferenceLine3 = _interopRequireDefault(_ReferenceLine2);
   
-  var _ReferenceDot2 = __webpack_require__(120);
+  var _ReferenceDot2 = __webpack_require__(124);
   
   var _ReferenceDot3 = _interopRequireDefault(_ReferenceDot2);
   
-  var _ReferenceArea2 = __webpack_require__(121);
+  var _ReferenceArea2 = __webpack_require__(125);
   
   var _ReferenceArea3 = _interopRequireDefault(_ReferenceArea2);
   
-  var _CartesianAxis2 = __webpack_require__(122);
+  var _CartesianAxis2 = __webpack_require__(126);
   
   var _CartesianAxis3 = _interopRequireDefault(_CartesianAxis2);
   
-  var _CartesianGrid2 = __webpack_require__(123);
+  var _CartesianGrid2 = __webpack_require__(127);
   
   var _CartesianGrid3 = _interopRequireDefault(_CartesianGrid2);
   
-  var _Line2 = __webpack_require__(124);
+  var _Line2 = __webpack_require__(128);
   
   var _Line3 = _interopRequireDefault(_Line2);
   
-  var _Area2 = __webpack_require__(125);
+  var _Area2 = __webpack_require__(129);
   
   var _Area3 = _interopRequireDefault(_Area2);
   
-  var _Bar2 = __webpack_require__(126);
+  var _Bar2 = __webpack_require__(130);
   
   var _Bar3 = _interopRequireDefault(_Bar2);
   
-  var _Scatter2 = __webpack_require__(127);
+  var _Scatter2 = __webpack_require__(131);
   
   var _Scatter3 = _interopRequireDefault(_Scatter2);
   
-  var _XAxis2 = __webpack_require__(128);
+  var _XAxis2 = __webpack_require__(132);
   
   var _XAxis3 = _interopRequireDefault(_XAxis2);
   
-  var _YAxis2 = __webpack_require__(129);
+  var _YAxis2 = __webpack_require__(133);
   
   var _YAxis3 = _interopRequireDefault(_YAxis2);
   
-  var _ZAxis2 = __webpack_require__(130);
+  var _ZAxis2 = __webpack_require__(134);
   
   var _ZAxis3 = _interopRequireDefault(_ZAxis2);
   
-  var _LineChart2 = __webpack_require__(131);
+  var _LineChart2 = __webpack_require__(135);
   
   var _LineChart3 = _interopRequireDefault(_LineChart2);
   
-  var _BarChart2 = __webpack_require__(138);
+  var _BarChart2 = __webpack_require__(142);
   
   var _BarChart3 = _interopRequireDefault(_BarChart2);
   
@@ -6758,31 +7588,31 @@ module.exports =
   
   var _PieChart3 = _interopRequireDefault(_PieChart2);
   
-  var _Treemap2 = __webpack_require__(139);
+  var _Treemap2 = __webpack_require__(143);
   
   var _Treemap3 = _interopRequireDefault(_Treemap2);
   
-  var _Sankey2 = __webpack_require__(140);
+  var _Sankey2 = __webpack_require__(144);
   
   var _Sankey3 = _interopRequireDefault(_Sankey2);
   
-  var _RadarChart2 = __webpack_require__(143);
+  var _RadarChart2 = __webpack_require__(147);
   
   var _RadarChart3 = _interopRequireDefault(_RadarChart2);
   
-  var _ScatterChart2 = __webpack_require__(144);
+  var _ScatterChart2 = __webpack_require__(148);
   
   var _ScatterChart3 = _interopRequireDefault(_ScatterChart2);
   
-  var _AreaChart2 = __webpack_require__(145);
+  var _AreaChart2 = __webpack_require__(149);
   
   var _AreaChart3 = _interopRequireDefault(_AreaChart2);
   
-  var _RadialBarChart2 = __webpack_require__(146);
+  var _RadialBarChart2 = __webpack_require__(150);
   
   var _RadialBarChart3 = _interopRequireDefault(_RadialBarChart2);
   
-  var _ComposedChart2 = __webpack_require__(147);
+  var _ComposedChart2 = __webpack_require__(151);
   
   var _ComposedChart3 = _interopRequireDefault(_ComposedChart2);
   
@@ -6835,7 +7665,7 @@ module.exports =
   exports.ComposedChart = _ComposedChart3.default;
 
 /***/ }),
-/* 101 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -6869,13 +7699,13 @@ module.exports =
   }
 
 /***/ }),
-/* 102 */
+/* 106 */
 /***/ (function(module, exports) {
 
   module.exports = require("core-js/es6/math");
 
 /***/ }),
-/* 103 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -6946,7 +7776,7 @@ module.exports =
   
   var _classnames2 = _interopRequireDefault(_classnames);
   
-  var _reactDom = __webpack_require__(104);
+  var _reactDom = __webpack_require__(108);
   
   var _reactSmooth = __webpack_require__(84);
   
@@ -7144,13 +7974,13 @@ module.exports =
   exports.default = Rectangle;
 
 /***/ }),
-/* 104 */
+/* 108 */
 /***/ (function(module, exports) {
 
   module.exports = require("react-dom");
 
 /***/ }),
-/* 105 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -7300,7 +8130,7 @@ module.exports =
   exports.default = Polygon;
 
 /***/ }),
-/* 106 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -7439,7 +8269,7 @@ module.exports =
   exports.default = Dot;
 
 /***/ }),
-/* 107 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -7598,7 +8428,7 @@ module.exports =
   exports.default = Cross;
 
 /***/ }),
-/* 108 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -7859,7 +8689,7 @@ module.exports =
   exports.default = PolarGrid;
 
 /***/ }),
-/* 109 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -7902,7 +8732,7 @@ module.exports =
   
   var _isString3 = _interopRequireDefault(_isString2);
   
-  var _maxBy2 = __webpack_require__(110);
+  var _maxBy2 = __webpack_require__(114);
   
   var _maxBy3 = _interopRequireDefault(_maxBy2);
   
@@ -8185,13 +9015,13 @@ module.exports =
   exports.default = PolarRadiusAxis;
 
 /***/ }),
-/* 110 */
+/* 114 */
 /***/ (function(module, exports) {
 
   module.exports = require("lodash/maxBy");
 
 /***/ }),
-/* 111 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -8268,11 +9098,11 @@ module.exports =
   
   var _ReactUtils = __webpack_require__(64);
   
-  var _Dot = __webpack_require__(106);
+  var _Dot = __webpack_require__(110);
   
   var _Dot2 = _interopRequireDefault(_Dot);
   
-  var _Polygon = __webpack_require__(105);
+  var _Polygon = __webpack_require__(109);
   
   var _Polygon2 = _interopRequireDefault(_Polygon);
   
@@ -8499,7 +9329,7 @@ module.exports =
   exports.default = PolarAngleAxis;
 
 /***/ }),
-/* 112 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -8576,11 +9406,11 @@ module.exports =
   
   var _ReactUtils = __webpack_require__(64);
   
-  var _Polygon = __webpack_require__(105);
+  var _Polygon = __webpack_require__(109);
   
   var _Polygon2 = _interopRequireDefault(_Polygon);
   
-  var _Dot = __webpack_require__(106);
+  var _Dot = __webpack_require__(110);
   
   var _Dot2 = _interopRequireDefault(_Dot);
   
@@ -8847,7 +9677,7 @@ module.exports =
   exports.default = Radar;
 
 /***/ }),
-/* 113 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -8886,7 +9716,7 @@ module.exports =
     value: true
   });
   
-  var _uniqueId2 = __webpack_require__(114);
+  var _uniqueId2 = __webpack_require__(118);
   
   var _uniqueId3 = _interopRequireDefault(_uniqueId2);
   
@@ -9280,13 +10110,13 @@ module.exports =
   exports.default = RadialBar;
 
 /***/ }),
-/* 114 */
+/* 118 */
 /***/ (function(module, exports) {
 
   module.exports = require("lodash/uniqueId");
 
 /***/ }),
-/* 115 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -9317,7 +10147,7 @@ module.exports =
     value: true
   });
   
-  var _range2 = __webpack_require__(116);
+  var _range2 = __webpack_require__(120);
   
   var _range3 = _interopRequireDefault(_range2);
   
@@ -9347,7 +10177,7 @@ module.exports =
   
   var _classnames2 = _interopRequireDefault(_classnames);
   
-  var _d3Scale = __webpack_require__(117);
+  var _d3Scale = __webpack_require__(121);
   
   var _PureRender = __webpack_require__(72);
   
@@ -9830,19 +10660,19 @@ module.exports =
   exports.default = Brush;
 
 /***/ }),
-/* 116 */
+/* 120 */
 /***/ (function(module, exports) {
 
   module.exports = require("lodash/range");
 
 /***/ }),
-/* 117 */
+/* 121 */
 /***/ (function(module, exports) {
 
   module.exports = require("d3-scale");
 
 /***/ }),
-/* 118 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -9871,7 +10701,7 @@ module.exports =
   
   var _assign2 = _interopRequireDefault2(_assign);
   
-  var _isIterable2 = __webpack_require__(119);
+  var _isIterable2 = __webpack_require__(123);
   
   var _isIterable3 = _interopRequireDefault2(_isIterable2);
   
@@ -10161,13 +10991,13 @@ module.exports =
   exports.default = ReferenceLine;
 
 /***/ }),
-/* 119 */
+/* 123 */
 /***/ (function(module, exports) {
 
   module.exports = require("babel-runtime/core-js/is-iterable");
 
 /***/ }),
-/* 120 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -10250,7 +11080,7 @@ module.exports =
   
   var _Layer2 = _interopRequireDefault(_Layer);
   
-  var _Dot = __webpack_require__(106);
+  var _Dot = __webpack_require__(110);
   
   var _Dot2 = _interopRequireDefault(_Dot);
   
@@ -10417,7 +11247,7 @@ module.exports =
   exports.default = ReferenceDot;
 
 /***/ }),
-/* 121 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -10500,7 +11330,7 @@ module.exports =
   
   var _Layer2 = _interopRequireDefault(_Layer);
   
-  var _Dot = __webpack_require__(106);
+  var _Dot = __webpack_require__(110);
   
   var _Dot2 = _interopRequireDefault(_Dot);
   
@@ -10714,7 +11544,7 @@ module.exports =
   exports.default = ReferenceArea;
 
 /***/ }),
-/* 122 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -11210,7 +12040,7 @@ module.exports =
   exports.default = CartesianAxis;
 
 /***/ }),
-/* 123 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -11406,7 +12236,7 @@ module.exports =
   exports.default = CartesianGrid;
 
 /***/ }),
-/* 124 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -11491,7 +12321,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _reactDom = __webpack_require__(104);
+  var _reactDom = __webpack_require__(108);
   
   var _reactSmooth = __webpack_require__(84);
   
@@ -11509,7 +12339,7 @@ module.exports =
   
   var _Curve2 = _interopRequireDefault(_Curve);
   
-  var _Dot = __webpack_require__(106);
+  var _Dot = __webpack_require__(110);
   
   var _Dot2 = _interopRequireDefault(_Dot);
   
@@ -11897,7 +12727,7 @@ module.exports =
   exports.default = Line;
 
 /***/ }),
-/* 125 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -11980,7 +12810,7 @@ module.exports =
   
   var _Curve2 = _interopRequireDefault(_Curve);
   
-  var _Dot = __webpack_require__(106);
+  var _Dot = __webpack_require__(110);
   
   var _Dot2 = _interopRequireDefault(_Dot);
   
@@ -12351,7 +13181,7 @@ module.exports =
   exports.default = Area;
 
 /***/ }),
-/* 126 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -12430,7 +13260,7 @@ module.exports =
   
   var _reactSmooth2 = _interopRequireDefault(_reactSmooth);
   
-  var _Rectangle = __webpack_require__(103);
+  var _Rectangle = __webpack_require__(107);
   
   var _Rectangle2 = _interopRequireDefault(_Rectangle);
   
@@ -12693,7 +13523,7 @@ module.exports =
   exports.default = Bar;
 
 /***/ }),
-/* 127 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -12997,7 +13827,7 @@ module.exports =
   exports.default = Scatter;
 
 /***/ }),
-/* 128 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -13137,7 +13967,7 @@ module.exports =
   exports.default = XAxis;
 
 /***/ }),
-/* 129 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -13277,7 +14107,7 @@ module.exports =
   exports.default = YAxis;
 
 /***/ }),
-/* 130 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -13388,7 +14218,7 @@ module.exports =
   exports.default = ZAxis;
 
 /***/ }),
-/* 131 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -13428,7 +14258,7 @@ module.exports =
   
   var _isFunction3 = _interopRequireDefault(_isFunction2);
   
-  var _isNil2 = __webpack_require__(132);
+  var _isNil2 = __webpack_require__(136);
   
   var _isNil3 = _interopRequireDefault(_isNil2);
   
@@ -13472,15 +14302,15 @@ module.exports =
   
   var _Curve2 = _interopRequireDefault(_Curve);
   
-  var _Dot = __webpack_require__(106);
+  var _Dot = __webpack_require__(110);
   
   var _Dot2 = _interopRequireDefault(_Dot);
   
-  var _generateCategoricalChart = __webpack_require__(133);
+  var _generateCategoricalChart = __webpack_require__(137);
   
   var _generateCategoricalChart2 = _interopRequireDefault(_generateCategoricalChart);
   
-  var _Line = __webpack_require__(124);
+  var _Line = __webpack_require__(128);
   
   var _Line2 = _interopRequireDefault(_Line);
   
@@ -13490,7 +14320,7 @@ module.exports =
   
   var _PureRender2 = _interopRequireDefault(_PureRender);
   
-  var _CartesianUtils = __webpack_require__(134);
+  var _CartesianUtils = __webpack_require__(138);
   
   var _DataUtils = __webpack_require__(96);
   
@@ -13723,13 +14553,13 @@ module.exports =
   exports.LineChart = LineChart;
 
 /***/ }),
-/* 132 */
+/* 136 */
 /***/ (function(module, exports) {
 
   module.exports = require("lodash/isNil");
 
 /***/ }),
-/* 133 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -13772,15 +14602,15 @@ module.exports =
   
   var _isNumber3 = _interopRequireDefault(_isNumber2);
   
-  var _range2 = __webpack_require__(116);
+  var _range2 = __webpack_require__(120);
   
   var _range3 = _interopRequireDefault(_range2);
   
-  var _isNil2 = __webpack_require__(132);
+  var _isNil2 = __webpack_require__(136);
   
   var _isNil3 = _interopRequireDefault(_isNil2);
   
-  var _uniqueId2 = __webpack_require__(114);
+  var _uniqueId2 = __webpack_require__(118);
   
   var _uniqueId3 = _interopRequireDefault(_uniqueId2);
   
@@ -13808,11 +14638,11 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _reactDom = __webpack_require__(104);
+  var _reactDom = __webpack_require__(108);
   
   var _reactDom2 = _interopRequireDefault(_reactDom);
   
-  var _d3Scale = __webpack_require__(117);
+  var _d3Scale = __webpack_require__(121);
   
   var _classnames = __webpack_require__(46);
   
@@ -13838,35 +14668,35 @@ module.exports =
   
   var _ReactUtils = __webpack_require__(64);
   
-  var _CartesianAxis = __webpack_require__(122);
+  var _CartesianAxis = __webpack_require__(126);
   
   var _CartesianAxis2 = _interopRequireDefault(_CartesianAxis);
   
-  var _CartesianGrid = __webpack_require__(123);
+  var _CartesianGrid = __webpack_require__(127);
   
   var _CartesianGrid2 = _interopRequireDefault(_CartesianGrid);
   
-  var _ReferenceLine = __webpack_require__(118);
+  var _ReferenceLine = __webpack_require__(122);
   
   var _ReferenceLine2 = _interopRequireDefault(_ReferenceLine);
   
-  var _ReferenceDot = __webpack_require__(120);
+  var _ReferenceDot = __webpack_require__(124);
   
   var _ReferenceDot2 = _interopRequireDefault(_ReferenceDot);
   
-  var _ReferenceArea = __webpack_require__(121);
+  var _ReferenceArea = __webpack_require__(125);
   
   var _ReferenceArea2 = _interopRequireDefault(_ReferenceArea);
   
-  var _XAxis = __webpack_require__(128);
+  var _XAxis = __webpack_require__(132);
   
   var _XAxis2 = _interopRequireDefault(_XAxis);
   
-  var _YAxis = __webpack_require__(129);
+  var _YAxis = __webpack_require__(133);
   
   var _YAxis2 = _interopRequireDefault(_YAxis);
   
-  var _Brush = __webpack_require__(115);
+  var _Brush = __webpack_require__(119);
   
   var _Brush2 = _interopRequireDefault(_Brush);
   
@@ -13878,9 +14708,9 @@ module.exports =
   
   var _DataUtils = __webpack_require__(96);
   
-  var _CartesianUtils = __webpack_require__(134);
+  var _CartesianUtils = __webpack_require__(138);
   
-  var _Events = __webpack_require__(136);
+  var _Events = __webpack_require__(140);
   
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
@@ -14796,7 +15626,7 @@ module.exports =
   exports.default = generateCategoricalChart;
 
 /***/ }),
-/* 134 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -14820,7 +15650,7 @@ module.exports =
   });
   exports.getTicksOfScale = exports.getLegendProps = exports.getMainColorOfGraphicItem = exports.calculateActiveTickIndex = exports.getTicksOfAxis = exports.getCoordinatesOfGrid = exports.isCategorialAxis = exports.getDomainOfItemsWithSameAxis = exports.getDomainOfStackGroups = exports.getDomainOfDataByKey = exports.calculateDomainOfTicks = exports.getStackedDataOfItem = exports.getStackGroupsByAxisId = exports.getStackedData = exports.detectReferenceElementsDomain = undefined;
   
-  var _uniqueId2 = __webpack_require__(114);
+  var _uniqueId2 = __webpack_require__(118);
   
   var _uniqueId3 = _interopRequireDefault(_uniqueId2);
   
@@ -14844,15 +15674,15 @@ module.exports =
   
   var _ReactUtils = __webpack_require__(64);
   
-  var _ReferenceDot = __webpack_require__(120);
+  var _ReferenceDot = __webpack_require__(124);
   
   var _ReferenceDot2 = _interopRequireDefault(_ReferenceDot);
   
-  var _ReferenceLine = __webpack_require__(118);
+  var _ReferenceLine = __webpack_require__(122);
   
   var _ReferenceLine2 = _interopRequireDefault(_ReferenceLine);
   
-  var _ReferenceArea = __webpack_require__(121);
+  var _ReferenceArea = __webpack_require__(125);
   
   var _ReferenceArea2 = _interopRequireDefault(_ReferenceArea);
   
@@ -14860,7 +15690,7 @@ module.exports =
   
   var _Legend2 = _interopRequireDefault(_Legend);
   
-  var _rechartsScale = __webpack_require__(135);
+  var _rechartsScale = __webpack_require__(139);
   
   var _d3Shape = __webpack_require__(79);
   
@@ -15297,13 +16127,13 @@ module.exports =
   };
 
 /***/ }),
-/* 135 */
+/* 139 */
 /***/ (function(module, exports) {
 
   module.exports = require("recharts-scale");
 
 /***/ }),
-/* 136 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -15313,7 +16143,7 @@ module.exports =
   });
   exports.SYNC_EVENT = exports.eventCenter = undefined;
   
-  var _events = __webpack_require__(137);
+  var _events = __webpack_require__(141);
   
   var _events2 = _interopRequireDefault(_events);
   
@@ -15331,13 +16161,13 @@ module.exports =
   var SYNC_EVENT = exports.SYNC_EVENT = 'recharts.syncMouseEvents';
 
 /***/ }),
-/* 137 */
+/* 141 */
 /***/ (function(module, exports) {
 
   module.exports = require("events");
 
 /***/ }),
-/* 138 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -15417,7 +16247,7 @@ module.exports =
   
   var _Tooltip2 = _interopRequireDefault(_Tooltip);
   
-  var _Rectangle = __webpack_require__(103);
+  var _Rectangle = __webpack_require__(107);
   
   var _Rectangle2 = _interopRequireDefault(_Rectangle);
   
@@ -15425,7 +16255,7 @@ module.exports =
   
   var _ReactUtils = __webpack_require__(64);
   
-  var _generateCategoricalChart = __webpack_require__(133);
+  var _generateCategoricalChart = __webpack_require__(137);
   
   var _generateCategoricalChart2 = _interopRequireDefault(_generateCategoricalChart);
   
@@ -15433,7 +16263,7 @@ module.exports =
   
   var _Cell2 = _interopRequireDefault(_Cell);
   
-  var _Bar = __webpack_require__(126);
+  var _Bar = __webpack_require__(130);
   
   var _Bar2 = _interopRequireDefault(_Bar);
   
@@ -15441,7 +16271,7 @@ module.exports =
   
   var _PureRender2 = _interopRequireDefault(_PureRender);
   
-  var _CartesianUtils = __webpack_require__(134);
+  var _CartesianUtils = __webpack_require__(138);
   
   var _AnimationDecorator = __webpack_require__(94);
   
@@ -15814,7 +16644,7 @@ module.exports =
   exports.BarChart = BarChart;
 
 /***/ }),
-/* 139 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -15889,7 +16719,7 @@ module.exports =
   
   var _Layer2 = _interopRequireDefault(_Layer);
   
-  var _Rectangle = __webpack_require__(103);
+  var _Rectangle = __webpack_require__(107);
   
   var _Rectangle2 = _interopRequireDefault(_Rectangle);
   
@@ -16406,7 +17236,7 @@ module.exports =
   exports.default = Treemap;
 
 /***/ }),
-/* 140 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -16449,15 +17279,15 @@ module.exports =
   
   var _isFunction3 = _interopRequireDefault(_isFunction2);
   
-  var _sumBy2 = __webpack_require__(141);
+  var _sumBy2 = __webpack_require__(145);
   
   var _sumBy3 = _interopRequireDefault(_sumBy2);
   
-  var _min2 = __webpack_require__(142);
+  var _min2 = __webpack_require__(146);
   
   var _min3 = _interopRequireDefault(_min2);
   
-  var _maxBy2 = __webpack_require__(110);
+  var _maxBy2 = __webpack_require__(114);
   
   var _maxBy3 = _interopRequireDefault(_maxBy2);
   
@@ -16501,7 +17331,7 @@ module.exports =
   
   var _Tooltip2 = _interopRequireDefault(_Tooltip);
   
-  var _Rectangle = __webpack_require__(103);
+  var _Rectangle = __webpack_require__(107);
   
   var _Rectangle2 = _interopRequireDefault(_Rectangle);
   
@@ -17135,19 +17965,19 @@ module.exports =
   exports.default = Sankey;
 
 /***/ }),
-/* 141 */
+/* 145 */
 /***/ (function(module, exports) {
 
   module.exports = require("lodash/sumBy");
 
 /***/ }),
-/* 142 */
+/* 146 */
 /***/ (function(module, exports) {
 
   module.exports = require("lodash/min");
 
 /***/ }),
-/* 143 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -17182,7 +18012,7 @@ module.exports =
     value: true
   });
   
-  var _range2 = __webpack_require__(116);
+  var _range2 = __webpack_require__(120);
   
   var _range3 = _interopRequireDefault(_range2);
   
@@ -17214,7 +18044,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _reactDom = __webpack_require__(104);
+  var _reactDom = __webpack_require__(108);
   
   var _reactDom2 = _interopRequireDefault(_reactDom);
   
@@ -17222,9 +18052,9 @@ module.exports =
   
   var _classnames2 = _interopRequireDefault(_classnames);
   
-  var _d3Scale = __webpack_require__(117);
+  var _d3Scale = __webpack_require__(121);
   
-  var _rechartsScale = __webpack_require__(135);
+  var _rechartsScale = __webpack_require__(139);
   
   var _Surface = __webpack_require__(63);
   
@@ -17242,19 +18072,19 @@ module.exports =
   
   var _Tooltip2 = _interopRequireDefault(_Tooltip);
   
-  var _Radar = __webpack_require__(112);
+  var _Radar = __webpack_require__(116);
   
   var _Radar2 = _interopRequireDefault(_Radar);
   
-  var _PolarGrid = __webpack_require__(108);
+  var _PolarGrid = __webpack_require__(112);
   
   var _PolarGrid2 = _interopRequireDefault(_PolarGrid);
   
-  var _PolarAngleAxis = __webpack_require__(111);
+  var _PolarAngleAxis = __webpack_require__(115);
   
   var _PolarAngleAxis2 = _interopRequireDefault(_PolarAngleAxis);
   
-  var _PolarRadiusAxis = __webpack_require__(109);
+  var _PolarRadiusAxis = __webpack_require__(113);
   
   var _PolarRadiusAxis2 = _interopRequireDefault(_PolarRadiusAxis);
   
@@ -17798,7 +18628,7 @@ module.exports =
   exports.default = RadarChart;
 
 /***/ }),
-/* 144 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -17869,7 +18699,7 @@ module.exports =
   
   var _classnames2 = _interopRequireDefault(_classnames);
   
-  var _d3Scale = __webpack_require__(117);
+  var _d3Scale = __webpack_require__(121);
   
   var _Surface = __webpack_require__(63);
   
@@ -17891,43 +18721,43 @@ module.exports =
   
   var _Tooltip2 = _interopRequireDefault(_Tooltip);
   
-  var _Cross = __webpack_require__(107);
+  var _Cross = __webpack_require__(111);
   
   var _Cross2 = _interopRequireDefault(_Cross);
   
-  var _CartesianAxis = __webpack_require__(122);
+  var _CartesianAxis = __webpack_require__(126);
   
   var _CartesianAxis2 = _interopRequireDefault(_CartesianAxis);
   
-  var _CartesianGrid = __webpack_require__(123);
+  var _CartesianGrid = __webpack_require__(127);
   
   var _CartesianGrid2 = _interopRequireDefault(_CartesianGrid);
   
-  var _Scatter = __webpack_require__(127);
+  var _Scatter = __webpack_require__(131);
   
   var _Scatter2 = _interopRequireDefault(_Scatter);
   
-  var _XAxis = __webpack_require__(128);
+  var _XAxis = __webpack_require__(132);
   
   var _XAxis2 = _interopRequireDefault(_XAxis);
   
-  var _YAxis = __webpack_require__(129);
+  var _YAxis = __webpack_require__(133);
   
   var _YAxis2 = _interopRequireDefault(_YAxis);
   
-  var _ZAxis = __webpack_require__(130);
+  var _ZAxis = __webpack_require__(134);
   
   var _ZAxis2 = _interopRequireDefault(_ZAxis);
   
-  var _ReferenceLine = __webpack_require__(118);
+  var _ReferenceLine = __webpack_require__(122);
   
   var _ReferenceLine2 = _interopRequireDefault(_ReferenceLine);
   
-  var _ReferenceDot = __webpack_require__(120);
+  var _ReferenceDot = __webpack_require__(124);
   
   var _ReferenceDot2 = _interopRequireDefault(_ReferenceDot);
   
-  var _ReferenceArea = __webpack_require__(121);
+  var _ReferenceArea = __webpack_require__(125);
   
   var _ReferenceArea2 = _interopRequireDefault(_ReferenceArea);
   
@@ -17941,7 +18771,7 @@ module.exports =
   
   var _LogUtils = __webpack_require__(99);
   
-  var _CartesianUtils = __webpack_require__(134);
+  var _CartesianUtils = __webpack_require__(138);
   
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
@@ -18505,7 +19335,7 @@ module.exports =
   exports.default = ScatterChart;
 
 /***/ }),
-/* 145 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -18549,7 +19379,7 @@ module.exports =
   
   var _isFunction3 = _interopRequireDefault(_isFunction2);
   
-  var _isNil2 = __webpack_require__(132);
+  var _isNil2 = __webpack_require__(136);
   
   var _isNil3 = _interopRequireDefault(_isNil2);
   
@@ -18589,7 +19419,7 @@ module.exports =
   
   var _Tooltip2 = _interopRequireDefault(_Tooltip);
   
-  var _Dot = __webpack_require__(106);
+  var _Dot = __webpack_require__(110);
   
   var _Dot2 = _interopRequireDefault(_Dot);
   
@@ -18599,13 +19429,13 @@ module.exports =
   
   var _ReactUtils = __webpack_require__(64);
   
-  var _CartesianUtils = __webpack_require__(134);
+  var _CartesianUtils = __webpack_require__(138);
   
-  var _generateCategoricalChart = __webpack_require__(133);
+  var _generateCategoricalChart = __webpack_require__(137);
   
   var _generateCategoricalChart2 = _interopRequireDefault(_generateCategoricalChart);
   
-  var _Area = __webpack_require__(125);
+  var _Area = __webpack_require__(129);
   
   var _Area2 = _interopRequireDefault(_Area);
   
@@ -18898,7 +19728,7 @@ module.exports =
   exports.AreaChart = AreaChart;
 
 /***/ }),
-/* 146 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -18933,7 +19763,7 @@ module.exports =
     value: true
   });
   
-  var _range2 = __webpack_require__(116);
+  var _range2 = __webpack_require__(120);
   
   var _range3 = _interopRequireDefault(_range2);
   
@@ -18969,13 +19799,13 @@ module.exports =
   
   var _classnames2 = _interopRequireDefault(_classnames);
   
-  var _d3Scale = __webpack_require__(117);
+  var _d3Scale = __webpack_require__(121);
   
   var _Surface = __webpack_require__(63);
   
   var _Surface2 = _interopRequireDefault(_Surface);
   
-  var _RadialBar = __webpack_require__(113);
+  var _RadialBar = __webpack_require__(117);
   
   var _RadialBar2 = _interopRequireDefault(_RadialBar);
   
@@ -19422,7 +20252,7 @@ module.exports =
   exports.default = RadialBarChart;
 
 /***/ }),
-/* 147 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -19501,15 +20331,15 @@ module.exports =
   
   var _Tooltip2 = _interopRequireDefault(_Tooltip);
   
-  var _Line = __webpack_require__(124);
+  var _Line = __webpack_require__(128);
   
   var _Line2 = _interopRequireDefault(_Line);
   
-  var _Bar = __webpack_require__(126);
+  var _Bar = __webpack_require__(130);
   
   var _Bar2 = _interopRequireDefault(_Bar);
   
-  var _Area = __webpack_require__(125);
+  var _Area = __webpack_require__(129);
   
   var _Area2 = _interopRequireDefault(_Area);
   
@@ -19517,15 +20347,15 @@ module.exports =
   
   var _Curve2 = _interopRequireDefault(_Curve);
   
-  var _Dot = __webpack_require__(106);
+  var _Dot = __webpack_require__(110);
   
   var _Dot2 = _interopRequireDefault(_Dot);
   
-  var _Rectangle = __webpack_require__(103);
+  var _Rectangle = __webpack_require__(107);
   
   var _Rectangle2 = _interopRequireDefault(_Rectangle);
   
-  var _generateCategoricalChart = __webpack_require__(133);
+  var _generateCategoricalChart = __webpack_require__(137);
   
   var _generateCategoricalChart2 = _interopRequireDefault(_generateCategoricalChart);
   
@@ -19537,13 +20367,13 @@ module.exports =
   
   var _PureRender2 = _interopRequireDefault(_PureRender);
   
-  var _CartesianUtils = __webpack_require__(134);
+  var _CartesianUtils = __webpack_require__(138);
   
-  var _AreaChart = __webpack_require__(145);
+  var _AreaChart = __webpack_require__(149);
   
-  var _LineChart = __webpack_require__(131);
+  var _LineChart = __webpack_require__(135);
   
-  var _BarChart = __webpack_require__(138);
+  var _BarChart = __webpack_require__(142);
   
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
@@ -19653,836 +20483,6 @@ module.exports =
   exports.default = (0, _generateCategoricalChart2.default)(ComposedChart, [_Line2.default, _Area2.default, _Bar2.default]);
 
 /***/ }),
-/* 148 */
-/***/ (function(module, exports, __webpack_require__) {
-
-  'use strict';
-  
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  
-  var _regenerator = __webpack_require__(1);
-  
-  var _regenerator2 = _interopRequireDefault(_regenerator);
-  
-  var _asyncToGenerator2 = __webpack_require__(4);
-  
-  var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
-  
-  var _react = __webpack_require__(11);
-  
-  var _react2 = _interopRequireDefault(_react);
-  
-  var _Initiate = __webpack_require__(149);
-  
-  var _Initiate2 = _interopRequireDefault(_Initiate);
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-  
-  // import fetch from '../../core/fetch';
-  
-  /**
-   * React Starter Kit (https://www.reactstarterkit.com/)
-   *
-   * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
-   *
-   * This source code is licensed under the MIT license found in the
-   * LICENSE.txt file in the root directory of this source tree.
-   */
-  
-  exports.default = {
-  
-    path: '/initiate',
-  
-    action: function action() {
-      var _this = this;
-  
-      return (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
-        return _regenerator2.default.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                return _context.abrupt('return', _react2.default.createElement(_Initiate2.default, null));
-  
-              case 1:
-              case 'end':
-                return _context.stop();
-            }
-          }
-        }, _callee, _this);
-      }))();
-    }
-  };
-
-/***/ }),
-/* 149 */
-/***/ (function(module, exports, __webpack_require__) {
-
-  'use strict';
-  
-  Object.defineProperty(exports, "__esModule", {
-  	value: true
-  });
-  
-  var _stringify = __webpack_require__(24);
-  
-  var _stringify2 = _interopRequireDefault(_stringify);
-  
-  var _toConsumableArray2 = __webpack_require__(2);
-  
-  var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
-  
-  var _regenerator = __webpack_require__(1);
-  
-  var _regenerator2 = _interopRequireDefault(_regenerator);
-  
-  var _asyncToGenerator2 = __webpack_require__(4);
-  
-  var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
-  
-  var _getPrototypeOf = __webpack_require__(29);
-  
-  var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-  
-  var _classCallCheck2 = __webpack_require__(30);
-  
-  var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  
-  var _createClass2 = __webpack_require__(31);
-  
-  var _createClass3 = _interopRequireDefault(_createClass2);
-  
-  var _possibleConstructorReturn2 = __webpack_require__(32);
-  
-  var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  
-  var _inherits2 = __webpack_require__(33);
-  
-  var _inherits3 = _interopRequireDefault(_inherits2);
-  
-  var _react = __webpack_require__(11);
-  
-  var _react2 = _interopRequireDefault(_react);
-  
-  var _withStyles = __webpack_require__(18);
-  
-  var _withStyles2 = _interopRequireDefault(_withStyles);
-  
-  var _reactBootstrap = __webpack_require__(38);
-  
-  var _Initiate = __webpack_require__(150);
-  
-  var _Initiate2 = _interopRequireDefault(_Initiate);
-  
-  var _Widget = __webpack_require__(52);
-  
-  var _Widget2 = _interopRequireDefault(_Widget);
-  
-  var _Donut = __webpack_require__(57);
-  
-  var _Donut2 = _interopRequireDefault(_Donut);
-  
-  var _recharts = __webpack_require__(100);
-  
-  var _Chat = __webpack_require__(152);
-  
-  var _Chat2 = _interopRequireDefault(_Chat);
-  
-  var _reactUserMedia = __webpack_require__(154);
-  
-  var _reactUserMedia2 = _interopRequireDefault(_reactUserMedia);
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-  
-  var title = 'Psychology Assistive Module';
-  
-  var data = [{ name: 'Page A', uv: 4000, pv: 2400, amt: 2400, value: 600 }, { name: 'Page B', uv: 3000, pv: 1398, amt: 2210, value: 300 }, { name: 'Page C', uv: 2000, pv: 9800, amt: 2290, value: 500 }, { name: 'Page D', uv: 2780, pv: 3908, amt: 2000, value: 400 }, { name: 'Page E', uv: 1890, pv: 4800, amt: 2181, value: 200 }, { name: 'Page F', uv: 2390, pv: 3800, amt: 2500, value: 700 }, { name: 'Page G', uv: 3490, pv: 4300, amt: 2100, value: 100 }];
-  
-  var Initiate = function (_Component) {
-  	(0, _inherits3.default)(Initiate, _Component);
-  
-  	function Initiate() {
-  		(0, _classCallCheck3.default)(this, Initiate);
-  
-  		var _this = (0, _possibleConstructorReturn3.default)(this, (Initiate.__proto__ || (0, _getPrototypeOf2.default)(Initiate)).call(this));
-  
-  		_this.setWebcamRef = function (webcam) {
-  			_this.webcam = webcam;
-  		};
-  
-  		_this.capture = function () {
-  			var imageSrc = _this.webcam.captureScreenshot();
-  			console.log(imageSrc);
-  			return imageSrc;
-  		};
-  
-  		_this.state = {
-  			running: false,
-  			forceEnd: false,
-  
-  			// text emotion analysis
-  			text_emotion: [{ name: 'No Emotion', amt: 0 }],
-  
-  			// text sentiment analysis
-  			text_sentiment: [{ name: 'No Emotion', pos: 0, neg: 0 }],
-  
-  			// face emotion analysis
-  			face_emotion: [{ name: 'No Emotion', amt: 0 }],
-  
-  			// patients
-  			patients: [],
-  
-  			// selected patient
-  			selectedPatient: -1,
-  
-  			//timer seconds
-  			seconds: 0,
-  
-  			//timer minutes
-  			minutes: 0,
-  
-  			messages: []
-  		};
-  
-  		fetch('http://localhost:8000/patients', {
-  			method: 'GET'
-  		}).then(function (response) {
-  			return response.json();
-  		}).then(function (responseJson) {
-  			_this.setState({ patients: responseJson, selectedPatient: responseJson[0].id });
-  		}).catch(function (error) {});
-  
-  		_this.recognition = new window.webkitSpeechRecognition();
-  		_this.recognition.onstart = function () {
-  			// console.log("Start")
-  			_this.setState({ running: true });
-  		};
-  		_this.recognition.onerror = function () {
-  			// console.log("Error Occured")
-  			_this.setState({ running: false });
-  		};
-  		_this.recognition.onend = function () {
-  			// console.log("Ended")
-  			_this.setState({ running: false });
-  			if (!_this.state.running && !_this.state.forceEnd) {
-  				_this.setState({ running: true });
-  				_this.recognition.start();
-  			}
-  			if (_this.state.forceEnd) _this.setState({ forceEnd: false });
-  		};
-  		_this.recognition.onresult = function (event) {
-  			// event is a SpeechRecognitionEvent object.
-  			// It holds all the lines we have captured so far.
-  			// We only need the current one.
-  			var current = event.resultIndex;
-  
-  			// Get a transcript of what was said.
-  			var transcript = event.results[current][0].transcript;
-  
-  			_this.getEmotionAndSentiment(transcript);
-  
-  			_this.setState(function (prev) {
-  				messages: prev.messages.push({ id: 0, message: transcript });
-  			});
-  
-  			// console.log(transcript)
-  			// this.getEmotion(noteContent).then((result) => console.log(result) )
-  			// this.setState((prevState) => { identifiedTextList: prevState.identifiedTextList.push(noteContent) })
-  		};
-  
-  		return _this;
-  	}
-  
-  	(0, _createClass3.default)(Initiate, [{
-  		key: 'componentDidMount',
-  		value: function componentDidMount() {
-  			var _this2 = this;
-  
-  			setInterval((0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
-  				var base64, formData;
-  				return _regenerator2.default.wrap(function _callee$(_context) {
-  					while (1) {
-  						switch (_context.prev = _context.next) {
-  							case 0:
-  								if (!_this2.state.running) {
-  									_context.next = 7;
-  									break;
-  								}
-  
-  								_this2.incTime();
-  								base64 = _this2.capture();
-  								formData = new FormData();
-  
-  								formData.append('base64', base64);
-  								_context.next = 7;
-  								return fetch('http://localhost:8000/imageAnalyze', {
-  									method: 'POST',
-  									body: formData
-  								}).then(function (response) {
-  									return response.json();
-  								}).then(function (responseJson) {
-  									var emotions = responseJson.emotion;
-  
-  									var data = [];
-  									for (var prop in emotions) {
-  										data.push({
-  											"name": prop,
-  											"amt": emotions[prop]
-  										});
-  									}
-  
-  									_this2.setState({ face_emotion: data });
-  									// this.setState((prevState) => {{ faceEmotionDataList: prevState.faceEmotionDataList.push(data) }})
-  									// this.setState((prevState) => {{ faceEmotionData: prevState.faceEmotionData.push(responseJson[0].scores) }})
-  								}).catch(function (error) {});
-  
-  							case 7:
-  							case 'end':
-  								return _context.stop();
-  						}
-  					}
-  				}, _callee, _this2);
-  			})), 1000);
-  		}
-  	}, {
-  		key: 'incTime',
-  		value: function incTime() {
-  			var s = this.state.seconds;
-  			var m = this.state.minutes;
-  
-  			if (s < 59) {
-  				this.setState({ seconds: s + 1 });
-  			} else {
-  				this.setState({ minutes: m + 1, seconds: 0 });
-  			}
-  		}
-  	}, {
-  		key: 'getEmotionAndSentiment',
-  		value: function () {
-  			var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(content) {
-  				var _this3 = this;
-  
-  				var formData;
-  				return _regenerator2.default.wrap(function _callee2$(_context2) {
-  					while (1) {
-  						switch (_context2.prev = _context2.next) {
-  							case 0:
-  								formData = new FormData();
-  
-  								formData.append("str", content);
-  								_context2.next = 4;
-  								return fetch('http://localhost:8000/textAnalyze', {
-  									method: 'POST',
-  									body: formData
-  								}).then(function (response) {
-  									return response.json();
-  								}).then(function (json) {
-  
-  									var emotions = json.emotion;
-  									var sentiments = json.sentiment;
-  									var response = json.response;
-  
-  									// setting the emotions
-  									var data = [];
-  									for (var p in emotions) {
-  										if (emotions.hasOwnProperty(p)) {
-  											data.push({
-  												'name': p,
-  												'amt': emotions[p]
-  											});
-  										}
-  									}
-  									_this3.setState({ text_emotion: data });
-  
-  									// setting the sentiments
-  									// this.setState({ text_sentiment : [...this.state.text_sentiment, temp]})
-  									var temp = [].concat((0, _toConsumableArray3.default)(_this3.state.text_sentiment), [{
-  										name: 'Sentiment',
-  										pos: sentiments.pos,
-  										neg: sentiments.neg
-  									}]);
-  
-  									_this3.setState({ text_sentiment: temp });
-  									// this.setState({ text_sentiment : tempData })
-  									// this.setState((prevState) => {return { text_sentiment : prevState.text_sentiment.append(temp), text_emotion : data }})
-  
-  									console.log(_this3.state.text_emotion);
-  									console.log(_this3.state.text_sentiment);
-  
-  									//setting the message response
-  									_this3.setState(function (prev) {
-  										messages: prev.messages.push({ id: 1, message: response });
-  									});
-  								}).catch(function (err) {
-  									console.log(err);
-  								});
-  
-  							case 4:
-  							case 'end':
-  								return _context2.stop();
-  						}
-  					}
-  				}, _callee2, this);
-  			}));
-  
-  			function getEmotionAndSentiment(_x) {
-  				return _ref2.apply(this, arguments);
-  			}
-  
-  			return getEmotionAndSentiment;
-  		}()
-  	}, {
-  		key: 'reset',
-  		value: function () {
-  			var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3() {
-  				var data;
-  				return _regenerator2.default.wrap(function _callee3$(_context3) {
-  					while (1) {
-  						switch (_context3.prev = _context3.next) {
-  							case 0:
-  
-  								// patient = Patient.objects.get(pk = int(req['patient_id'])),
-  								// textual_emotional = json.dumps(req['textual_emotional']),
-  								// textual_sentiment = json.dumps(req['textual_sentiment']),
-  								// facial_emotional = json.dumps(req['facial_emotional']),
-  								// textual_conversation = json.dumps(req['messages'])
-  
-  								data = {
-  									patient_id: this.state.selectedPatient,
-  									textual_emotional: this.state.text_emotion,
-  									textual_sentiment: this.state.text_sentiment,
-  									facial_emotional: this.state.face_emotion,
-  									messages: this.state.messages
-  								};
-  
-  
-  								console.log(data);
-  
-  								_context3.next = 4;
-  								return fetch('http://localhost:8000/session', {
-  									method: 'POST',
-  									headers: {
-  										'Accept': 'application/json',
-  										'Content-Type': 'application/json'
-  									},
-  									body: (0, _stringify2.default)(data)
-  								}).then(function (response) {
-  									return response.json();
-  								}).then(function (json) {
-  									console.log(json);
-  								}).catch(function (err) {
-  									return console.log(err);
-  								});
-  
-  							case 4:
-  
-  								this.setState({
-  									running: false,
-  									forceEnd: true,
-  
-  									// text emotion analysis
-  									text_emotion: [{ name: 'No Emotion', amt: 0 }],
-  
-  									// text sentiment analysis
-  									text_sentiment: [{ name: 'No Emotion', pos: 0, neg: 0 }],
-  
-  									// face emotion analysis
-  									face_emotion: [{ name: 'No Emotion', amt: 0 }],
-  
-  									//timer seconds
-  									seconds: 0,
-  
-  									//timer minutes
-  									minutes: 0,
-  
-  									messages: []
-  								});
-  
-  							case 5:
-  							case 'end':
-  								return _context3.stop();
-  						}
-  					}
-  				}, _callee3, this);
-  			}));
-  
-  			function reset() {
-  				return _ref3.apply(this, arguments);
-  			}
-  
-  			return reset;
-  		}()
-  	}, {
-  		key: 'renderWebCam',
-  		value: function renderWebCam() {
-  			return _react2.default.createElement(
-  				'div',
-  				null,
-  				_react2.default.createElement(_reactUserMedia2.default, {
-  					audio: false,
-  					height: 135,
-  					ref: this.setWebcamRef,
-  					captureFormat: 'image/jpeg',
-  					width: 150
-  				})
-  			);
-  		}
-  	}, {
-  		key: 'renderStartStopButton',
-  		value: function renderStartStopButton() {
-  			var _this4 = this;
-  
-  			if (!this.state.running) {
-  				return _react2.default.createElement(
-  					'button',
-  					{
-  						className: 'btn btn-success',
-  						onClick: function onClick() {
-  							_this4.recognition.start();
-  						}
-  					},
-  					'Start'
-  				);
-  			} else {
-  				return _react2.default.createElement(
-  					'button',
-  					{
-  						className: 'btn btn-warning',
-  						onClick: function onClick() {
-  							if (!_this4.state.forceEnd) {
-  								_this4.setState({ forceEnd: true });
-  							}
-  							_this4.recognition.stop();
-  						}
-  					},
-  					'Pause'
-  				);
-  			}
-  		}
-  	}, {
-  		key: 'render',
-  		value: function render() {
-  			var _this5 = this;
-  
-  			return _react2.default.createElement(
-  				'div',
-  				null,
-  				_react2.default.createElement(
-  					'div',
-  					{ className: 'row' },
-  					_react2.default.createElement(
-  						'div',
-  						{ className: 'col-lg-12' },
-  						_react2.default.createElement(
-  							_reactBootstrap.PageHeader,
-  							null,
-  							_react2.default.createElement(
-  								'div',
-  								{ className: 'row' },
-  								_react2.default.createElement(
-  									'div',
-  									{ className: 'col-lg-3' },
-  									_react2.default.createElement(
-  										'span',
-  										null,
-  										'Assitant'
-  									)
-  								),
-  								_react2.default.createElement(
-  									'div',
-  									{ className: 'col-lg-6' },
-  									_react2.default.createElement(
-  										_reactBootstrap.FormGroup,
-  										{ controlId: 'formControlsSelect' },
-  										_react2.default.createElement(
-  											_reactBootstrap.ControlLabel,
-  											null,
-  											_react2.default.createElement(
-  												'h4',
-  												null,
-  												'Patient'
-  											)
-  										),
-  										_react2.default.createElement(
-  											_reactBootstrap.FormControl,
-  											{
-  												componentClass: 'select',
-  												placeholder: 'select',
-  												onChange: function onChange(e) {
-  													_this5.state.selectedPatient = e.target.value;
-  												} },
-  											this.state.patients.map(function (data, i) {
-  												return _react2.default.createElement(
-  													'option',
-  													{ value: data.id },
-  													data.name
-  												);
-  											})
-  										)
-  									)
-  								),
-  								_react2.default.createElement(
-  									'div',
-  									{ className: 'col-lg-3' },
-  									_react2.default.createElement(
-  										'div',
-  										{ className: 'pull-right' },
-  										this.renderStartStopButton(),
-  										_react2.default.createElement(
-  											'button',
-  											{
-  												className: 'btn btn-danger',
-  												onClick: function onClick() {
-  													if (!_this5.state.forceEnd) {
-  														_this5.setState({ forceEnd: true });
-  													}
-  													_this5.recognition.stop();
-  													_this5.reset();
-  												}
-  											},
-  											'Stop'
-  										)
-  									)
-  								)
-  							),
-  							_react2.default.createElement(
-  								'div',
-  								{ className: 'row' },
-  								_react2.default.createElement(
-  									'div',
-  									{ className: 'pull-right' },
-  									_react2.default.createElement(
-  										'p',
-  										null,
-  										this.state.minutes,
-  										' : ',
-  										this.state.seconds
-  									)
-  								)
-  							)
-  						)
-  					)
-  				),
-  				_react2.default.createElement(
-  					'div',
-  					{ className: 'row' },
-  					_react2.default.createElement(
-  						'div',
-  						{ className: 'col-lg-3' },
-  						_react2.default.createElement(
-  							_reactBootstrap.Panel,
-  							{
-  								header: _react2.default.createElement(
-  									'span',
-  									null,
-  									_react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
-  									' Video Stream',
-  									_react2.default.createElement('div', null)
-  								)
-  							},
-  							_react2.default.createElement(
-  								'div',
-  								null,
-  								this.renderWebCam()
-  							)
-  						),
-  						_react2.default.createElement(
-  							_reactBootstrap.Panel,
-  							{
-  								header: _react2.default.createElement(
-  									'span',
-  									null,
-  									_react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
-  									' Text Stream',
-  									_react2.default.createElement('div', null)
-  								)
-  							},
-  							_react2.default.createElement(
-  								'div',
-  								null,
-  								_react2.default.createElement(_Chat2.default, {
-  									messages: this.state.messages
-  								})
-  							)
-  						)
-  					),
-  					_react2.default.createElement(
-  						'div',
-  						{ className: 'col-lg-9' },
-  						_react2.default.createElement(
-  							'div',
-  							{ className: 'row' },
-  							_react2.default.createElement(
-  								'div',
-  								{ className: 'col-lg-6' },
-  								_react2.default.createElement(
-  									_reactBootstrap.Panel,
-  									{
-  										header: _react2.default.createElement(
-  											'span',
-  											null,
-  											_react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
-  											' Textual Emotion Analysis'
-  										)
-  									},
-  									_react2.default.createElement(
-  										'div',
-  										null,
-  										_react2.default.createElement(
-  											_recharts.ResponsiveContainer,
-  											{ width: '100%', aspect: 2 },
-  											_react2.default.createElement(
-  												_recharts.BarChart,
-  												{
-  													data: this.state.text_emotion,
-  													margin: { top: 10, right: 30, left: 0, bottom: 0 } },
-  												_react2.default.createElement(_recharts.CartesianGrid, { stroke: '#ccc' }),
-  												_react2.default.createElement(_recharts.XAxis, { dataKey: 'name' }),
-  												_react2.default.createElement(_recharts.YAxis, null),
-  												_react2.default.createElement(_recharts.Tooltip, null),
-  												_react2.default.createElement(_recharts.Bar, { type: 'monotone', dataKey: 'amt', fill: '#ffc658', isAnimationActive: false })
-  											)
-  										)
-  									)
-  								)
-  							),
-  							_react2.default.createElement(
-  								'div',
-  								{ className: 'col-lg-6' },
-  								_react2.default.createElement(
-  									_reactBootstrap.Panel,
-  									{
-  										header: _react2.default.createElement(
-  											'span',
-  											null,
-  											_react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
-  											' Visual Emotional Analysis'
-  										)
-  									},
-  									_react2.default.createElement(
-  										'div',
-  										null,
-  										_react2.default.createElement(
-  											_recharts.ResponsiveContainer,
-  											{ width: '100%', aspect: 2 },
-  											_react2.default.createElement(
-  												_recharts.BarChart,
-  												{ data: this.state.face_emotion, margin: { top: 10, right: 30, left: 0, bottom: 0 } },
-  												_react2.default.createElement(_recharts.CartesianGrid, { stroke: '#ccc' }),
-  												_react2.default.createElement(_recharts.XAxis, { dataKey: 'name' }),
-  												_react2.default.createElement(_recharts.YAxis, null),
-  												_react2.default.createElement(_recharts.Tooltip, null),
-  												_react2.default.createElement(_recharts.Bar, { type: 'monotone', dataKey: 'amt', fill: '#ffc658', isAnimationActive: false })
-  											)
-  										)
-  									)
-  								)
-  							)
-  						),
-  						_react2.default.createElement(
-  							'div',
-  							{ className: 'row' },
-  							_react2.default.createElement(
-  								'div',
-  								{ className: 'col-lg-12' },
-  								_react2.default.createElement(
-  									_reactBootstrap.Panel,
-  									{
-  										header: _react2.default.createElement(
-  											'span',
-  											null,
-  											_react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
-  											' Textual Sentimental Analysis'
-  										)
-  									},
-  									_react2.default.createElement(
-  										'div',
-  										null,
-  										_react2.default.createElement(
-  											_recharts.ResponsiveContainer,
-  											{ width: '100%', aspect: 2 },
-  											_react2.default.createElement(
-  												_recharts.LineChart,
-  												{ data: this.state.text_sentiment, margin: { top: 10, right: 30, left: 0, bottom: 0 } },
-  												_react2.default.createElement(_recharts.XAxis, { dataKey: 'name' }),
-  												_react2.default.createElement(_recharts.YAxis, null),
-  												_react2.default.createElement(_recharts.CartesianGrid, { stroke: '#ccc' }),
-  												_react2.default.createElement(_recharts.Tooltip, null),
-  												_react2.default.createElement(_recharts.Line, { type: 'monotone', dataKey: 'pos', stackId: '1', stroke: '#8884d8', fill: '#8884d8', isAnimationActive: false }),
-  												_react2.default.createElement(_recharts.Line, { type: 'monotone', dataKey: 'neg', stackId: '1', stroke: '#82ca9d', fill: '#82ca9d', isAnimationActive: false })
-  											)
-  										)
-  									)
-  								)
-  							)
-  						)
-  					)
-  				)
-  			);
-  		}
-  	}]);
-  	return Initiate;
-  }(_react.Component);
-  
-  exports.default = (0, _withStyles2.default)(_Initiate2.default)(Initiate);
-
-/***/ }),
-/* 150 */
-/***/ (function(module, exports, __webpack_require__) {
-
-  
-      var content = __webpack_require__(151);
-      var insertCss = __webpack_require__(22);
-  
-      if (typeof content === 'string') {
-        content = [[module.id, content, '']];
-      }
-  
-      module.exports = content.locals || {};
-      module.exports._getCss = function() { return content.toString(); };
-      module.exports._insertCss = function(options) { return insertCss(content, options) };
-    
-      // Hot Module Replacement
-      // https://webpack.github.io/docs/hot-module-replacement
-      // Only activated in browser context
-      if (false) {
-        var removeCss = function() {};
-        module.hot.accept("!!../../../node_modules/css-loader/index.js?{\"sourceMap\":true,\"modules\":true,\"localIdentName\":\"[name]_[local]_[hash:base64:3]\",\"minimize\":false}!../../../node_modules/postcss-loader/index.js?pack=default!./Initiate.css", function() {
-          content = require("!!../../../node_modules/css-loader/index.js?{\"sourceMap\":true,\"modules\":true,\"localIdentName\":\"[name]_[local]_[hash:base64:3]\",\"minimize\":false}!../../../node_modules/postcss-loader/index.js?pack=default!./Initiate.css");
-  
-          if (typeof content === 'string') {
-            content = [[module.id, content, '']];
-          }
-  
-          removeCss = insertCss(content, { replace: true });
-        });
-        module.hot.dispose(function() { removeCss(); });
-      }
-    
-
-/***/ }),
-/* 151 */
-/***/ (function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(21)();
-  // imports
-  
-  
-  // module
-  exports.push([module.id, "/**\n * React Starter Kit (https://www.reactstarterkit.com/)\n *\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE.txt file in the root directory of this source tree.\n */\n\n/**\n * React Starter Kit (https://www.reactstarterkit.com/)\n *\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE.txt file in the root directory of this source tree.\n */\n\n:root {\n  /*\n   * Typography\n   * ======================================================================== */\n\n  /*\n   * Layout\n   * ======================================================================== */\n\n  /*\n   * Media queries breakpoints\n   * ======================================================================== */  /* Extra small screen / phone */  /* Small screen / tablet */  /* Medium screen / desktop */ /* Large screen / wide desktop */\n}\n\n.Initiate_root_28e {\n  padding-left: 20px;\n  padding-right: 20px;\n}\n\n.Initiate_container_3rT {\n  margin: 0 auto;\n  padding: 0 0 40px;\n  max-width: 1000px;\n}\n\n.Initiate_news_3dl {\n  padding: 0;\n}\n\n.Initiate_newsItem_3fU {\n  list-style-type: none;\n  padding-bottom: 6px;\n}\n\n.Initiate_newsTitle_3-B {\n  font-size: 1.125em;\n}\n\n.Initiate_newsTitle_3-B,\n.Initiate_newsDesc_3St {\n  display: block;\n}\n", "", {"version":3,"sources":["/./routes/initiate/Initiate.css","/./components/variables.css"],"names":[],"mappings":"AAAA;;;;;;;GAOG;;ACPH;;;;;;;GAOG;;AAEH;EACE;;gFAE8E;;EAI9E;;gFAE8E;;EAI9E;;gFAE8E,EAErD,gCAAgC,EAChC,2BAA2B,EAC3B,6BAA6B,CAC7B,iCAAiC;CAC3D;;ADnBD;EACE,mBAAmB;EACnB,oBAAoB;CACrB;;AAED;EACE,eAAe;EACf,kBAAkB;EAClB,kBAAoC;CACrC;;AAED;EACE,WAAW;CACZ;;AAED;EACE,sBAAsB;EACtB,oBAAoB;CACrB;;AAED;EACE,mBAAmB;CACpB;;AAED;;EAEE,eAAe;CAChB","file":"Initiate.css","sourcesContent":["/**\n * React Starter Kit (https://www.reactstarterkit.com/)\n *\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE.txt file in the root directory of this source tree.\n */\n\n@import '../../components/variables.css';\n\n.root {\n  padding-left: 20px;\n  padding-right: 20px;\n}\n\n.container {\n  margin: 0 auto;\n  padding: 0 0 40px;\n  max-width: var(--max-content-width);\n}\n\n.news {\n  padding: 0;\n}\n\n.newsItem {\n  list-style-type: none;\n  padding-bottom: 6px;\n}\n\n.newsTitle {\n  font-size: 1.125em;\n}\n\n.newsTitle,\n.newsDesc {\n  display: block;\n}\n","/**\n * React Starter Kit (https://www.reactstarterkit.com/)\n *\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE.txt file in the root directory of this source tree.\n */\n\n:root {\n  /*\n   * Typography\n   * ======================================================================== */\n\n  --font-family-base: 'Segoe UI', 'HelveticaNeue-Light', sans-serif;\n\n  /*\n   * Layout\n   * ======================================================================== */\n\n  --max-content-width: 1000px;\n\n  /*\n   * Media queries breakpoints\n   * ======================================================================== */\n\n  --screen-xs-min: 480px;  /* Extra small screen / phone */\n  --screen-sm-min: 768px;  /* Small screen / tablet */\n  --screen-md-min: 992px;  /* Medium screen / desktop */\n  --screen-lg-min: 1200px; /* Large screen / wide desktop */\n}\n"],"sourceRoot":"webpack://"}]);
-  
-  // exports
-  exports.locals = {
-  	"root": "Initiate_root_28e",
-  	"container": "Initiate_container_3rT",
-  	"news": "Initiate_news_3dl",
-  	"newsItem": "Initiate_newsItem_3fU",
-  	"newsTitle": "Initiate_newsTitle_3-B",
-  	"newsDesc": "Initiate_newsDesc_3St"
-  };
-
-/***/ }),
 /* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20589,7 +20589,835 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Login = __webpack_require__(156);
+  var _Patient = __webpack_require__(156);
+  
+  var _Patient2 = _interopRequireDefault(_Patient);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  exports.default = {
+  
+    path: '/patient',
+  
+    action: function action() {
+      return _react2.default.createElement(_Patient2.default, null);
+    }
+  };
+
+/***/ }),
+/* 156 */
+/***/ (function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  
+  var _getPrototypeOf = __webpack_require__(29);
+  
+  var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+  
+  var _classCallCheck2 = __webpack_require__(30);
+  
+  var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+  
+  var _createClass2 = __webpack_require__(31);
+  
+  var _createClass3 = _interopRequireDefault(_createClass2);
+  
+  var _possibleConstructorReturn2 = __webpack_require__(32);
+  
+  var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+  
+  var _inherits2 = __webpack_require__(33);
+  
+  var _inherits3 = _interopRequireDefault(_inherits2);
+  
+  var _react = __webpack_require__(11);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _Button = __webpack_require__(157);
+  
+  var _Button2 = _interopRequireDefault(_Button);
+  
+  var _Panel = __webpack_require__(158);
+  
+  var _Panel2 = _interopRequireDefault(_Panel);
+  
+  var _Pagination = __webpack_require__(159);
+  
+  var _Pagination2 = _interopRequireDefault(_Pagination);
+  
+  var _PageHeader = __webpack_require__(160);
+  
+  var _PageHeader2 = _interopRequireDefault(_PageHeader);
+  
+  var _Well = __webpack_require__(161);
+  
+  var _Well2 = _interopRequireDefault(_Well);
+  
+  var _reactBootstrap = __webpack_require__(38);
+  
+  var _history = __webpack_require__(40);
+  
+  var _history2 = _interopRequireDefault(_history);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  var title = 'Table';
+  
+  var Patient = function (_Component) {
+    (0, _inherits3.default)(Patient, _Component);
+  
+    function Patient() {
+      (0, _classCallCheck3.default)(this, Patient);
+  
+      var _this = (0, _possibleConstructorReturn3.default)(this, (Patient.__proto__ || (0, _getPrototypeOf2.default)(Patient)).call(this));
+  
+      _this.state = {
+        patients: [],
+  
+        showModal: false
+      };
+  
+      _this.updatePatients();
+  
+      return _this;
+    }
+  
+    (0, _createClass3.default)(Patient, [{
+      key: 'updatePatients',
+      value: function updatePatients() {
+        var _this2 = this;
+  
+        fetch('http://localhost:8000/patients', {
+          method: 'GET'
+        }).then(function (response) {
+          return response.json();
+        }).then(function (responseJson) {
+          _this2.setState({ patients: responseJson });
+        }).catch(function (error) {});
+      }
+    }, {
+      key: 'handleClose',
+      value: function handleClose() {
+        this.setState({ showModal: false });
+      }
+    }, {
+      key: 'handleShow',
+      value: function handleShow() {
+        this.setState({ showModal: true });
+      }
+    }, {
+      key: 'renderAddPatientModal',
+      value: function renderAddPatientModal() {
+        var _this3 = this;
+  
+        return _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Modal,
+            { show: this.state.showModal, onHide: function onHide() {
+                return _this3.handleClose();
+              } },
+            _react2.default.createElement(
+              _reactBootstrap.Modal.Header,
+              { closeButton: true },
+              _react2.default.createElement(
+                _reactBootstrap.Modal.Title,
+                null,
+                'Add Patient'
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Modal.Body,
+              null,
+              _react2.default.createElement(
+                _reactBootstrap.Form,
+                null,
+                _react2.default.createElement(
+                  _reactBootstrap.FormGroup,
+                  { controlId: 'formBasicText2' },
+                  _react2.default.createElement(
+                    _reactBootstrap.ControlLabel,
+                    null,
+                    'Text Input'
+                  ),
+                  _react2.default.createElement(_reactBootstrap.FormControl, {
+                    type: 'text',
+                    placeholder: 'Enter Text',
+                    inputRef: function inputRef(name) {
+                      return _this3.inputName = name;
+                    }
+                  })
+                ),
+                _react2.default.createElement(
+                  _Button2.default,
+                  { onClick: function onClick() {
+                      var formData = new FormData();
+                      formData.append("name", _this3.inputName.value);
+                      fetch('http://localhost:8000/patients', {
+                        method: 'POST',
+                        body: formData
+                      }).then(function (response) {
+                        return response.json();
+                      }).then(function (responseJson) {
+                        console.log(responseJson);
+                        _this3.updatePatients();
+                        _this3.handleClose();
+                      }).catch(function (error) {});
+                    } },
+                  'Submit'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Modal.Footer,
+              null,
+              _react2.default.createElement(
+                _Button2.default,
+                { onClick: function onClick() {
+                    return _this3.handleClose();
+                  } },
+                'Close'
+              )
+            )
+          )
+        );
+      }
+    }, {
+      key: 'render',
+      value: function render() {
+        var _this4 = this;
+  
+        return _react2.default.createElement(
+          'div',
+          null,
+          this.renderAddPatientModal(),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-lg-12' },
+            _react2.default.createElement(
+              _PageHeader2.default,
+              null,
+              'Patients',
+              _react2.default.createElement(
+                'div',
+                { className: 'pull-right' },
+                _react2.default.createElement(
+                  'button',
+                  {
+                    className: 'btn btn-success',
+                    onClick: function onClick() {
+                      return _this4.handleShow();
+                    } },
+                  'Add Patient'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-lg-12' },
+            _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement(
+                'div',
+                { className: 'dataTable_wrapper' },
+                _react2.default.createElement(
+                  'div',
+                  {
+                    id: 'dataTables-example_wrapper',
+                    className: 'dataTables_wrapper form-inline dt-bootstrap no-footer'
+                  },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'row' },
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'col-sm-12' },
+                      _react2.default.createElement(
+                        'table',
+                        {
+                          className: 'table table-striped table-bordered table-hover dataTable no-footer',
+                          id: 'dataTables-example',
+                          role: 'grid',
+                          'aria-describedby': 'dataTables-example_info'
+                        },
+                        _react2.default.createElement(
+                          'thead',
+                          null,
+                          _react2.default.createElement(
+                            'tr',
+                            { role: 'row' },
+                            _react2.default.createElement(
+                              'th',
+                              {
+                                className: 'sorting_asc',
+                                tabIndex: '0',
+                                'aria-controls': 'dataTables-example',
+                                rowSpan: '1',
+                                colSpan: '1',
+                                'aria-label': 'Rendering engine: activate to sort column descending',
+                                'aria-sort': 'ascending',
+                                style: { width: 265 }
+                              },
+                              'ID'
+                            ),
+                            _react2.default.createElement(
+                              'th',
+                              {
+                                className: 'sorting',
+                                tabIndex: '0',
+                                'aria-controls': 'dataTables-example',
+                                rowSpan: '1',
+                                colSpan: '1',
+                                'aria-label': 'Browser: activate to sort column ascending',
+                                style: { width: 321 }
+                              },
+                              'Name'
+                            ),
+                            _react2.default.createElement(
+                              'th',
+                              {
+                                className: 'sorting',
+                                tabIndex: '0',
+                                'aria-controls': 'dataTables-example',
+                                rowSpan: '1',
+                                colSpan: '1',
+                                'aria-label': 'Platform(s): activate to sort column ascending',
+                                style: { width: 299 }
+                              },
+                              'Action'
+                            )
+                          )
+                        ),
+                        _react2.default.createElement(
+                          'tbody',
+                          null,
+                          this.state.patients.map(function (data, i) {
+                            return _react2.default.createElement(
+                              'tr',
+                              { className: 'gradeA odd', role: 'row', key: i },
+                              _react2.default.createElement(
+                                'td',
+                                { className: 'sorting_1' },
+                                data.id
+                              ),
+                              _react2.default.createElement(
+                                'td',
+                                null,
+                                data.name
+                              ),
+                              _react2.default.createElement(
+                                'td',
+                                null,
+                                _react2.default.createElement(
+                                  'button',
+                                  {
+                                    className: 'btn btn-success',
+                                    onClick: function onClick() {
+                                      _history2.default.push('/session/' + data.id);
+                                    } },
+                                  'View Sessions'
+                                )
+                              )
+                            );
+                          })
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+        );
+      }
+    }]);
+    return Patient;
+  }(_react.Component);
+  
+  exports.default = Patient;
+
+/***/ }),
+/* 157 */
+/***/ (function(module, exports) {
+
+  module.exports = require("react-bootstrap/lib/Button");
+
+/***/ }),
+/* 158 */
+/***/ (function(module, exports) {
+
+  module.exports = require("react-bootstrap/lib/Panel");
+
+/***/ }),
+/* 159 */
+/***/ (function(module, exports) {
+
+  module.exports = require("react-bootstrap/lib/Pagination");
+
+/***/ }),
+/* 160 */
+/***/ (function(module, exports) {
+
+  module.exports = require("react-bootstrap/lib/PageHeader");
+
+/***/ }),
+/* 161 */
+/***/ (function(module, exports) {
+
+  module.exports = require("react-bootstrap/lib/Well");
+
+/***/ }),
+/* 162 */
+/***/ (function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  
+  var _react = __webpack_require__(11);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _Session = __webpack_require__(163);
+  
+  var _Session2 = _interopRequireDefault(_Session);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  exports.default = {
+  
+    path: '/session/:patientId',
+  
+    action: function action(_ref) {
+      var path = _ref.path,
+          params = _ref.params,
+          query = _ref.query;
+  
+      return _react2.default.createElement(_Session2.default, { patientId: params.patientId });
+    }
+  };
+
+/***/ }),
+/* 163 */
+/***/ (function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  
+  var _regenerator = __webpack_require__(1);
+  
+  var _regenerator2 = _interopRequireDefault(_regenerator);
+  
+  var _asyncToGenerator2 = __webpack_require__(4);
+  
+  var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+  
+  var _getPrototypeOf = __webpack_require__(29);
+  
+  var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+  
+  var _classCallCheck2 = __webpack_require__(30);
+  
+  var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+  
+  var _createClass2 = __webpack_require__(31);
+  
+  var _createClass3 = _interopRequireDefault(_createClass2);
+  
+  var _possibleConstructorReturn2 = __webpack_require__(32);
+  
+  var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+  
+  var _inherits2 = __webpack_require__(33);
+  
+  var _inherits3 = _interopRequireDefault(_inherits2);
+  
+  var _react = __webpack_require__(11);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _Button = __webpack_require__(157);
+  
+  var _Button2 = _interopRequireDefault(_Button);
+  
+  var _Panel = __webpack_require__(158);
+  
+  var _Panel2 = _interopRequireDefault(_Panel);
+  
+  var _Pagination = __webpack_require__(159);
+  
+  var _Pagination2 = _interopRequireDefault(_Pagination);
+  
+  var _PageHeader = __webpack_require__(160);
+  
+  var _PageHeader2 = _interopRequireDefault(_PageHeader);
+  
+  var _Well = __webpack_require__(161);
+  
+  var _Well2 = _interopRequireDefault(_Well);
+  
+  var _recharts = __webpack_require__(104);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  var title = 'Table';
+  
+  var Session = function (_Component) {
+    (0, _inherits3.default)(Session, _Component);
+  
+    function Session() {
+      (0, _classCallCheck3.default)(this, Session);
+  
+      var _this = (0, _possibleConstructorReturn3.default)(this, (Session.__proto__ || (0, _getPrototypeOf2.default)(Session)).call(this));
+  
+      _this.state = {
+        graphs: []
+      };
+  
+      return _this;
+    }
+  
+    (0, _createClass3.default)(Session, [{
+      key: 'componentDidMount',
+      value: function componentDidMount() {
+        this.updateGraphs();
+      }
+    }, {
+      key: 'updateGraphs',
+      value: function () {
+        var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+          var _this2 = this;
+  
+          return _regenerator2.default.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  _context.next = 2;
+                  return fetch('http://localhost:8000/sessionId/' + this.props.patientId, {
+                    method: 'GET'
+                  }).then(function (response) {
+                    return response.json();
+                  }).then(function (responseJson) {
+                    console.log(responseJson);
+                    var data = [];
+                    for (var y in responseJson) {
+                      var x = responseJson[y];
+                      var temp = {
+                        text_emotion: JSON.parse(x.textual_emotional),
+                        face_emotion: JSON.parse(x.facial_emotional),
+                        text_sentiment: JSON.parse(x.textual_sentimental)
+                      };
+                      data.push(temp);
+                    }
+                    _this2.setState({ graphs: data });
+                    console.log(_this2.state.graphs);
+                  });
+  
+                case 2:
+                case 'end':
+                  return _context.stop();
+              }
+            }
+          }, _callee, this);
+        }));
+  
+        function updateGraphs() {
+          return _ref.apply(this, arguments);
+        }
+  
+        return updateGraphs;
+      }()
+    }, {
+      key: 'render',
+      value: function render() {
+        return _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'div',
+            { className: 'col-lg-12' },
+            _react2.default.createElement(
+              _PageHeader2.default,
+              null,
+              'Session for patient ID: ',
+              this.props.patientId,
+              ' '
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-lg-12' },
+            _react2.default.createElement(
+              'div',
+              null,
+              this.state.graphs.map(function (data, i) {
+                return _react2.default.createElement(
+                  'div',
+                  { className: 'row', key: i },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'col-lg-4' },
+                    _react2.default.createElement(
+                      _Panel2.default,
+                      {
+                        header: _react2.default.createElement(
+                          'span',
+                          null,
+                          _react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
+                          ' Textual Emotion Analysis'
+                        )
+                      },
+                      _react2.default.createElement(
+                        'div',
+                        null,
+                        _react2.default.createElement(
+                          _recharts.ResponsiveContainer,
+                          { width: '100%', aspect: 2 },
+                          _react2.default.createElement(
+                            _recharts.BarChart,
+                            {
+                              data: data.text_emotion,
+                              margin: { top: 10, right: 30, left: 0, bottom: 0 } },
+                            _react2.default.createElement(_recharts.CartesianGrid, { stroke: '#ccc' }),
+                            _react2.default.createElement(_recharts.XAxis, { dataKey: 'name' }),
+                            _react2.default.createElement(_recharts.YAxis, null),
+                            _react2.default.createElement(_recharts.Tooltip, null),
+                            _react2.default.createElement(_recharts.Bar, { type: 'monotone', dataKey: 'amt', fill: '#ffc658', isAnimationActive: false })
+                          )
+                        )
+                      )
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'col-lg-4' },
+                    _react2.default.createElement(
+                      _Panel2.default,
+                      {
+                        header: _react2.default.createElement(
+                          'span',
+                          null,
+                          _react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
+                          ' Visual Emotional Analysis'
+                        )
+                      },
+                      _react2.default.createElement(
+                        'div',
+                        null,
+                        _react2.default.createElement(
+                          _recharts.ResponsiveContainer,
+                          { width: '100%', aspect: 2 },
+                          _react2.default.createElement(
+                            _recharts.BarChart,
+                            { data: data.face_emotion, margin: { top: 10, right: 30, left: 0, bottom: 0 } },
+                            _react2.default.createElement(_recharts.CartesianGrid, { stroke: '#ccc' }),
+                            _react2.default.createElement(_recharts.XAxis, { dataKey: 'name' }),
+                            _react2.default.createElement(_recharts.YAxis, null),
+                            _react2.default.createElement(_recharts.Tooltip, null),
+                            _react2.default.createElement(_recharts.Bar, { type: 'monotone', dataKey: 'amt', fill: '#ffc658', isAnimationActive: false })
+                          )
+                        )
+                      )
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'col-lg-4' },
+                    _react2.default.createElement(
+                      _Panel2.default,
+                      {
+                        header: _react2.default.createElement(
+                          'span',
+                          null,
+                          _react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
+                          ' Textual Sentimental Analysis'
+                        )
+                      },
+                      _react2.default.createElement(
+                        'div',
+                        null,
+                        _react2.default.createElement(
+                          _recharts.ResponsiveContainer,
+                          { width: '100%', aspect: 2 },
+                          _react2.default.createElement(
+                            _recharts.LineChart,
+                            { data: data.text_sentiment, margin: { top: 10, right: 30, left: 0, bottom: 0 } },
+                            _react2.default.createElement(_recharts.XAxis, { dataKey: 'name' }),
+                            _react2.default.createElement(_recharts.YAxis, null),
+                            _react2.default.createElement(_recharts.CartesianGrid, { stroke: '#ccc' }),
+                            _react2.default.createElement(_recharts.Tooltip, null),
+                            _react2.default.createElement(_recharts.Line, { type: 'monotone', dataKey: 'pos', stackId: '1', stroke: '#8884d8', fill: '#8884d8', isAnimationActive: false }),
+                            _react2.default.createElement(_recharts.Line, { type: 'monotone', dataKey: 'neg', stackId: '1', stroke: '#82ca9d', fill: '#82ca9d', isAnimationActive: false })
+                          )
+                        )
+                      )
+                    )
+                  )
+                );
+              })
+            )
+          )
+        );
+      }
+    }]);
+    return Session;
+  }(_react.Component);
+  
+  exports.default = Session;
+
+/***/ }),
+/* 164 */
+/***/ (function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  
+  var _react = __webpack_require__(11);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _Scheduling = __webpack_require__(165);
+  
+  var _Scheduling2 = _interopRequireDefault(_Scheduling);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  exports.default = {
+  
+    path: '/scheduling',
+  
+    action: function action() {
+      return _react2.default.createElement(_Scheduling2.default, null);
+    }
+  };
+
+/***/ }),
+/* 165 */
+/***/ (function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  
+  var _getPrototypeOf = __webpack_require__(29);
+  
+  var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+  
+  var _classCallCheck2 = __webpack_require__(30);
+  
+  var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+  
+  var _createClass2 = __webpack_require__(31);
+  
+  var _createClass3 = _interopRequireDefault(_createClass2);
+  
+  var _possibleConstructorReturn2 = __webpack_require__(32);
+  
+  var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+  
+  var _inherits2 = __webpack_require__(33);
+  
+  var _inherits3 = _interopRequireDefault(_inherits2);
+  
+  var _react = __webpack_require__(11);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _Button = __webpack_require__(157);
+  
+  var _Button2 = _interopRequireDefault(_Button);
+  
+  var _Panel = __webpack_require__(158);
+  
+  var _Panel2 = _interopRequireDefault(_Panel);
+  
+  var _Pagination = __webpack_require__(159);
+  
+  var _Pagination2 = _interopRequireDefault(_Pagination);
+  
+  var _PageHeader = __webpack_require__(160);
+  
+  var _PageHeader2 = _interopRequireDefault(_PageHeader);
+  
+  var _Well = __webpack_require__(161);
+  
+  var _Well2 = _interopRequireDefault(_Well);
+  
+  var _reactBootstrap = __webpack_require__(38);
+  
+  var _history = __webpack_require__(40);
+  
+  var _history2 = _interopRequireDefault(_history);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  var title = 'Table';
+  
+  var Scheduling = function (_Component) {
+    (0, _inherits3.default)(Scheduling, _Component);
+  
+    function Scheduling() {
+      (0, _classCallCheck3.default)(this, Scheduling);
+  
+      var _this = (0, _possibleConstructorReturn3.default)(this, (Scheduling.__proto__ || (0, _getPrototypeOf2.default)(Scheduling)).call(this));
+  
+      _this.state = {};
+  
+      return _this;
+    }
+  
+    (0, _createClass3.default)(Scheduling, [{
+      key: 'render',
+      value: function render() {
+        return _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'p',
+            null,
+            'Hello'
+          )
+        );
+      }
+    }]);
+    return Scheduling;
+  }(_react.Component);
+  
+  exports.default = Scheduling;
+
+/***/ }),
+/* 166 */
+/***/ (function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  
+  var _react = __webpack_require__(11);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _Login = __webpack_require__(167);
   
   var _Login2 = _interopRequireDefault(_Login);
   
@@ -20615,7 +21443,7 @@ module.exports =
   // import App from '../../components/App';
 
 /***/ }),
-/* 156 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -20642,7 +21470,7 @@ module.exports =
   
   var _withStyles2 = _interopRequireDefault(_withStyles);
   
-  var _Login = __webpack_require__(159);
+  var _Login = __webpack_require__(168);
   
   var _Login2 = _interopRequireDefault(_Login);
   
@@ -20741,23 +21569,11 @@ module.exports =
   exports.default = (0, _withStyles2.default)(_Login2.default)(Login);
 
 /***/ }),
-/* 157 */
-/***/ (function(module, exports) {
-
-  module.exports = require("react-bootstrap/lib/Button");
-
-/***/ }),
-/* 158 */
-/***/ (function(module, exports) {
-
-  module.exports = require("react-bootstrap/lib/Panel");
-
-/***/ }),
-/* 159 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
   
-      var content = __webpack_require__(160);
+      var content = __webpack_require__(169);
       var insertCss = __webpack_require__(22);
   
       if (typeof content === 'string') {
@@ -20787,7 +21603,7 @@ module.exports =
     
 
 /***/ }),
-/* 160 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(21)();
@@ -20814,7 +21630,7 @@ module.exports =
   };
 
 /***/ }),
-/* 161 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -20827,7 +21643,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Table = __webpack_require__(162);
+  var _Table = __webpack_require__(171);
   
   var _Table2 = _interopRequireDefault(_Table);
   
@@ -20843,7 +21659,7 @@ module.exports =
   };
 
 /***/ }),
-/* 162 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -20864,15 +21680,15 @@ module.exports =
   
   var _Panel2 = _interopRequireDefault(_Panel);
   
-  var _Pagination = __webpack_require__(163);
+  var _Pagination = __webpack_require__(159);
   
   var _Pagination2 = _interopRequireDefault(_Pagination);
   
-  var _PageHeader = __webpack_require__(164);
+  var _PageHeader = __webpack_require__(160);
   
   var _PageHeader2 = _interopRequireDefault(_PageHeader);
   
-  var _Well = __webpack_require__(165);
+  var _Well = __webpack_require__(161);
   
   var _Well2 = _interopRequireDefault(_Well);
   
@@ -22219,25 +23035,7 @@ module.exports =
   exports.default = displayTable;
 
 /***/ }),
-/* 163 */
-/***/ (function(module, exports) {
-
-  module.exports = require("react-bootstrap/lib/Pagination");
-
-/***/ }),
-/* 164 */
-/***/ (function(module, exports) {
-
-  module.exports = require("react-bootstrap/lib/PageHeader");
-
-/***/ }),
-/* 165 */
-/***/ (function(module, exports) {
-
-  module.exports = require("react-bootstrap/lib/Well");
-
-/***/ }),
-/* 166 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -22250,7 +23048,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Button = __webpack_require__(167);
+  var _Button = __webpack_require__(173);
   
   var _Button2 = _interopRequireDefault(_Button);
   
@@ -22266,7 +23064,7 @@ module.exports =
   };
 
 /***/ }),
-/* 167 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -22287,7 +23085,7 @@ module.exports =
   
   var _Panel2 = _interopRequireDefault(_Panel);
   
-  var _PageHeader = __webpack_require__(164);
+  var _PageHeader = __webpack_require__(160);
   
   var _PageHeader2 = _interopRequireDefault(_PageHeader);
   
@@ -22826,7 +23624,7 @@ module.exports =
   exports.default = displayButtons;
 
 /***/ }),
-/* 168 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -22839,7 +23637,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _FlotCharts = __webpack_require__(169);
+  var _FlotCharts = __webpack_require__(175);
   
   var _FlotCharts2 = _interopRequireDefault(_FlotCharts);
   
@@ -22855,7 +23653,7 @@ module.exports =
   };
 
 /***/ }),
-/* 169 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -22876,11 +23674,11 @@ module.exports =
   
   var _Panel2 = _interopRequireDefault(_Panel);
   
-  var _PageHeader = __webpack_require__(164);
+  var _PageHeader = __webpack_require__(160);
   
   var _PageHeader2 = _interopRequireDefault(_PageHeader);
   
-  var _recharts = __webpack_require__(100);
+  var _recharts = __webpack_require__(104);
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
@@ -23095,7 +23893,7 @@ module.exports =
   exports.default = displayFlotCharts;
 
 /***/ }),
-/* 170 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -23108,7 +23906,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _forms = __webpack_require__(171);
+  var _forms = __webpack_require__(177);
   
   var _forms2 = _interopRequireDefault(_forms);
   
@@ -23124,7 +23922,7 @@ module.exports =
   };
 
 /***/ }),
-/* 171 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -23139,15 +23937,15 @@ module.exports =
   
   var _reactBootstrap = __webpack_require__(38);
   
-  var _FormControlFeedback = __webpack_require__(172);
+  var _FormControlFeedback = __webpack_require__(178);
   
   var _FormControlFeedback2 = _interopRequireDefault(_FormControlFeedback);
   
-  var _FormControlStatic = __webpack_require__(173);
+  var _FormControlStatic = __webpack_require__(179);
   
   var _FormControlStatic2 = _interopRequireDefault(_FormControlStatic);
   
-  var _InputGroupAddon = __webpack_require__(174);
+  var _InputGroupAddon = __webpack_require__(180);
   
   var _InputGroupAddon2 = _interopRequireDefault(_InputGroupAddon);
   
@@ -23633,25 +24431,25 @@ module.exports =
   exports.default = displayForms;
 
 /***/ }),
-/* 172 */
+/* 178 */
 /***/ (function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/FormControlFeedback");
 
 /***/ }),
-/* 173 */
+/* 179 */
 /***/ (function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/FormControlStatic");
 
 /***/ }),
-/* 174 */
+/* 180 */
 /***/ (function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/InputGroupAddon");
 
 /***/ }),
-/* 175 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -23664,7 +24462,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Grid = __webpack_require__(176);
+  var _Grid = __webpack_require__(182);
   
   var _Grid2 = _interopRequireDefault(_Grid);
   
@@ -23680,7 +24478,7 @@ module.exports =
   };
 
 /***/ }),
-/* 176 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -23697,7 +24495,7 @@ module.exports =
   
   var _Panel2 = _interopRequireDefault(_Panel);
   
-  var _PageHeader = __webpack_require__(164);
+  var _PageHeader = __webpack_require__(160);
   
   var _PageHeader2 = _interopRequireDefault(_PageHeader);
   
@@ -24568,7 +25366,7 @@ module.exports =
   exports.default = displayGrid;
 
 /***/ }),
-/* 177 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -24581,7 +25379,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Icons = __webpack_require__(178);
+  var _Icons = __webpack_require__(184);
   
   var _Icons2 = _interopRequireDefault(_Icons);
   
@@ -24597,7 +25395,7 @@ module.exports =
   };
 
 /***/ }),
-/* 178 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -24614,7 +25412,7 @@ module.exports =
   
   var _Panel2 = _interopRequireDefault(_Panel);
   
-  var _PageHeader = __webpack_require__(164);
+  var _PageHeader = __webpack_require__(160);
   
   var _PageHeader2 = _interopRequireDefault(_PageHeader);
   
@@ -27696,7 +28494,7 @@ module.exports =
   exports.default = displayIcons;
 
 /***/ }),
-/* 179 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -27709,7 +28507,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _MorrisjsCharts = __webpack_require__(180);
+  var _MorrisjsCharts = __webpack_require__(186);
   
   var _MorrisjsCharts2 = _interopRequireDefault(_MorrisjsCharts);
   
@@ -27725,7 +28523,7 @@ module.exports =
   };
 
 /***/ }),
-/* 180 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -27746,7 +28544,7 @@ module.exports =
   
   var _Panel2 = _interopRequireDefault(_Panel);
   
-  var _PageHeader = __webpack_require__(164);
+  var _PageHeader = __webpack_require__(160);
   
   var _PageHeader2 = _interopRequireDefault(_PageHeader);
   
@@ -27754,7 +28552,7 @@ module.exports =
   
   var _Donut2 = _interopRequireDefault(_Donut);
   
-  var _recharts = __webpack_require__(100);
+  var _recharts = __webpack_require__(104);
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
@@ -27936,7 +28734,7 @@ module.exports =
   exports.default = displayMorrisjsCharts;
 
 /***/ }),
-/* 181 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -27949,7 +28747,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Notification = __webpack_require__(182);
+  var _Notification = __webpack_require__(188);
   
   var _Notification2 = _interopRequireDefault(_Notification);
   
@@ -27965,7 +28763,7 @@ module.exports =
   };
 
 /***/ }),
-/* 182 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -28002,7 +28800,7 @@ module.exports =
   
   var _Panel2 = _interopRequireDefault(_Panel);
   
-  var _Alert = __webpack_require__(183);
+  var _Alert = __webpack_require__(189);
   
   var _Alert2 = _interopRequireDefault(_Alert);
   
@@ -28010,23 +28808,23 @@ module.exports =
   
   var _Button2 = _interopRequireDefault(_Button);
   
-  var _OverlayTrigger = __webpack_require__(184);
+  var _OverlayTrigger = __webpack_require__(190);
   
   var _OverlayTrigger2 = _interopRequireDefault(_OverlayTrigger);
   
-  var _Tooltip = __webpack_require__(185);
+  var _Tooltip = __webpack_require__(191);
   
   var _Tooltip2 = _interopRequireDefault(_Tooltip);
   
-  var _Popover = __webpack_require__(186);
+  var _Popover = __webpack_require__(192);
   
   var _Popover2 = _interopRequireDefault(_Popover);
   
-  var _Modal = __webpack_require__(187);
+  var _Modal = __webpack_require__(193);
   
   var _Modal2 = _interopRequireDefault(_Modal);
   
-  var _PageHeader = __webpack_require__(164);
+  var _PageHeader = __webpack_require__(160);
   
   var _PageHeader2 = _interopRequireDefault(_PageHeader);
   
@@ -28525,37 +29323,37 @@ module.exports =
   exports.default = Notification;
 
 /***/ }),
-/* 183 */
+/* 189 */
 /***/ (function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/Alert");
 
 /***/ }),
-/* 184 */
+/* 190 */
 /***/ (function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/OverlayTrigger");
 
 /***/ }),
-/* 185 */
+/* 191 */
 /***/ (function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/Tooltip");
 
 /***/ }),
-/* 186 */
+/* 192 */
 /***/ (function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/Popover");
 
 /***/ }),
-/* 187 */
+/* 193 */
 /***/ (function(module, exports) {
 
   module.exports = require("react-bootstrap/lib/Modal");
 
 /***/ }),
-/* 188 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -28568,7 +29366,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _PanelWells = __webpack_require__(189);
+  var _PanelWells = __webpack_require__(195);
   
   var _PanelWells2 = _interopRequireDefault(_PanelWells);
   
@@ -28584,7 +29382,7 @@ module.exports =
   };
 
 /***/ }),
-/* 189 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -29179,7 +29977,7 @@ module.exports =
   exports.default = displayPanelWells;
 
 /***/ }),
-/* 190 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -29192,7 +29990,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Typography = __webpack_require__(191);
+  var _Typography = __webpack_require__(197);
   
   var _Typography2 = _interopRequireDefault(_Typography);
   
@@ -29208,7 +30006,7 @@ module.exports =
   };
 
 /***/ }),
-/* 191 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -29225,7 +30023,7 @@ module.exports =
   
   var _Panel2 = _interopRequireDefault(_Panel);
   
-  var _PageHeader = __webpack_require__(164);
+  var _PageHeader = __webpack_require__(160);
   
   var _PageHeader2 = _interopRequireDefault(_PageHeader);
   
@@ -29823,7 +30621,7 @@ module.exports =
   exports.default = displayTypography;
 
 /***/ }),
-/* 192 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -29836,7 +30634,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _blank = __webpack_require__(193);
+  var _blank = __webpack_require__(199);
   
   var _blank2 = _interopRequireDefault(_blank);
   
@@ -29851,7 +30649,7 @@ module.exports =
   };
 
 /***/ }),
-/* 193 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -29895,7 +30693,7 @@ module.exports =
   exports.default = displayBlank;
 
 /***/ }),
-/* 194 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -29944,808 +30742,10 @@ module.exports =
       */
 
 /***/ }),
-/* 195 */
+/* 201 */
 /***/ (function(module, exports) {
 
   module.exports = require("./assets");
-
-/***/ }),
-/* 196 */
-/***/ (function(module, exports, __webpack_require__) {
-
-  'use strict';
-  
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  
-  var _react = __webpack_require__(11);
-  
-  var _react2 = _interopRequireDefault(_react);
-  
-  var _Patient = __webpack_require__(197);
-  
-  var _Patient2 = _interopRequireDefault(_Patient);
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-  
-  exports.default = {
-  
-    path: '/patient',
-  
-    action: function action() {
-      return _react2.default.createElement(_Patient2.default, null);
-    }
-  };
-
-/***/ }),
-/* 197 */
-/***/ (function(module, exports, __webpack_require__) {
-
-  'use strict';
-  
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  
-  var _getPrototypeOf = __webpack_require__(29);
-  
-  var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-  
-  var _classCallCheck2 = __webpack_require__(30);
-  
-  var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  
-  var _createClass2 = __webpack_require__(31);
-  
-  var _createClass3 = _interopRequireDefault(_createClass2);
-  
-  var _possibleConstructorReturn2 = __webpack_require__(32);
-  
-  var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  
-  var _inherits2 = __webpack_require__(33);
-  
-  var _inherits3 = _interopRequireDefault(_inherits2);
-  
-  var _react = __webpack_require__(11);
-  
-  var _react2 = _interopRequireDefault(_react);
-  
-  var _Button = __webpack_require__(157);
-  
-  var _Button2 = _interopRequireDefault(_Button);
-  
-  var _Panel = __webpack_require__(158);
-  
-  var _Panel2 = _interopRequireDefault(_Panel);
-  
-  var _Pagination = __webpack_require__(163);
-  
-  var _Pagination2 = _interopRequireDefault(_Pagination);
-  
-  var _PageHeader = __webpack_require__(164);
-  
-  var _PageHeader2 = _interopRequireDefault(_PageHeader);
-  
-  var _Well = __webpack_require__(165);
-  
-  var _Well2 = _interopRequireDefault(_Well);
-  
-  var _reactBootstrap = __webpack_require__(38);
-  
-  var _history = __webpack_require__(40);
-  
-  var _history2 = _interopRequireDefault(_history);
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-  
-  var title = 'Table';
-  
-  var Patient = function (_Component) {
-    (0, _inherits3.default)(Patient, _Component);
-  
-    function Patient() {
-      (0, _classCallCheck3.default)(this, Patient);
-  
-      var _this = (0, _possibleConstructorReturn3.default)(this, (Patient.__proto__ || (0, _getPrototypeOf2.default)(Patient)).call(this));
-  
-      _this.state = {
-        patients: [],
-  
-        showModal: false
-      };
-  
-      _this.updatePatients();
-  
-      return _this;
-    }
-  
-    (0, _createClass3.default)(Patient, [{
-      key: 'updatePatients',
-      value: function updatePatients() {
-        var _this2 = this;
-  
-        fetch('http://localhost:8000/patients', {
-          method: 'GET'
-        }).then(function (response) {
-          return response.json();
-        }).then(function (responseJson) {
-          _this2.setState({ patients: responseJson });
-        }).catch(function (error) {});
-      }
-    }, {
-      key: 'handleClose',
-      value: function handleClose() {
-        this.setState({ showModal: false });
-      }
-    }, {
-      key: 'handleShow',
-      value: function handleShow() {
-        this.setState({ showModal: true });
-      }
-    }, {
-      key: 'renderAddPatientModal',
-      value: function renderAddPatientModal() {
-        var _this3 = this;
-  
-        return _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Modal,
-            { show: this.state.showModal, onHide: function onHide() {
-                return _this3.handleClose();
-              } },
-            _react2.default.createElement(
-              _reactBootstrap.Modal.Header,
-              { closeButton: true },
-              _react2.default.createElement(
-                _reactBootstrap.Modal.Title,
-                null,
-                'Add Patient'
-              )
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Modal.Body,
-              null,
-              _react2.default.createElement(
-                _reactBootstrap.Form,
-                null,
-                _react2.default.createElement(
-                  _reactBootstrap.FormGroup,
-                  { controlId: 'formBasicText2' },
-                  _react2.default.createElement(
-                    _reactBootstrap.ControlLabel,
-                    null,
-                    'Text Input'
-                  ),
-                  _react2.default.createElement(_reactBootstrap.FormControl, {
-                    type: 'text',
-                    placeholder: 'Enter Text',
-                    inputRef: function inputRef(name) {
-                      return _this3.inputName = name;
-                    }
-                  })
-                ),
-                _react2.default.createElement(
-                  _Button2.default,
-                  { onClick: function onClick() {
-                      var formData = new FormData();
-                      formData.append("name", _this3.inputName.value);
-                      fetch('http://localhost:8000/patients', {
-                        method: 'POST',
-                        body: formData
-                      }).then(function (response) {
-                        return response.json();
-                      }).then(function (responseJson) {
-                        console.log(responseJson);
-                        _this3.updatePatients();
-                        _this3.handleClose();
-                      }).catch(function (error) {});
-                    } },
-                  'Submit'
-                )
-              )
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Modal.Footer,
-              null,
-              _react2.default.createElement(
-                _Button2.default,
-                { onClick: function onClick() {
-                    return _this3.handleClose();
-                  } },
-                'Close'
-              )
-            )
-          )
-        );
-      }
-    }, {
-      key: 'render',
-      value: function render() {
-        var _this4 = this;
-  
-        return _react2.default.createElement(
-          'div',
-          null,
-          this.renderAddPatientModal(),
-          _react2.default.createElement(
-            'div',
-            { className: 'col-lg-12' },
-            _react2.default.createElement(
-              _PageHeader2.default,
-              null,
-              'Patients',
-              _react2.default.createElement(
-                'div',
-                { className: 'pull-right' },
-                _react2.default.createElement(
-                  'button',
-                  {
-                    className: 'btn btn-success',
-                    onClick: function onClick() {
-                      return _this4.handleShow();
-                    } },
-                  'Add Patient'
-                )
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'col-lg-12' },
-            _react2.default.createElement(
-              'div',
-              null,
-              _react2.default.createElement(
-                'div',
-                { className: 'dataTable_wrapper' },
-                _react2.default.createElement(
-                  'div',
-                  {
-                    id: 'dataTables-example_wrapper',
-                    className: 'dataTables_wrapper form-inline dt-bootstrap no-footer'
-                  },
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'row' },
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'col-sm-12' },
-                      _react2.default.createElement(
-                        'table',
-                        {
-                          className: 'table table-striped table-bordered table-hover dataTable no-footer',
-                          id: 'dataTables-example',
-                          role: 'grid',
-                          'aria-describedby': 'dataTables-example_info'
-                        },
-                        _react2.default.createElement(
-                          'thead',
-                          null,
-                          _react2.default.createElement(
-                            'tr',
-                            { role: 'row' },
-                            _react2.default.createElement(
-                              'th',
-                              {
-                                className: 'sorting_asc',
-                                tabIndex: '0',
-                                'aria-controls': 'dataTables-example',
-                                rowSpan: '1',
-                                colSpan: '1',
-                                'aria-label': 'Rendering engine: activate to sort column descending',
-                                'aria-sort': 'ascending',
-                                style: { width: 265 }
-                              },
-                              'ID'
-                            ),
-                            _react2.default.createElement(
-                              'th',
-                              {
-                                className: 'sorting',
-                                tabIndex: '0',
-                                'aria-controls': 'dataTables-example',
-                                rowSpan: '1',
-                                colSpan: '1',
-                                'aria-label': 'Browser: activate to sort column ascending',
-                                style: { width: 321 }
-                              },
-                              'Name'
-                            ),
-                            _react2.default.createElement(
-                              'th',
-                              {
-                                className: 'sorting',
-                                tabIndex: '0',
-                                'aria-controls': 'dataTables-example',
-                                rowSpan: '1',
-                                colSpan: '1',
-                                'aria-label': 'Platform(s): activate to sort column ascending',
-                                style: { width: 299 }
-                              },
-                              'Action'
-                            )
-                          )
-                        ),
-                        _react2.default.createElement(
-                          'tbody',
-                          null,
-                          this.state.patients.map(function (data, i) {
-                            return _react2.default.createElement(
-                              'tr',
-                              { className: 'gradeA odd', role: 'row', key: i },
-                              _react2.default.createElement(
-                                'td',
-                                { className: 'sorting_1' },
-                                data.id
-                              ),
-                              _react2.default.createElement(
-                                'td',
-                                null,
-                                data.name
-                              ),
-                              _react2.default.createElement(
-                                'td',
-                                null,
-                                _react2.default.createElement(
-                                  'button',
-                                  {
-                                    className: 'btn btn-success',
-                                    onClick: function onClick() {
-                                      _history2.default.push('/session/' + data.id);
-                                    } },
-                                  'View Sessions'
-                                )
-                              )
-                            );
-                          })
-                        )
-                      )
-                    )
-                  )
-                )
-              )
-            )
-          )
-        );
-      }
-    }]);
-    return Patient;
-  }(_react.Component);
-  
-  exports.default = Patient;
-
-/***/ }),
-/* 198 */
-/***/ (function(module, exports, __webpack_require__) {
-
-  'use strict';
-  
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  
-  var _react = __webpack_require__(11);
-  
-  var _react2 = _interopRequireDefault(_react);
-  
-  var _Session = __webpack_require__(199);
-  
-  var _Session2 = _interopRequireDefault(_Session);
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-  
-  exports.default = {
-  
-    path: '/session/:patientId',
-  
-    action: function action(_ref) {
-      var path = _ref.path,
-          params = _ref.params,
-          query = _ref.query;
-  
-      return _react2.default.createElement(_Session2.default, { patientId: params.patientId });
-    }
-  };
-
-/***/ }),
-/* 199 */
-/***/ (function(module, exports, __webpack_require__) {
-
-  'use strict';
-  
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  
-  var _regenerator = __webpack_require__(1);
-  
-  var _regenerator2 = _interopRequireDefault(_regenerator);
-  
-  var _asyncToGenerator2 = __webpack_require__(4);
-  
-  var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
-  
-  var _getPrototypeOf = __webpack_require__(29);
-  
-  var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-  
-  var _classCallCheck2 = __webpack_require__(30);
-  
-  var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  
-  var _createClass2 = __webpack_require__(31);
-  
-  var _createClass3 = _interopRequireDefault(_createClass2);
-  
-  var _possibleConstructorReturn2 = __webpack_require__(32);
-  
-  var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  
-  var _inherits2 = __webpack_require__(33);
-  
-  var _inherits3 = _interopRequireDefault(_inherits2);
-  
-  var _react = __webpack_require__(11);
-  
-  var _react2 = _interopRequireDefault(_react);
-  
-  var _Button = __webpack_require__(157);
-  
-  var _Button2 = _interopRequireDefault(_Button);
-  
-  var _Panel = __webpack_require__(158);
-  
-  var _Panel2 = _interopRequireDefault(_Panel);
-  
-  var _Pagination = __webpack_require__(163);
-  
-  var _Pagination2 = _interopRequireDefault(_Pagination);
-  
-  var _PageHeader = __webpack_require__(164);
-  
-  var _PageHeader2 = _interopRequireDefault(_PageHeader);
-  
-  var _Well = __webpack_require__(165);
-  
-  var _Well2 = _interopRequireDefault(_Well);
-  
-  var _recharts = __webpack_require__(100);
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-  
-  var title = 'Table';
-  
-  var Session = function (_Component) {
-    (0, _inherits3.default)(Session, _Component);
-  
-    function Session() {
-      (0, _classCallCheck3.default)(this, Session);
-  
-      var _this = (0, _possibleConstructorReturn3.default)(this, (Session.__proto__ || (0, _getPrototypeOf2.default)(Session)).call(this));
-  
-      _this.state = {
-        graphs: []
-      };
-  
-      return _this;
-    }
-  
-    (0, _createClass3.default)(Session, [{
-      key: 'componentDidMount',
-      value: function componentDidMount() {
-        this.updateGraphs();
-      }
-    }, {
-      key: 'updateGraphs',
-      value: function () {
-        var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
-          var _this2 = this;
-  
-          return _regenerator2.default.wrap(function _callee$(_context) {
-            while (1) {
-              switch (_context.prev = _context.next) {
-                case 0:
-                  _context.next = 2;
-                  return fetch('http://localhost:8000/sessionId/' + this.props.patientId, {
-                    method: 'GET'
-                  }).then(function (response) {
-                    return response.json();
-                  }).then(function (responseJson) {
-                    console.log(responseJson);
-                    var data = [];
-                    for (var y in responseJson) {
-                      var x = responseJson[y];
-                      var temp = {
-                        text_emotion: JSON.parse(x.textual_emotional),
-                        face_emotion: JSON.parse(x.facial_emotional),
-                        text_sentiment: JSON.parse(x.textual_sentimental)
-                      };
-                      data.push(temp);
-                    }
-                    _this2.setState({ graphs: data });
-                    console.log(_this2.state.graphs);
-                  });
-  
-                case 2:
-                case 'end':
-                  return _context.stop();
-              }
-            }
-          }, _callee, this);
-        }));
-  
-        function updateGraphs() {
-          return _ref.apply(this, arguments);
-        }
-  
-        return updateGraphs;
-      }()
-    }, {
-      key: 'render',
-      value: function render() {
-        return _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(
-            'div',
-            { className: 'col-lg-12' },
-            _react2.default.createElement(
-              _PageHeader2.default,
-              null,
-              'Session for patient ID: ',
-              this.props.patientId,
-              ' '
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'col-lg-12' },
-            _react2.default.createElement(
-              'div',
-              null,
-              this.state.graphs.map(function (data, i) {
-                return _react2.default.createElement(
-                  'div',
-                  { className: 'row', key: i },
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'col-lg-4' },
-                    _react2.default.createElement(
-                      _Panel2.default,
-                      {
-                        header: _react2.default.createElement(
-                          'span',
-                          null,
-                          _react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
-                          ' Textual Emotion Analysis'
-                        )
-                      },
-                      _react2.default.createElement(
-                        'div',
-                        null,
-                        _react2.default.createElement(
-                          _recharts.ResponsiveContainer,
-                          { width: '100%', aspect: 2 },
-                          _react2.default.createElement(
-                            _recharts.BarChart,
-                            {
-                              data: data.text_emotion,
-                              margin: { top: 10, right: 30, left: 0, bottom: 0 } },
-                            _react2.default.createElement(_recharts.CartesianGrid, { stroke: '#ccc' }),
-                            _react2.default.createElement(_recharts.XAxis, { dataKey: 'name' }),
-                            _react2.default.createElement(_recharts.YAxis, null),
-                            _react2.default.createElement(_recharts.Tooltip, null),
-                            _react2.default.createElement(_recharts.Bar, { type: 'monotone', dataKey: 'amt', fill: '#ffc658', isAnimationActive: false })
-                          )
-                        )
-                      )
-                    )
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'col-lg-4' },
-                    _react2.default.createElement(
-                      _Panel2.default,
-                      {
-                        header: _react2.default.createElement(
-                          'span',
-                          null,
-                          _react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
-                          ' Visual Emotional Analysis'
-                        )
-                      },
-                      _react2.default.createElement(
-                        'div',
-                        null,
-                        _react2.default.createElement(
-                          _recharts.ResponsiveContainer,
-                          { width: '100%', aspect: 2 },
-                          _react2.default.createElement(
-                            _recharts.BarChart,
-                            { data: data.face_emotion, margin: { top: 10, right: 30, left: 0, bottom: 0 } },
-                            _react2.default.createElement(_recharts.CartesianGrid, { stroke: '#ccc' }),
-                            _react2.default.createElement(_recharts.XAxis, { dataKey: 'name' }),
-                            _react2.default.createElement(_recharts.YAxis, null),
-                            _react2.default.createElement(_recharts.Tooltip, null),
-                            _react2.default.createElement(_recharts.Bar, { type: 'monotone', dataKey: 'amt', fill: '#ffc658', isAnimationActive: false })
-                          )
-                        )
-                      )
-                    )
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'col-lg-4' },
-                    _react2.default.createElement(
-                      _Panel2.default,
-                      {
-                        header: _react2.default.createElement(
-                          'span',
-                          null,
-                          _react2.default.createElement('i', { className: 'fa fa-bar-chart-o fa-fw' }),
-                          ' Textual Sentimental Analysis'
-                        )
-                      },
-                      _react2.default.createElement(
-                        'div',
-                        null,
-                        _react2.default.createElement(
-                          _recharts.ResponsiveContainer,
-                          { width: '100%', aspect: 2 },
-                          _react2.default.createElement(
-                            _recharts.LineChart,
-                            { data: data.text_sentiment, margin: { top: 10, right: 30, left: 0, bottom: 0 } },
-                            _react2.default.createElement(_recharts.XAxis, { dataKey: 'name' }),
-                            _react2.default.createElement(_recharts.YAxis, null),
-                            _react2.default.createElement(_recharts.CartesianGrid, { stroke: '#ccc' }),
-                            _react2.default.createElement(_recharts.Tooltip, null),
-                            _react2.default.createElement(_recharts.Line, { type: 'monotone', dataKey: 'pos', stackId: '1', stroke: '#8884d8', fill: '#8884d8', isAnimationActive: false }),
-                            _react2.default.createElement(_recharts.Line, { type: 'monotone', dataKey: 'neg', stackId: '1', stroke: '#82ca9d', fill: '#82ca9d', isAnimationActive: false })
-                          )
-                        )
-                      )
-                    )
-                  )
-                );
-              })
-            )
-          )
-        );
-      }
-    }]);
-    return Session;
-  }(_react.Component);
-  
-  exports.default = Session;
-
-/***/ }),
-/* 200 */
-/***/ (function(module, exports, __webpack_require__) {
-
-  'use strict';
-  
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  
-  var _react = __webpack_require__(11);
-  
-  var _react2 = _interopRequireDefault(_react);
-  
-  var _Scheduling = __webpack_require__(201);
-  
-  var _Scheduling2 = _interopRequireDefault(_Scheduling);
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-  
-  exports.default = {
-  
-    path: '/scheduling',
-  
-    action: function action() {
-      return _react2.default.createElement(_Scheduling2.default, null);
-    }
-  };
-
-/***/ }),
-/* 201 */
-/***/ (function(module, exports, __webpack_require__) {
-
-  'use strict';
-  
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  
-  var _getPrototypeOf = __webpack_require__(29);
-  
-  var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-  
-  var _classCallCheck2 = __webpack_require__(30);
-  
-  var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  
-  var _createClass2 = __webpack_require__(31);
-  
-  var _createClass3 = _interopRequireDefault(_createClass2);
-  
-  var _possibleConstructorReturn2 = __webpack_require__(32);
-  
-  var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  
-  var _inherits2 = __webpack_require__(33);
-  
-  var _inherits3 = _interopRequireDefault(_inherits2);
-  
-  var _react = __webpack_require__(11);
-  
-  var _react2 = _interopRequireDefault(_react);
-  
-  var _Button = __webpack_require__(157);
-  
-  var _Button2 = _interopRequireDefault(_Button);
-  
-  var _Panel = __webpack_require__(158);
-  
-  var _Panel2 = _interopRequireDefault(_Panel);
-  
-  var _Pagination = __webpack_require__(163);
-  
-  var _Pagination2 = _interopRequireDefault(_Pagination);
-  
-  var _PageHeader = __webpack_require__(164);
-  
-  var _PageHeader2 = _interopRequireDefault(_PageHeader);
-  
-  var _Well = __webpack_require__(165);
-  
-  var _Well2 = _interopRequireDefault(_Well);
-  
-  var _reactBootstrap = __webpack_require__(38);
-  
-  var _history = __webpack_require__(40);
-  
-  var _history2 = _interopRequireDefault(_history);
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-  
-  var title = 'Table';
-  
-  var Scheduling = function (_Component) {
-    (0, _inherits3.default)(Scheduling, _Component);
-  
-    function Scheduling() {
-      (0, _classCallCheck3.default)(this, Scheduling);
-  
-      var _this = (0, _possibleConstructorReturn3.default)(this, (Scheduling.__proto__ || (0, _getPrototypeOf2.default)(Scheduling)).call(this));
-  
-      _this.state = {};
-  
-      return _this;
-    }
-  
-    (0, _createClass3.default)(Scheduling, [{
-      key: 'render',
-      value: function render() {
-        return _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(
-            'p',
-            null,
-            'Hello'
-          )
-        );
-      }
-    }]);
-    return Scheduling;
-  }(_react.Component);
-  
-  exports.default = Scheduling;
 
 /***/ })
 /******/ ]);
