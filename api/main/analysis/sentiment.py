@@ -1,9 +1,12 @@
 import nltk.classify.util
 from nltk.classify import NaiveBayesClassifier
 from nltk.corpus import movie_reviews
+import nltk
 
 from collections import OrderedDict
  
+nltk.download('movie_reviews')
+
 def word_feats(words):
     return dict([(word, True) for word in words])
  
