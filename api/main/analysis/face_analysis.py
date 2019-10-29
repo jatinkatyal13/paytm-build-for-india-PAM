@@ -18,11 +18,14 @@ def format_image(image):
     image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
   else:
     image = cv2.imdecode(image, cv2.CV_LOAD_IMAGE_GRAYSCALE)
+
   faces = cascade_classifier.detectMultiScale(
       image,
       scaleFactor = 1.3,
       minNeighbors = 5
   )
+
+  print(faces)
   # None is we don't found an image
   if not len(faces) > 0:
     return None

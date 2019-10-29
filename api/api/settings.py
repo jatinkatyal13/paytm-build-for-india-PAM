@@ -26,6 +26,7 @@ SECRET_KEY = '0ot-amjc83v($h+34*7@17d1zo@bh9-068=%j+qht1mie^h@)k'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+        '*',
 	'phsychohelp-backend.herokuapp.com',		
 ]
 

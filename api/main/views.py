@@ -85,7 +85,8 @@ def imageAnalyze(request):
 		try:
 			b = request.POST['base64']
 			res['emotion'] = predict_face(b)
-		except:
+		except Exception as err:
+			print(err)
 			res['error'] = "Emotion key not found"	
 	else:
 		res['error'] = "Method not supported"

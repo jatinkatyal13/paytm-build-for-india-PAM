@@ -8,7 +8,7 @@
 #
 #
 
-CASC_PATH = '/Users/jatinkatyal/Desktop/jatin/PAM/api/main/analysis/haarcascade_files/haarcascade_frontalface_default.xml'
+CASC_PATH = '/Users/jatinkatyal/Desktop/work/PAM/api/main/analysis/haarcascade_files/haarcascade_frontalface_default.xml'
 SIZE_FACE = 48
 EMOTIONS = ['angry', 'disgusted', 'fearful', 'happy', 'sad', 'surprised', 'neutral']
 SAVE_DIRECTORY = '/Users/jatinkatyal/Desktop/jatin/PAM/api/main/analysis/data/'
