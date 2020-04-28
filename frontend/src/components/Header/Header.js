@@ -30,7 +30,7 @@ function Header() {
           <Brand>
             <span>
               <img src={logo} alt="Start React" title="Start React" />
-              <span style={{ color : '#fff' }}>&nbsp;Psychological Assistance Module</span>
+              <span style={{ color : '#fff' }}>&nbsp;Automatic Feedback System</span>
                 <button type="button" className="navbar-toggle" onClick={() => {toggleMenu();}} style={{position: 'absolute', right: 0, top: 0}}>
                   <span className="sr-only">Toggle navigation</span>
                   <span className="icon-bar"></span>

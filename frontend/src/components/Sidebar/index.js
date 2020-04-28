@@ -39,13 +39,13 @@ class Sidebar extends Component {
 
             <li>
               <a href="" onClick={(e) => { e.preventDefault(); history.push('/initiate'); }} style={{ color : '#07252f' }}>
-                <i className="fa fa-dashboard fa-fw" /> &nbsp;Initiate Now
+                <i className="fa fa-dashboard fa-fw" /> &nbsp;Call Now
               </a>
             </li>
 
             <li>
               <a href="" onClick={(e) => { e.preventDefault(); history.push('/patient'); }} style={{ color : '#07252f' }}>
-                <i className="fa fa-table fa-fw" /> &nbsp;Patients
+                <i className="fa fa-table fa-fw" /> &nbsp;Customers
               </a>
             </li>
 

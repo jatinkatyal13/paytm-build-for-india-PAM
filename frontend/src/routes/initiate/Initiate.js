@@ -345,7 +345,7 @@ class Initiate extends Component {
 								</div>
 								<div className="col-lg-6">
 									<FormGroup controlId="formControlsSelect">
-										<ControlLabel><h4>Patient</h4></ControlLabel>
+										<ControlLabel><h4>Customer</h4></ControlLabel>
 										<FormControl 
 											componentClass="select" 
 											placeholder="select"
@@ -392,18 +392,6 @@ class Initiate extends Component {
 				<div className="row">
 	
 					<div className="col-lg-3">
-						<Panel
-							header={<span>
-								<i className="fa fa-bar-chart-o fa-fw" /> Video Stream
-								<div>
-								</div>
-							</span>}
-						>
-							<div>
-								{ this.renderWebCam() }
-							</div>
-	
-						</Panel>
 						<Panel
 							header={<span>
 								<i className="fa fa-bar-chart-o fa-fw" /> Text Stream

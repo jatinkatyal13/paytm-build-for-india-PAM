@@ -52,7 +52,7 @@ class Home extends Component {
 							style="panel-primary"
 							icon="fa fa-comments fa-5x"
 							count={ this.state.patient_count }
-							headerText="Number of Patients"
+							headerText="Number of Customers"
 							footerText="View Details"
 							linkTo="/patient"
 						/>
@@ -62,7 +62,7 @@ class Home extends Component {
 							style="panel-green"
 							icon="fa fa-tasks fa-5x"
 							count={ this.state.session_count }
-							headerText="Number of Sessions"
+							headerText="Number of Calls"
 							footerText="View Details"
 							linkTo="/patient"
 						/>
@@ -72,7 +72,7 @@ class Home extends Component {
 							style="panel-yellow"
 							icon="fa fa-shopping-cart fa-5x"
 							count="00:00"
-							headerText="Total Time in Sessions"
+							headerText="Total Time in Call"
 							footerText="View Details"
 							linkTo="/"
 						/>

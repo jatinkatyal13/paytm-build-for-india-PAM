@@ -60,7 +60,7 @@ class Patient extends Component {
       <div>
         <Modal show={this.state.showModal} onHide={ () => this.handleClose()}>
           <Modal.Header closeButton>
-            <Modal.Title>Add Patient</Modal.Title>
+            <Modal.Title>Add Customer</Modal.Title>
           </Modal.Header>
           <Modal.Body>
           <Form>
@@ -104,7 +104,7 @@ class Patient extends Component {
         { this.renderAddPatientModal() }
         <div className="col-lg-12">
           <PageHeader>
-            Patients
+            Customers
             <div className="pull-right">
               <button 
                 className="btn btn-success"
